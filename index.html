@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vCard - Personal Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box" style="background: none;">
+          <img src="./assets/images/avatar.jpg" alt="Jorge Duarte" width="80" style="border-radius: 100%;">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Jorge Duarte">Jorge Duarte</h1>
+
+          <p class="title">Software Engineer</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:jorge_duarte@outlook.pt" class="contact-link">jorge_duarte@outlook.pt</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:+351932207163" class="contact-link">+351 932 207 163</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+
+              <time datetime="1997-11-16">November 16, 1997</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Coimbra, Portugal</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Personal Projects</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            I am currently employed as a Full Stack Software Engineer at Kuehne-Nagel, where my primary focus is on the reporting domain.
+            
+          </p>
+
+          <p>
+            In addition to my professional career, I am pursuing a Bachelor's degree in Computer Engineering at the Instituto Superior de Engenharia de Coimbra, with an expected graduation in 2024.
+          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What i'm doing/interested</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/web.svg" alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web Development</h4>
+
+                <p class="service-item-text">
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/blockchain.svg" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Blockchain</h4>
+
+                <p class="service-item-text">
+                </p>
+              </div>
+
+            </li>
+
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/cloud.svg" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Cloud Development</h4>
+
+                <p class="service-item-text">
+                </p>
+              </div>
+
+            </li>
+
+            
+            
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/physics2.svg" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Quantum</h4>
+
+                <p class="service-item-text">
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials
+        -->
+
+        <section class="testimonials">
+
+          <h3 class="h3 testimonials-title">Testimonials</h3>
+
+          <ul class="testimonials-list has-scrollbar">
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-1.png" alt="Rui Marinho" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Rui Marinho (2020)</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Jorge is an excellent professional with great learning abilities and a passion for what he does. I currently work with him, and he is undoubtedly one of the most competent people in software development.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-1.png" alt="Alexandre Reis" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Alexandre Reis (2020)</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    While Jorge and I studied together, Jorge was always committed to all the work we did together! 
+He never leaves his projects unfinished and always try in a simple way to solve the problems that appear to him! He's a super excited person and I 'm very glad to have worked with him! 
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+
+              <time datetime="2021-06-14">14 June, 2021</time>
+
+              <div data-modal-text>
+                <p>
+                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  lot of experience
+                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                  consectetur adipiscing
+                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+          
+              <h4 class="h4 timeline-item-title">Instituto Superior de Engenharia de Coimbra</h4>
+          
+              <span>2021 — 2024</span>
+          
+              <p class="timeline-text">
+                Pursuing a Bachelor's Degree in Computer Engineering, expected to graduate in 2024.
+                <br>
+                <strong>Key competencies:</strong> Docker, React, Java, C#, TypeScript, Matlab, Oracle DB, C, C++, Python, Assembly.
+              </p>
+          
+            </li>
+          
+            <li class="timeline-item">
+          
+              <h4 class="h4 timeline-item-title">Universidade de Aveiro</h4>
+          
+              <span>2015 — 2018</span>
+          
+              <p class="timeline-text">
+                Earned an Associate’s Degree in Software Development.
+                <br>
+                <strong>Key competencies:</strong> Java, Ionic Framework, Node.js, PHP, Python, MySQL.
+              </p>
+          
+            </li>
+          
+            <li class="timeline-item">
+          
+              <h4 class="h4 timeline-item-title">Agrupamento de Escolas Ferreira de Castro</h4>
+          
+              <span>2012 — 2015</span>
+          
+              <p class="timeline-text">
+                Completed a Technician of Management and Programming of Information Systems program.
+                <br>
+                <strong>Key competencies:</strong> PHP, C, C++, MySQL, HTML, CSS, Visual Basic.
+              </p>
+          
+            </li>
+          
+          </ol>
+          
+          
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+          
+              <h4 class="h4 timeline-item-title">Full Stack Software Engineer at Kuehne+Nagel</h4>
+          
+              <span>November 2022 — Present</span>
+          
+              <p class="timeline-text">
+                Specializing in the reporting domain to support the Business Intelligence team. Implementing Star Schema for data analysis and utilizing Java for backend applications. Managed project migrations, including Vue2 to Vue3 and Spring Boot 2 to Spring Boot 3.
+                <br>
+                <strong>Key technologies:</strong> TypeScript, Java, Vue.js, OpenShift, AWX, Prometheus.io, Elasticsearch, Sentry, Oracle DB, Kanban, RabbitMQ, Node.js, Grafana, Git, Docker.
+              </p>
+          
+            </li>
+          
+            <li class="timeline-item">
+          
+              <h4 class="h4 timeline-item-title">Software Engineer II at Talkdesk</h4>
+          
+              <span>September 2021 — November 2022</span>
+          
+              <p class="timeline-text">
+                Developed a product integrating Talkdesk with customer support for ecommerce. Integrated customer data from Shopify, enhancing agent capabilities during calls.
+                <br>
+                <strong>Key technologies:</strong> TypeScript, Oauth2, React, Apache Kafka, Jenkins, Scrum, Kotlin, Git, Docker.
+              </p>
+          
+            </li>
+          
+            <li class="timeline-item">
+          
+              <h4 class="h4 timeline-item-title">Team Leader at BoldApps</h4>
+          
+              <span>April 2020 — August 2021</span>
+          
+              <p class="timeline-text">
+                Managed teams and implemented agile methodologies. Led the development of ERecursos, an educational platform that gained popularity during the COVID-19 pandemic.
+                <br>
+                <strong>Key technologies:</strong> TypeScript, jQuery, .NET, MongoDB, SQL, JavaScript, C#, Git.
+              </p>
+          
+            </li>
+          
+            <li class="timeline-item">
+          
+              <h4 class="h4 timeline-item-title">Full Stack Developer at BoldApps</h4>
+          
+              <span>June 2019 — August 2021</span>
+          
+              <p class="timeline-text">
+                Developed SQL scripts management framework. Restructured applications and authentication systems to enhance overall efficiency.
+                <br>
+                <strong>Key technologies:</strong> jQuery, .NET, MongoDB, SQL, JavaScript, C#, Git.
+              </p>
+          
+            </li>
+          
+            <li class="timeline-item">
+          
+              <h4 class="h4 timeline-item-title">Co-Founder at Social Mile</h4>
+          
+              <span>February 2021 — June 2021</span>
+          
+              <p class="timeline-text">
+                Launched an MVP for a gamified social network. Supported trip planning, capturing moments, and making reservations.
+                <br>
+                <strong>Key technologies:</strong> TypeScript, jQuery, Oauth2, Redis, MongoDB, JavaScript, Jenkins, Node.js, MySQL, Git.
+              </p>
+          
+            </li>
+          
+            <li class="timeline-item">
+          
+              <h4 class="h4 timeline-item-title">Full Stack Developer at Edubox SA</h4>
+          
+              <span>November 2017 — May 2019</span>
+          
+              <p class="timeline-text">
+                Managed municipal road maintenance projects and contributed to AppMunicipios. Developed modules for beacons management, events management, geolocations, and more.
+                <br>
+                <strong>Key technologies:</strong> XML, jQuery, .NET, SQL, Python, JavaScript, Ionic Framework, C#, SOAP, Git.
+              </p>
+          
+            </li>
+          
+            <li class="timeline-item">
+          
+              <h4 class="h4 timeline-item-title">Software Developer (Trainee) at Prologica</h4>
+          
+              <span>February 2017 — June 2017</span>
+          
+              <p class="timeline-text">
+                Implemented OAuth2 authorization protocol for a hospital inpatient project. Developed user management and patient notes modules.
+                <br>
+                <strong>Key technologies:</strong> jQuery, .NET, Oauth2, SQL, JavaScript, C#, Git.
+              </p>
+          
+            </li>
+          
+          </ol>
+          
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="personal projects">
+
+        <header>
+          <h2 class="h2 article-title">Personal Projects</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Blockchain</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>AI</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Applications</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web development</button>
+            </li>
+
+            
+            <li class="filter-item">
+              <button data-filter-btn>Games</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>AI</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Applications</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Blockchain</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web development</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Games</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="blockchain">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/cryptopayments.png" alt="blockchain" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">(2024) Crypto Payments Gateway</h3>
+
+                <p class="project-category">Blockchain</p>
+
+              </a>
+            </li>
+            <li class="project-item  active" data-filter-item data-category="blockchain">
+              <a href="https://items4crypto.com" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/i4c.png" alt="blockchain" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">(2023) Items 4 Crypto</h3>
+
+                <p class="project-category">Blockchain</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="ai">
+              <a href="https://github.com/jorgermduarte/isec-ic" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/plantdetection.png" alt="blockchain" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">(2023) Plant Health Identification</h3>
+
+                <p class="project-category">AI</p>
+
+              </a>
+            </li>
+
+
+            
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="https://github.com/jorgermduarte/isec-pweb" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/habitaqui.png" alt="Web Development" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">(2023) Hotel Booking</h3>
+
+                <p class="project-category">Web Development</p>
+
+              </a>
+            </li>
+            <li class="project-item  active" data-filter-item data-category="games">
+              <a href="https://github.com/jorgermduarte/isec-poo-natural-reserve" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/naturalreserve.png" alt="games" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">(2022) Natural Reserve</h3>
+
+                <p class="project-category">Games</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="https://github.com/jorgermduarte/isec-react-letter-soup" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/lettersoup.png" alt="Web Development" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">(2022) React Letter Soup</h3>
+
+                <p class="project-category">Web Development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="creativity">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/musicreactor.png" alt="Creativity" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">(2020) Music Reactor</h3>
+
+                <p class="project-category">Creativity</p>
+
+              </a>
+            </li>
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/defesapessoal.png" alt="Web Development" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">(2019) Defesa Pessoal</h3>
+
+                <p class="project-category">Web Development</p>
+
+              </a>
+            </li>
+
+            
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/healthycerberus.png" alt="application" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">(2018) Healthy Cerberus</h3>
+
+                <p class="project-category">Applications</p>
+
+              </a>
+            </li>
+          
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/lastroad.png" alt="Web Development" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">(2017) Last Road</h3>
+
+                <p class="project-category">Web Development</p>
+
+              </a>
+            </li>
+
+            
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
