@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorge Duarte</title>
+  <link rel="shortcut icon" href="../assets/images/avatar.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+
+    <div class="main-content">
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>Post</button>
+          </li>
+      </nav>
+
+      <article class="about  active" data-page="about">
+
+        <header>
+            <a href="../index.html"><button class="btn-back-posts"> <span> <img src="../assets/images/arrow.svg" height="20" class="arrow-white" /></span> Go Back </button></a>
+          <h2 class="h2 article-title">Becoming a Software Architect</h2>
+        </header>
+
+        <section class="about-text">
+
+          <p>This post distills key insights from my study of "The Complete Guide to Becoming a Software Architect" by Demi Lavi.</p>
+          <p><a class="btn-view-course" href="https://www.udemy.com/course/the-complete-guide-to-becoming-a-software-architect" target="_blank">View Course On Udemy</a></p>
+
+          <h2>The Architect Mindset</h2>
+
+          <p>Software architects must go beyond technical expertise to understand the company's business aspects deeply, including strengths, weaknesses, competition, and growth strategies. This understanding helps in crafting systems that align with broader business objectives.</p>
+          <p>It's crucial for architects to view system goals as reflections of business objectives and user needs, rather than just technical requirements. For example, a system designed for mapping criminal incidents should aim to improve public safety and urban living.</p>
+          <p>Architects should extend their focus beyond immediate clients to the end users. This approach ensures that the solutions developed are beneficial for all stakeholders involved.</p>
+          <p>Adapting communication to meet different stakeholder needs is vital. For instance, explaining the benefits of new technologies in terms of project management gains, like reduced schedules and budgets, can help align technical decisions with business goals.</p>
+          <p>The architect mindset involves integrating deeply with business strategies and understanding the end user’s perspective, which enhances the strategic impact of technology solutions in any organization.</p>
+          <h2>Architecture Process</h2>
+
+          <p>
+            - Understand the System's Requirements<br>
+            - Understand the Non-Functional Requirements<br>
+            - Map the Components<br>
+            - Select the Technology Stack<br>
+            - Design the Architecture<br>
+            - Write the Architecture Document<br>
+            - Support the Team<br>
+          </p>
+
+          <h2>Working With System Requirements</h2>
+
+          <p>System requirements are crucial for guiding the design and functionality of a project. These requirements are broadly categorized into functional and non-functional types, each serving a distinct purpose in the system’s architecture.</p>
+        
+          <p>Functional requirements describe what the system should do. They include:</p>
+
+          <p>
+            - <b>Business Flows:</b> The processes that capture routine business activities.<br>
+            - <b>Business Services:</b> The operations that a system performs to fulfill specific business needs.<br>
+            - <b>User Interfaces:</b> The points of interaction between the system and its users.
+            These are essential for defining the core operations of any system and ensure that the software meets its intended use.<br>
+          </p>
+
+          <p>While functional requirements focus on the actions of a system, non-functional requirements (NFRs) detail how the system performs under various conditions. These include:</p>
+
+          <p>
+            - <b>Performance:</b> The speed and responsiveness of the system.<br>
+            - <b>Load:</b> The maximum operating capacity the system can handle.<br>
+            - <b>Data Volume:</b> The amount of data the system must manage effectively.<br>
+            - <b>Concurrent Users:</b> The number of users who can interact with the system simultaneously.<br>
+            - <b>Service Level Agreements (SLA):</b> The formalized level of service expected from the system.
+            - Planning for extreme cases is vital as these scenarios test the limits of the system’s capabilities and resilience.<br>
+          </p>
+
+          <h2>Meeting the *-ilities</h2>
+          <p>*-ilities are a group of quality attributes essential for meeting non-functional requirements in software systems. A quality attribute is a technical capability that enhances system performance and usability.</p>
+          <p>These *-ilities include Scalability, Manageability, Modularity, Extensibility, and Testability—each serving a specific role in improving system design.</p>
+          <p>The relationship between non-functional requirements and architects is critical: non-functional requirements define the system's operational needs; quality attributes translate these needs into technical capabilities; and architects outline the design and implementation strategies for these capabilities.</p>
+          
+          <p><b>Scalability</b> ensures the system can handle increased loads by seamlessly adding resources, such as virtual machines, and integrating them with existing components like load balancers.</p>
+          <p><b>Manageability</b> refers to the ease with which a system can be monitored and maintained, ensuring administrators can understand and influence system behavior effectively.</p>
+          <p><b>Modularity</b> describes a system's design around independent building blocks, which can be individually updated or replaced without impacting overall functionality.</p>
+          <p><b>Extensibility</b> allows for the addition of features or functionality without altering the existing system code, facilitating future growth and adaptation.</p>
+          <p><b>Testability</b> is crucial for maintaining code quality, enabling systematic testing at both unit and integration levels to ensure robustness and reliability.</p>
+          
+          <h2>Architecture Components</h2>
+          <p>A software component, often referred to as a "Service," is a piece of code designed to operate within a single process.</p>
+          <p>Modular systems, which are typically distributed, consist of independent software components. These components are deployed across separate processes (or containers, or servers), enhancing system flexibility and scalability.</p>
+          <p>These systems are examples of distributed systems, where components or services are deployed independently and interact through specific protocols.</p>
+          
+          <p>The architecture of components involves managing internal components, facilitating interactions among them, and optimizing the code for speed and maintainability.</p>
+          <p>The system architecture represents the larger framework, focusing on creating solutions that are scalable, reliable, fast, and easy to maintain.</p>
+          
+          <h2>Design Patterns</h2>
+
+          <p>(...)</p>
+          
+          <h2>System Architecture</h2>
+
+          <p>(...)</p>
+
+          <h2>Architecture Document</h2>
+
+          <p>(...)</p>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <script src="../assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

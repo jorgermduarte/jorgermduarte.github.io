@@ -15,7 +15,28 @@
 \*-----------------------------------*/
 .public-project-right{
   float:right;
-  }
+}
+
+.btn-back-posts{
+  padding: 10px;
+  border: 2px solid hsl(45, 100%, 72%);
+  border-radius: 10px;
+  color:white;
+  margin-bottom: 20px;
+  display:inline-flex;
+}
+
+.arrow-white{
+  filter: invert(245%) sepia(137%) saturate(2540%) hue-rotate(199deg) brightness(118%) contrast(119%);
+  padding-top:2px;
+}
+
+.btn-view-course{
+  padding: 10px;
+  border: 2px solid hsl(45, 100%, 72%);
+  border-radius: 10px;
+  color:white;
+}
 
 :root {
 
