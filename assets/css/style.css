@@ -37,7 +37,12 @@
   border-radius: 10px;
   color:white;
 }
-
+.image-caption {
+  font-size: 16px; /* Sets the size of the caption text */
+  color: hsl(45, 100%, 72%); /* Sets the color of the caption text */
+  margin-top: 8px; /* Space between image and caption */
+  font-style: italic;
+}
 :root {
 
   /**

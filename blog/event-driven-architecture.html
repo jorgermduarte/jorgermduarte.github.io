@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorge Duarte</title>
+  <link rel="shortcut icon" href="../assets/images/avatar.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+
+    <div class="main-content">
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>Post</button>
+          </li>
+      </nav>
+
+      <article class="about  active" data-page="about">
+
+        <header>
+            <a href="../index.html"><button class="btn-back-posts"> <span> <img src="../assets/images/arrow.svg" height="20" class="arrow-white" /></span> Go Back </button></a>
+          <h2 class="h2 article-title">Event driven architecture</h2>
+        </header>
+
+        <section class="about-text">
+          
+          <p>This post distills key insights from my study of "Event Driven Architecture - The Complete Guide" by Demi Lavi.</p>
+          <p><a class="btn-view-course" href="https://www.udemy.com/course/event-driven-architecture-the-complete-guide" target="_blank">View Course On Udemy</a></p>
+
+          <img src="../assets/images/blog/eda.png" alt="Typical Event Driven Architecture" class="img-post" />
+          <div class="image-caption">Typical Event-Driven Architecture Diagram</div>
+          <br/>
+
+          <h2>What is Event-Driven Architecture?</h2>
+          <p>Event-Driven Architecture (EDA) is a design paradigm structured around the production, detection, consumption, and reaction to events. An event is any significant change in state that should trigger further processing. This architecture style is highly dynamic, enabling applications to be more responsive and scalable. It is particularly well-suited for environments where asynchronous data flows and real-time updates are critical, such as in microservices, real-time analytics, and complex event processing systems.</p>
+          
+          <h2>Why Use Event-Driven Architecture?</h2>
+          <ul>
+              <li><strong>Scalability:</strong> EDA can handle high volumes of events without a single point of failure, making it scalable to demand.</li>
+              <li><strong>Flexibility:</strong> Services in EDA can be developed, deployed, and scaled independently, which enhances the flexibility of development teams to address changes quickly.</li>
+              <li><strong>Responsiveness:</strong> Since components communicate through events, the system can respond immediately to real-time data changes.</li>
+              <li><strong>Asynchronous Communication:</strong> Components in an EDA do not wait for responses to proceed with processing, reducing system downtime and bottlenecks.</li>
+              <li>Evolved from microservices architecture frameworks.</li>
+              <li>Highly popular and widely adopted.</li>
+          </ul>
+          <br/>
+          <h2>Core Components of Event-Driven Architecture</h2>
+          <ul>
+              <li><strong>Event Producers:</strong> Generate and send events to the central messaging system. Producers are often microservices or external systems that detect state changes.</li>
+              <li><strong>Event Channels:</strong> Act as the pipeline through which events are delivered from producers to consumers. They ensure that events are distributed efficiently and securely.</li>
+              <li><strong>Event Consumers:</strong> Receive events and perform the appropriate actions based on the event type and payload. Consumers are typically services or microservices that handle specific business logic.</li>
+          </ul>
+          <br/>
+          <h2>Advantages of Event-Driven Architecture</h2>
+          <p>Event-Driven Architecture offers several advantages over traditional request/response architecture, making it ideal for certain types of applications:</p>
+          <ul>
+              <li>Improves decoupling of processes and services, enhancing system flexibility and maintainability.</li>
+              <li>Supports better scalability as components can be scaled independently based on demand.</li>
+              <li>Enhances real-time performance capabilities, crucial for applications requiring immediate data processing.</li>
+          </ul>
+          <br/>
+          <h2>Challenges of Event-Driven Architecture</h2>
+          <p>While EDA provides numerous benefits, it also presents unique challenges:</p>
+          <ul>
+              <li><strong>Complexity in Error Handling:</strong> The asynchronous nature of EDA can make it difficult to trace and handle errors as events flow through multiple components.</li>
+              <li><strong>Testing Difficulties:</strong> Testing an event-driven system can be more complex than traditional architectures due to its asynchronous and distributed nature.</li>
+              <li><strong>Management Overhead:</strong> Managing a large number of services and the flow of events can become cumbersome without proper tools and practices.</li>
+          </ul>
+          <br/>
+          <h2>Introduction to Events</h2>
+          <p>Events have evolved from traditional architectures and are fundamentally based on the principles of microservices architecture.</p>
+          <br/>
+          <h3>Microservices Architecture</h3>
+          <ul>
+              <li>Each service operates within its own process.</li>
+              <li>Utilizes lightweight communication protocols.</li>
+              <li>Supports polyglot persistence (no platform dependencies between services) and development in different programming languages.</li>
+              <li>Serves as a modern replacement for two legacy architectures:</li>
+              <ul>
+                  <li><strong> - Monolithic Architecture:</strong> Challenging to scale, all components reside in the same process, platform limitations.</li>
+                  <li><strong> - Service-Oriented Architecture (SOA):</strong> Views applications as separate but interconnected services, typically each service interacts through a singular API.</li>
+              </ul>
+          </ul>
+          <br/>
+          <p>One of the most critical aspects of microservices architecture is <strong>communication</strong>, which significantly impacts performance, scalability, implementation, and more.</p>
+          <p><strong>Event-driven architecture focuses on the communication between services rather than on the services themselves.</strong></p>
+          <br/>
+          <h3>Command and Query</h3>
+          <ul>
+              <li><strong>Commands:</strong> A service requests another service to perform an action. Often synchronous with occasional responses.</li>
+              <li><strong>Queries:</strong> A service requests data from another service. Always expects a response, even if there is no data.</li>
+          </ul>
+          <br/>
+          <h3>Challenges with Command and Query</h3>
+          <ul>
+              <li><strong>Performance:</strong> Methods are typically synchronous.</li>
+              <li><strong>Coupling:</strong> Services must be aware of the handler's identity. API changes in the service require corresponding changes in the calling service.</li>
+              <li><strong>Scalability:</strong> Tightly coupled to a single instance of a service. Scaling involves complex load balancing and configurations.</li>
+          </ul>
+          <br/>
+          <h3>Solving These Issues with Events</h3>
+          <ul>
+              <li>An event notifies the system that something has happened.</li>
+              <li>Events do not expect a response.</li>
+              <li>Asynchronous in nature.</li>
+              <li>The service issuing the command does not know the event handler.</li>
+          </ul>
+          <br/>
+          <h2>Event Driven Architecture (EDA)</h2>
+          <p>Utilizes events as the primary form of communication between services, consisting of three main components:</p>
+          <ul>
+              <li><strong>Producer:</strong> The service/component that issues the event.</li>
+              <li><strong>Channel:</strong> Distributes the event to relevant parties and is crucial for managing event queues.</li>
+              <li><strong>Consumer:</strong> Receives and processes the event.</li>
+          </ul>
+          <br/>
+          <h2>Advantages of EDA</h2>
+          <ul>
+              <li>Improved performance: The channel does not wait for a consumer's response.</li>
+              <li>Reduced coupling: Producers send events without knowing who will listen.</li>
+              <li>Enhanced scalability: Multiple consumers can listen to the channel, and it's easy to add more as needed.</li>
+          </ul>
+
+          <br/>
+      
+          <h2>Publish/Subscribe (Pub/Sub)</h2>
+          <p>Similar to EDA but used specifically for message patterns within systems. The main difference is that while EDA can encompass a variety of communication types (including REST API calls), Pub/Sub strictly deals with message exchanges.</p>
+          <br/>
+          <h2>Logging and Monitoring in EDA</h2>
+          <p>Implementing effective logging and monitoring in a distributed, event-driven system is challenging due to the decentralized and asynchronous nature of EDA.</p>
+          <ul>
+              <li>Using correlation IDs to trace event paths across services.</li>
+              <li>Centralized logging engines to unify log formats and manage data from multiple sources.</li>
+          </ul>
+          <br/>
+          <h2>Advanced Topics in EDA</h2>
+          <p>Covers less common but critical scenarios, such as mixing EDA with synchronous API calls, handling stateful versus stateless event processing, and utilizing event streaming technologies like Kafka for managing large-scale event data.</p>
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <script src="../assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
