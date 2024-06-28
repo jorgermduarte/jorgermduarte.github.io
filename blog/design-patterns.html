@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorge Duarte</title>
+  <link rel="shortcut icon" href="../assets/images/avatar.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+
+    <div class="main-content">
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>Post</button>
+          </li>
+      </nav>
+
+      <article class="about  active" data-page="about">
+
+        <header>
+            <a href="../index.html"><button class="btn-back-posts"> <span> <img src="../assets/images/arrow.svg" height="20" class="arrow-white" /></span> Go Back </button></a>
+          <h2 class="h2 article-title">Understanding Design Patterns</h2>
+        </header>
+
+        <section class="about-text">
+
+          <h2>Design Patterns Overview</h2>
+
+          <p>Design patterns are typical solutions to common problems in software design. Each pattern is like a blueprint you can customize to solve a particular design problem in your code.</p>
+      
+          <h2>Categories of Design Patterns</h2>
+          <ul>
+              <li><strong>Creational Patterns:</strong> These patterns provide various object creation mechanisms, which increase the flexibility and reuse of existing code.</li>
+              <li><strong>Structural Patterns:</strong> These patterns explain how to assemble objects and classes into larger structures, while keeping the structures flexible and efficient.</li>
+              <li><strong>Behavioral Patterns:</strong> These patterns are concerned with algorithms and the assignment of responsibilities between objects.</li>
+          </ul>
+          
+          <br>
+          <h2>Creational Patterns</h2>
+          <ul>
+              <li>
+                  <strong>Singleton:</strong> Ensures that a class has only one instance, and provides a global point of access to it.
+                  <pre>
+                      public class Singleton {
+                          private static Singleton instance;
+                          private Singleton() {}
+                          public static Singleton Instance {
+                              get {
+                                  if (instance == null) {
+                                      instance = new Singleton();
+                                  }
+                                  return instance;
+                              }
+                          }
+                      }
+                  </pre>
+              </li>
+              <li>
+                  <strong>Factory Method:</strong> Defines an interface for creating an object, but lets subclasses decide which class to instantiate.
+                  <pre>
+                      public abstract class Creator {
+                          public abstract Product FactoryMethod();
+                      }
+                      public class ConcreteCreator : Creator {
+                          public override Product FactoryMethod() { return new ConcreteProduct(); }
+                      }
+                  </pre>
+              </li>
+              <li>
+                  <strong>Abstract Factory:</strong> Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+                  <pre>
+                      interface IFactory {
+                          IProductA CreateProductA();
+                          IProductB CreateProductB();
+                      }
+                      class ConcreteFactory1 : IFactory {
+                          public IProductA CreateProductA() { return new ProductA1(); }
+                          public IProductB CreateProductB() { return new ProductB1(); }
+                      }
+                  </pre>
+              </li>
+              <li>
+                  <strong>Builder:</strong> Separates the construction of a complex object from its representation.
+                  <pre>
+                      class Director {
+                          public void Construct(Builder builder) {
+                              builder.BuildPartA();
+                              builder.BuildPartB();
+                          }
+                      }
+                  </pre>
+              </li>
+              <li>
+                  <strong>Prototype:</strong> Specifies the kinds of objects to create using a prototypical instance.
+                  <pre>
+                      class Prototype {
+                          public int X { get; private set; }
+                          public Prototype Clone() {
+                              return (Prototype)this.MemberwiseClone();
+                          }
+                      }
+                  </pre>
+              </li>
+              <li>
+                  <strong>Object Pool:</strong> Avoids expensive acquisition and release of resources by recycling objects that are no longer in use.
+                  <pre>
+                      public class ObjectPool {
+                          private List&lt;Reusable&gt; available = new List&lt;Reusable&gt;();
+                          public Reusable GetReusable() {
+                              if (available.Count > 0) {
+                                  Reusable r = available[0];
+                                  available.RemoveAt(0);
+                                  return r;
+                              } else {
+                                  return new Reusable();
+                              }
+                          }
+                      }
+                  </pre>
+              </li>
+          </ul>
+
+
+          <h2>Structural Patterns</h2>
+<ul>
+    <li>
+        <strong>Adapter:</strong> Allows objects with incompatible interfaces to work together by wrapping their interfaces.
+        <pre>
+            // Old Printer Interface (Adaptee)
+            public interface IOldPrinter {
+                void Print(string text);
+            }
+
+            // Old Printer Implementation
+            public class OldPrinter : IOldPrinter {
+                public void Print(string text) {
+                    Console.WriteLine($"Old Printer: {text}");
+                }
+            }
+
+            // Modern Printer Interface (Target)
+            public interface IModernPrinter {
+                void PrintDocument(string document);
+            }
+
+            public class ModernPrinter : IModernPrinter {
+                public void PrintDocument(string document) {
+                    Console.WriteLine($"Modern Printer: {document}");
+                }
+            }
+
+            // Adapter Class
+            public class PrinterAdapter : IModernPrinter {
+                private IOldPrinter oldPrinter;
+
+                public PrinterAdapter(IOldPrinter oldPrinter) {
+                    this.oldPrinter = oldPrinter;
+                }
+
+                public void PrintDocument(string document) {
+                    oldPrinter.Print(document);
+                }
+            }
+        </pre>
+    </li>
+    <li>
+        <strong>Bridge:</strong> Decouples an abstraction from its implementation so that the two can vary independently.
+        <pre>
+            // Implementor
+            public interface IImplementor {
+                void OperationImpl();
+            }
+
+            // ConcreteImplementorA
+            public class ConcreteImplementorA : IImplementor {
+                public void OperationImpl() {
+                    Console.WriteLine("ConcreteImplementorA Operation");
+                }
+            }
+
+            // ConcreteImplementorB
+            public class ConcreteImplementorB : IImplementor {
+                public void OperationImpl() {
+                    Console.WriteLine("ConcreteImplementorB Operation");
+                }
+            }
+
+            // Abstraction
+            public abstract class Abstraction {
+                protected IImplementor implementor;
+                public Abstraction(IImplementor impl) {
+                    implementor = impl;
+                }
+                public virtual void Operation() {
+                    implementor.OperationImpl();
+                }
+            }
+
+            // RefinedAbstraction
+            public class RefinedAbstraction : Abstraction {
+                public RefinedAbstraction(IImplementor impl) : base(impl) { }
+                public override void Operation() {
+                    Console.WriteLine("RefinedAbstraction Operation");
+                    implementor.OperationImpl();
+                }
+            }
+        </pre>
+    </li>
+    <li>
+        <strong>Composite:</strong> Composes objects into tree structures to represent part-whole hierarchies.
+        <pre>
+            // Component
+            public interface IComponent {
+                void Operation();
+            }
+
+            // Leaf
+            public class Leaf : IComponent {
+                public void Operation() {
+                    Console.WriteLine("Leaf operation");
+                }
+            }
+
+            // Composite
+            public class Composite : IComponent {
+                private List&lt;IComponent&gt; children = new List&lt;IComponent&gt;();
+
+                public void Add(IComponent component) {
+                    children.Add(component);
+                }
+
+                public void Operation() {
+                    Console.WriteLine("Composite Operation");
+                    foreach (var child in children) {
+                        child.Operation();
+                    }
+                }
+            }
+        </pre>
+    </li>
+    <li>
+        <strong>Decorator:</strong> Allows for dynamically adding behavior to an object.
+        <pre>
+            // Component
+            public interface ICoffee {
+                double GetCost();
+                string GetDescription();
+            }
+
+            // ConcreteComponent
+            public class SimpleCoffee : ICoffee {
+                public double GetCost() {
+                    return 1.0;
+                }
+                public string GetDescription() {
+                    return "Simple coffee";
+                }
+            }
+
+            // Decorator
+            public abstract class CoffeeDecorator : ICoffee {
+                protected ICoffee coffee;
+                public CoffeeDecorator(ICoffee coffee) {
+                    this.coffee = coffee;
+                }
+                public virtual double GetCost() {
+                    return coffee.GetCost();
+                }
+                public virtual string GetDescription() {
+                    return coffee.GetDescription();
+                }
+            }
+
+            // ConcreteDecorator
+            public class MilkDecorator : CoffeeDecorator {
+                public MilkDecorator(ICoffee coffee) : base(coffee) { }
+                public override double GetCost() {
+                    return base.GetCost() + 0.5;
+                }
+                public override string GetDescription() {
+                    return base.GetDescription() + ", milk";
+                }
+            }
+        </pre>
+    </li>
+    <li>
+        <strong>Facade:</strong> Provides a simplified interface to a complex system.
+        <pre>
+            // Subsystems
+            public class SubsystemA {
+                public void A1() { }
+            }
+            public class SubsystemB {
+                public void B1() { }
+            }
+
+            // Facade
+            public class Facade {
+                private SubsystemA a = new SubsystemA();
+                private SubsystemB b = new SubsystemB();
+
+                public void Operation1() {
+                    a.A1();
+                    b.B1();
+                }
+            }
+        </pre>
+    </li>
+    <li>
+        <strong>Flyweight:</strong> Minimizes memory usage by sharing as much data as possible with similar objects.
+        <pre>
+            // Flyweight
+            public interface IFlyweight {
+                void Operation(int extrinsicState);
+            }
+
+            // ConcreteFlyweight
+            public class ConcreteFlyweight : IFlyweight {
+                int intrinsicState;
+
+                public void Operation(int extrinsicState) {
+                    Console.WriteLine("ConcreteFlyweight: " + (intrinsicState + extrinsicState));
+                }
+            }
+
+            // FlyweightFactory
+            public class FlyweightFactory {
+                private Dictionary&lt;string, IFlyweight&gt; flyweights = new Dictionary&lt;string, IFlyweight&gt;();
+
+                public IFlyweight GetFlyweight(string key) {
+                    if (!flyweights.ContainsKey(key)) {
+                        flyweights[key] = new ConcreteFlyweight();
+                    }
+                    return flyweights[key];
+                }
+            }
+        </pre>
+    </li>
+    <li>
+        <strong>Proxy:</strong> Provides a surrogate or placeholder for another object to control access to it.
+        <pre>
+            // Subject Interface
+            public interface ISubject {
+                void Request();
+            }
+
+            // RealSubject
+            public class RealSubject : ISubject {
+                public void Request() {
+                    Console.WriteLine("RealSubject Request");
+                }
+            }
+
+            // Proxy
+            public class Proxy : ISubject {
+                private RealSubject realSubject;
+
+                public void Request() {
+                    if (realSubject == null) {
+                        realSubject = new RealSubject();
+                    }
+                    realSubject.Request();
+                }
+            }
+        </pre>
+    </li>
+</ul>
+
+<h2>Behavioral Patterns</h2>
+<ul>
+    <li>
+        <strong>Observer:</strong> Allows objects to notify changes to multiple other objects.
+        <pre>
+            // Subject
+            public interface ISubject {
+                void Attach(IObserver observer);
+                void Detach(IObserver observer);
+                void Notify();
+            }
+
+            // Concrete Subject
+            public class ConcreteSubject : ISubject {
+                private List&lt;IObserver&gt; observers = new List&lt;IObserver&gt;();
+                public void Attach(IObserver observer) {
+                    observers.Add(observer);
+                }
+                public void Detach(IObserver observer) {
+                    observers.Remove(observer);
+                }
+                public void Notify() {
+                    foreach (var observer in observers) {
+                        observer.Update();
+                    }
+                }
+            }
+
+            // Observer
+            public interface IObserver {
+                void Update();
+            }
+
+            // Concrete Observer
+            public class ConcreteObserver : IObserver {
+                public void Update() {
+                    Console.WriteLine("Observer updated");
+                }
+            }
+        </pre>
+    </li>
+    <li>
+        <strong>Chain of Responsibility:</strong> Passes a request along a chain of potential handlers.
+        <pre>
+            // Handler
+            public abstract class Handler {
+                protected Handler successor;
+                public void SetSuccessor(Handler successor) {
+                    this.successor = successor;
+                }
+                public abstract void HandleRequest(int condition);
+            }
+
+            // Concrete Handler 1
+            public class ConcreteHandler1 : Handler {
+                public override void HandleRequest(int condition) {
+                    if (condition == 1) {
+                        Console.WriteLine("Handled by ConcreteHandler1");
+                    } else if (successor != null) {
+                        successor.HandleRequest(condition);
+                    }
+                }
+            }
+
+            // Concrete Handler 2
+            public class ConcreteHandler2 : Handler {
+                public override void HandleRequest(int condition) {
+                    if (condition == 2) {
+                        Console.WriteLine("Handled by ConcreteHandler2");
+                    } else if (successor != null) {
+                        successor.HandleRequest(condition);
+                    }
+                }
+            }
+        </pre>
+    </li>
+    <li>
+        <strong>Command:</strong> Encapsulates a command request as an object.
+        <pre>
+            // Command
+            public interface ICommand {
+                void Execute();
+            }
+
+            // Concrete Command
+            public class TurnOnCommand : ICommand {
+                private Light light;
+                public TurnOnCommand(Light light) {
+                    this.light = light;
+                }
+                public void Execute() {
+                    light.TurnOn();
+                }
+            }
+
+            // Receiver
+            public class Light {
+                public void TurnOn() {
+                    Console.WriteLine("Light turned on");
+                }
+            }
+
+            // Invoker
+            public class RemoteControl {
+                private ICommand command;
+                public void SetCommand(ICommand command) {
+                    this.command = command;
+                }
+                public void PressButton() {
+                    command.Execute();
+                }
+            }
+        </pre>
+    </li>
+    <li>
+        <strong>State:</strong> Allows an object to alter its behavior when its internal state changes.
+        <pre>
+            // Context
+            public class Context {
+                private State state;
+                public Context(State state) {
+                    this.state = state;
+                }
+                public void Request() {
+                    state.Handle(this);
+                }
+                public void SetState(State state) {
+                    this.state = state;
+                }
+            }
+
+            // State
+            public abstract class State {
+                public abstract void Handle(Context context);
+            }
+
+            // Concrete State A
+            public class ConcreteStateA : State {
+                public override void Handle(Context context) {
+                    Console.WriteLine("Handling state A");
+                    context.SetState(new ConcreteStateB());
+                }
+            }
+
+            // Concrete State B
+            public class ConcreteStateB : State {
+                public override void Handle(Context context) {
+                    Console.WriteLine("Handling state B");
+                    context.SetState(new ConcreteStateA());
+                }
+            }
+        </pre>
+    </li>
+    <li>
+        <strong>Strategy:</strong> Enables an algorithm's behavior to be selected at runtime.
+        <pre>
+            // Strategy
+            public interface IStrategy {
+                void AlgorithmInterface();
+            }
+
+            // ConcreteStrategy A
+            public class ConcreteStrategyA : IStrategy {
+                public void AlgorithmInterface() {
+                    Console.WriteLine("Algorithm A");
+                }
+            }
+
+            // ConcreteStrategy B
+            public class ConcreteStrategyB : IStrategy {
+                public void AlgorithmInterface() {
+                    Console.WriteLine("Algorithm B");
+                }
+            }
+
+            // Context
+            public class Context {
+                private IStrategy strategy;
+                public Context(IStrategy strategy) {
+                    this.strategy = strategy;
+                }
+                public void ExecuteStrategy() {
+                    strategy.AlgorithmInterface();
+                }
+            }
+        </pre>
+    </li>
+    <li>
+        <strong>Memento:</strong> Provides a way to restore an object to its previous state.
+        <pre>
+            // Originator
+            public class Originator {
+                private string state;
+                public void SetState(string state) {
+                    this.state = state;
+                }
+                public Memento SaveStateToMemento() {
+                    return new Memento(state);
+                }
+                public void GetStateFromMemento(Memento memento) {
+                    state = memento.GetState();
+                }
+            }
+
+            // Memento
+            public class Memento {
+                private string state;
+                public Memento(string state) {
+                    this.state = state;
+                }
+                public string GetState() {
+                    return state;
+                }
+            }
+
+            // Caretaker
+            public class Caretaker {
+                private List&lt;Memento&gt; mementoList = new List&lt;Memento&gt;();
+                public void Add(Memento state) {
+                    mementoList.Add(state);
+                }
+                public Memento Get(int index) {
+                    return mementoList[index];
+                }
+            }
+        </pre>
+    </li>
+    <li>
+        <strong>Visitor:</strong> Separates an algorithm from the objects on which it operates.
+        <pre>
+            // Visitor
+            public interface IVisitor {
+                void VisitConcreteElementA(ConcreteElementA concreteElementA);
+                void VisitConcreteElementB(ConcreteElementB concreteElementB);
+            }
+
+            // ConcreteVisitor
+            public class ConcreteVisitor : IVisitor {
+                public void VisitConcreteElementA(ConcreteElementA concreteElementA) {
+                    Console.WriteLine("Visited ConcreteElementA");
+                }
+                public void VisitConcreteElementB(ConcreteElementB concreteElementB) {
+                    Console.WriteLine("Visited ConcreteElementB");
+                }
+            }
+
+            // Element
+            public interface IElement {
+                void Accept(IVisitor visitor);
+            }
+
+            // ConcreteElement A
+            public class ConcreteElementA : IElement {
+                public void Accept(IVisitor visitor) {
+                    visitor.VisitConcreteElementA(this);
+                }
+            }
+
+            // ConcreteElement B
+            public class ConcreteElementB : IElement {
+                public void Accept(IVisitor visitor) {
+                    visitor.VisitConcreteElementB(this);
+                }
+            }
+        </pre>
+    </li>
+</ul>
+
+
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <script src="../assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
