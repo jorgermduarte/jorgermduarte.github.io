@@ -59,6 +59,11 @@ pre{
   float:right;
 }
 
+.wip-course{
+  color:hsl(45, 100%, 72%) !important ;
+  font-weight: bold !important;
+}
+
 :root {
 
   /**
