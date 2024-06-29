@@ -53,6 +53,12 @@ pre{
   padding: 10px;
  }
 
+.language-code{
+  color:hsl(45, 100%, 72%);
+  font-weight: bold;
+  float:right;
+}
+
 :root {
 
   /**

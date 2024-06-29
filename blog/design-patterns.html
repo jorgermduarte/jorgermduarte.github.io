@@ -50,7 +50,7 @@
           <ul>
               <li>
                   <strong>Singleton:</strong> Ensures that a class has only one instance, and provides a global point of access to it.
-                  <pre>
+                  <pre lang="cs" ><code class="language-code">C#</code>
                       public class Singleton {
                           private static Singleton instance;
                           private Singleton() {}
@@ -67,7 +67,7 @@
               </li>
               <li>
                   <strong>Factory Method:</strong> Defines an interface for creating an object, but lets subclasses decide which class to instantiate.
-                  <pre>
+                  <pre lang="cs"><code class="language-code">C#</code>
                       public abstract class Creator {
                           public abstract Product FactoryMethod();
                       }
@@ -78,7 +78,7 @@
               </li>
               <li>
                   <strong>Abstract Factory:</strong> Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
-                  <pre>
+                  <pre lang="cs"><code class="language-code">C#</code>
                       interface IFactory {
                           IProductA CreateProductA();
                           IProductB CreateProductB();
@@ -91,7 +91,7 @@
               </li>
               <li>
                   <strong>Builder:</strong> Separates the construction of a complex object from its representation.
-                  <pre>
+                  <pre lang="cs"><code class="language-code">C#</code>
                       class Director {
                           public void Construct(Builder builder) {
                               builder.BuildPartA();
@@ -102,7 +102,7 @@
               </li>
               <li>
                   <strong>Prototype:</strong> Specifies the kinds of objects to create using a prototypical instance.
-                  <pre>
+                  <pre lang="cs"><code class="language-code">C#</code>
                       class Prototype {
                           public int X { get; private set; }
                           public Prototype Clone() {
@@ -113,7 +113,7 @@
               </li>
               <li>
                   <strong>Object Pool:</strong> Avoids expensive acquisition and release of resources by recycling objects that are no longer in use.
-                  <pre>
+                  <pre lang="cs"><code class="language-code">C#</code>
                       public class ObjectPool {
                           private List&lt;Reusable&gt; available = new List&lt;Reusable&gt;();
                           public Reusable GetReusable() {
@@ -135,7 +135,7 @@
 <ul>
     <li>
         <strong>Adapter:</strong> Allows objects with incompatible interfaces to work together by wrapping their interfaces.
-        <pre>
+        <pre lang="cs"><code class="language-code">C#</code>
             // Old Printer Interface (Adaptee)
             public interface IOldPrinter {
                 void Print(string text);
@@ -175,7 +175,7 @@
     </li>
     <li>
         <strong>Bridge:</strong> Decouples an abstraction from its implementation so that the two can vary independently.
-        <pre>
+        <pre lang="cs"><code class="language-code">C#</code>
             // Implementor
             public interface IImplementor {
                 void OperationImpl();
@@ -218,7 +218,7 @@
     </li>
     <li>
         <strong>Composite:</strong> Composes objects into tree structures to represent part-whole hierarchies.
-        <pre>
+        <pre lang="cs"><code class="language-code">C#</code>
             // Component
             public interface IComponent {
                 void Operation();
@@ -250,7 +250,7 @@
     </li>
     <li>
         <strong>Decorator:</strong> Allows for dynamically adding behavior to an object.
-        <pre>
+        <pre lang="cs"><code class="language-code">C#</code>
             // Component
             public interface ICoffee {
                 double GetCost();
@@ -295,7 +295,7 @@
     </li>
     <li>
         <strong>Facade:</strong> Provides a simplified interface to a complex system.
-        <pre>
+        <pre lang="cs"><code class="language-code">C#</code>
             // Subsystems
             public class SubsystemA {
                 public void A1() { }
@@ -318,7 +318,7 @@
     </li>
     <li>
         <strong>Flyweight:</strong> Minimizes memory usage by sharing as much data as possible with similar objects.
-        <pre>
+        <pre lang="cs"><code class="language-code">C#</code>
             // Flyweight
             public interface IFlyweight {
                 void Operation(int extrinsicState);
@@ -348,7 +348,7 @@
     </li>
     <li>
         <strong>Proxy:</strong> Provides a surrogate or placeholder for another object to control access to it.
-        <pre>
+        <pre lang="cs"><code class="language-code">C#</code>
             // Subject Interface
             public interface ISubject {
                 void Request();
@@ -380,7 +380,7 @@
 <ul>
     <li>
         <strong>Observer:</strong> Allows objects to notify changes to multiple other objects.
-        <pre>
+        <pre lang="cs"><code class="language-code">C#</code>
             // Subject
             public interface ISubject {
                 void Attach(IObserver observer);
@@ -419,7 +419,7 @@
     </li>
     <li>
         <strong>Chain of Responsibility:</strong> Passes a request along a chain of potential handlers.
-        <pre>
+        <pre lang="cs"><code class="language-code">C#</code>
             // Handler
             public abstract class Handler {
                 protected Handler successor;
@@ -454,7 +454,7 @@
     </li>
     <li>
         <strong>Command:</strong> Encapsulates a command request as an object.
-        <pre>
+        <pre lang="cs"><code class="language-code">C#</code>
             // Command
             public interface ICommand {
                 void Execute();
@@ -492,7 +492,7 @@
     </li>
     <li>
         <strong>State:</strong> Allows an object to alter its behavior when its internal state changes.
-        <pre>
+        <pre lang="cs"><code class="language-code">C#</code>
             // Context
             public class Context {
                 private State state;
@@ -531,7 +531,7 @@
     </li>
     <li>
         <strong>Strategy:</strong> Enables an algorithm's behavior to be selected at runtime.
-        <pre>
+        <pre lang="cs"><code class="language-code">C#</code>
             // Strategy
             public interface IStrategy {
                 void AlgorithmInterface();
@@ -565,7 +565,7 @@
     </li>
     <li>
         <strong>Memento:</strong> Provides a way to restore an object to its previous state.
-        <pre>
+        <pre lang="cs"><code class="language-code">C#</code>
             // Originator
             public class Originator {
                 private string state;
@@ -605,7 +605,7 @@
     </li>
     <li>
         <strong>Visitor:</strong> Separates an algorithm from the objects on which it operates.
-        <pre>
+        <pre lang="cs"><code class="language-code">C#</code>
             // Visitor
             public interface IVisitor {
                 void VisitConcreteElementA(ConcreteElementA concreteElementA);
