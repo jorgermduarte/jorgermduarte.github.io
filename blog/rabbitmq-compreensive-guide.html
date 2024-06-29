@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorge Duarte</title>
+  <link rel="shortcut icon" href="../assets/images/avatar.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+
+    <div class="main-content">
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>Post</button>
+          </li>
+      </nav>
+
+      <article class="about  active" data-page="about">
+
+        <header>
+            <a href="../index.html"><button class="btn-back-posts"> <span> <img src="../assets/images/arrow.svg" height="20" class="arrow-white" /></span> Go Back </button></a>
+          <h2 class="h2 article-title">RabbitMQ: A Comprehensive Guide</h2>
+        </header>
+
+        <section class="about-text">
+
+          <p>This post distills key insights from my study of "RabbitMQ and Messaging Concepts" by Mustafa Kök.</p>
+          <p><a class="btn-view-course" href="https://www.udemy.com/course/rabbitmq-and-messaging-concepts/" target="_blank">View Course On Udemy</a></p>
+          <h2>What is RabbitMQ?</h2>
+          <p>RabbitMQ is an open-source messaging system that serves as a broker for sending and receiving messages between applications and services. It implements the Advanced Message Queuing Protocol (AMQP), making it a popular choice for asynchronous communication among distributed components.</p>
+          <br/>
+    <h2>Basic Concepts</h2>
+
+    <h3>Messages</h3>
+    <p>In RabbitMQ, messages are data packets that applications send and receive. A message consists of a header (containing metadata) and a body (the data to be transmitted).</p>
+
+    <h3>Queues</h3>
+    <p>A queue is a storage structure in RabbitMQ that holds messages sent by producers until they are consumed by subscribers. RabbitMQ supports queues with delivery and deletion policies, allowing control over queue behavior.</p>
+
+    <h3>Priority Queues</h3>
+    <p>Priority Queues are special queues that prioritize the processing of messages based on a priority criterion associated with each message. Higher priority messages are processed before those of lower priority, which is useful when certain messages must be handled more urgently than others.</p>
+
+    <h3>Producers and Consumers</h3>
+    <p>Producers are message emitters that send messages to RabbitMQ, while consumers are receivers that receive and process messages. RabbitMQ allows one or more consumers to subscribe to a queue to receive messages.</p>
+    <br/>
+    <h2>Exchanges</h2>
+    <p>Exchanges are responsible for receiving messages from producers and directing them to the appropriate queues. RabbitMQ offers several types of exchanges:</p>
+
+    <h3>1. Direct Exchange</h3>
+    <p>A direct exchange forwards messages to queues based on a routing key specified by the producer. Messages are delivered to queues whose routing key matches exactly that specified by the producer.</p>
+
+    <h3>2. Fanout Exchange</h3>
+    <p>A fanout exchange forwards all received messages to all queues linked to it, completely ignoring the routing key used by the producer.</p>
+
+    <h3>3. Topic Exchange</h3>
+    <p>A topic exchange allows messages to be routed based on patterns of routing keys. Queues connect to the exchange using wildcards to determine which messages to receive.</p>
+
+    <h3>4. Headers Exchange</h3>
+    <p>A headers exchange uses message header attributes to route messages to the correct queues. In this type of exchange, routing keys are replaced by header criteria specified by the producer and interpreted by the exchange.</p>
+    <br/>
+    <h2>Advanced Messaging Patterns</h2>
+    <h3>Work Queues</h3>
+    <p>Work Queues, also known as task queues, are a messaging pattern that allows tasks to be distributed for processing across multiple consumers in parallel. This pattern is useful for handling heavy workloads and ensuring tasks are fairly distributed among available consumers.</p>
+
+    <h3>Publish-Subscribe</h3>
+    <p>The publish-subscribe pattern is used to broadcast messages to multiple interested consumers simultaneously. Producers send messages to a 'fanout' type exchange, which forwards the messages to all queues linked to that exchange, allowing multiple applications or services to receive the same messages at the same time.</p>
+
+    <h3>Request-Reply</h3>
+    <p>The request-reply pattern is a communication model where a client (producer) sends a message to a specific queue requesting an action or information. A server (consumer) listening on that queue responds to the message, providing the requested action or information to the client.</p>
+    <br/>
+    <h2>Conclusion</h2>
+    <p>RabbitMQ is a powerful messaging solution for distributed systems, enabling applications to communicate asynchronously, ensuring scalability and robustness of software architectures. With an understanding of the basic concepts, including messages, queues, and exchanges, developers can create resilient and reliable systems with RabbitMQ as the messaging intermediary.</p>
+
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <script src="../assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
