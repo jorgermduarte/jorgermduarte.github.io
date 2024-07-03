@@ -33,6 +33,248 @@
         </header>
 
         <section class="about-text">
+          <p>The SOLID principles are a set of design guidelines in object-oriented programming that enable developers to build more maintainable and scalable software. These principles were introduced by Robert C. Martin (Uncle Bob) in his 2000 paper "Design Principles and Design Patterns." </p>
+          <p>The acronym SOLID stands for Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. Each principle helps developers to manage dependencies, which in turn reduces the complexity of the code and makes it easier to manage over time.</p>
+      
+          <p><a class="wip-course no-decoration" href="https://staff.cs.utu.fi/~jounsmed/doos_06/material/DesignPrinciplesAndPatterns.pdf">Learn more about the paper clicking here </a></p>
+          
+
+          <h2>1. Single Responsibility Principle (SRP)</h2>
+    <p>A class should have only one reason to change, meaning it should have only one job or responsibility.</p>
+    <pre lang="cs" ><code class="language-code">C#</code>
+<span class="code-incorrect-comment">// Incorrect: Combining logging and processing responsibilities</span>
+public class OrderHandler
+{
+    public void ProcessOrder(Order order)
+    {
+        // Process the order
+    }
+
+    public void LogOrder(Order order)
+    {
+        // Log order details
+    }
+}
+    </pre>
+    <pre lang="cs" ><code class="language-code">C#</code>
+<span class="code-correct-comment">// Correct: Separate classes for processing and logging</span>
+public class OrderProcessor
+{
+    public void ProcessOrder(Order order)
+    {
+        // Process the order
+    }
+}
+
+public class OrderLogger
+{
+    public void LogOrder(Order order)
+    {
+        // Log order details
+    }
+}
+    </pre>
+
+    <h2>2. Open/Closed Principle (OCP)</h2>
+    <p>Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification.</p>
+    <pre lang="cs" ><code class="language-code">C#</code>
+<span class="code-incorrect-comment">// Incorrect: Modifying existing class to add new features</span>
+public class Discount
+{
+    public double CalculateDiscount(string type, double price)
+    {
+        if (type == "Seasonal")
+        {
+            return price * 0.15;
+        }
+        else if (type == "Veteran")
+        {
+            return price * 0.1;
+        }
+        return 0;
+    }
+}
+    </pre>
+    <pre lang="cs" ><code class="language-code">C#</code>
+<span class="code-correct-comment">// Correct: Using abstract class to allow extensions without modifying existing code</span>
+public abstract class Discount
+{
+    public abstract double CalculateDiscount(double productPrice);
+}
+
+public class SeasonalDiscount : Discount
+{
+    public override double CalculateDiscount(double productPrice)
+    {
+        return productPrice * 0.15;
+    }
+}
+
+public class VeteranDiscount : Discount
+{
+    public override double CalculateDiscount(double productPrice)
+    {
+        return productPrice * 0.1;
+    }
+}
+    </pre>
+
+    <h2>3. Liskov Substitution Principle (LSP)</h2>
+    <p>Objects of a superclass should be replaceable with objects of its subclasses without affecting the correctness of the program.</p>
+    <pre lang="cs" ><code class="language-code">C#</code>
+<span class="code-incorrect-comment">// Incorrect: Subclass that breaks functionality of the superclass</span>
+public class Rectangle
+{
+    public int Width { get; set; }
+    public int Height { get; set; }
+
+    public int CalculateArea()
+    {
+        return Width * Height;
+    }
+}
+
+public class Square : Rectangle
+{
+    public new int Width
+    {
+        set { base.Width = base.Height = value; }
+    }
+
+    public new int Height
+    {
+        set { base.Height = base.Width = value; }
+    }
+}
+    </pre>
+    <pre lang="cs" ><code class="language-code">C#</code>
+<span class="code-correct-comment">// Correct: Refactoring to avoid breaking LSP</span>
+public class Shape
+{
+    public virtual int CalculateArea() { return 0; }
+}
+
+public class Rectangle : Shape
+{
+    public int Width { get; set; }
+    public int Height { get; set; }
+
+    public override int CalculateArea()
+    {
+        return Width * Height;
+    }
+}
+
+public class Square : Shape
+{
+    public int SideLength { get; set; }
+
+    public override int CalculateArea()
+    {
+        return SideLength * SideLength;
+    }
+}
+    </pre>
+
+    <h2>4. Interface Segregation Principle (ISP)</h2>
+    <p>Clients should not be forced to depend on interfaces they do not use.</p>
+    <pre lang="cs" ><code class="language-code">C#</code>
+<span class="code-incorrect-comment">// Incorrect: One interface for all functionalities</span>
+public interface IMachine
+{
+    void Print(Document d);
+    void Scan(Document d);
+    void Fax(Document d);
+}
+
+public class SimplePrinter : IMachine
+{
+    public void Print(Document d) { /* Implement printing */ }
+    public void Scan(Document d) { /* Not used */ }
+    public void Fax(Document d) { /* Not used */ }
+}
+    </pre>
+    <pre lang="cs" ><code class="language-code">C#</code>
+<span class="code-correct-comment">// Correct: Segregated interfaces for specific functionalities</span>
+public interface IPrinter
+{
+    void Print(Document d);
+}
+
+public interface IScanner
+{
+    void Scan(Document d);
+}
+
+public class SimplePrinter : IPrinter
+{
+    public void Print(Document d)
+    {
+        // Implement printing
+    }
+}
+    </pre>
+
+    <h2>5. Dependency Inversion Principle (DIP)</h2>
+    <p>High-level modules should not depend on low-level modules. Both should depend on abstractions.</p>
+    <pre lang="cs" ><code class="language-code">C#</code>
+<span class="code-incorrect-comment">// Incorrect: High-level module directly depends on low-level module</span>
+public class DataManager
+{
+    private FileDataAccess _dataAccess = new FileDataAccess();
+
+    public void Load()
+    {
+        _dataAccess.LoadData();
+    }
+
+    public void Save()
+    {
+        _dataAccess.SaveData();
+    }
+}
+    </pre>
+    <pre lang="cs" ><code class="language-code">C#</code>
+<span class="code-correct-comment">// Correct: High-level module depends on abstraction, not on concretions</span>
+public interface IDataAccess
+{
+    void LoadData();
+    void SaveData();
+}
+
+public class FileDataAccess : IDataAccess
+{
+    public void LoadData()
+    {
+        // Load data from a file
+    }
+
+    public void SaveData()
+    {
+        // Save data to a file
+    }
+}
+
+public class DataManager
+{
+    private IDataAccess _dataAccess;
+
+    public DataManager(IDataAccess dataAccess)
+    {
+        _dataAccess = dataAccess;
+    }
+
+    public void Load()
+    {
+        _dataAccess.LoadData();
+    }
+
+    public void Save()
+    {
+        _dataAccess.SaveData();
+    }
+}
+    </pre>
 
         </section>
 

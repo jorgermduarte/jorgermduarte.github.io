@@ -83,6 +83,15 @@ ol {
   padding-left: 20px;
 }
 
+.code-incorrect-comment{
+  color:salmon;
+  font-weight: bold;
+}
+
+.code-correct-comment{
+  color:forestgreen;
+  font-weight: bold;
+}
 
 :root {
 
