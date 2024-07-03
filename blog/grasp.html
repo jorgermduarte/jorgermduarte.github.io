@@ -33,7 +33,187 @@
         </header>
 
         <section class="about-text">
+          <h1>GRASP Principles in Software Design: A Detailed Guide</h1>
+          <p>The GRASP (General Responsibility Assignment Software Patterns) principles are foundational concepts in object-oriented design, providing guidelines for assigning responsibilities to classes and objects. Developed and first described by Craig Larman in his seminal book "Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development," these principles are designed to help create software that is robust, maintainable, and scalable. The GRASP acronym underscores the focus on solving specific problems in software design.</p>
 
+          <h2>1. Information Expert</h2>
+          <p>The principle of Information Expert suggests assigning a responsibility to the class that has the necessary information to fulfill it.</p>
+          <pre lang="cs" ><code class="language-code">C#</code>
+      <span class="code-incorrect-comment">// Incorrect: Responsibility assigned to a class without the necessary information</span>
+      public class Order
+      {
+          // Order data
+      }
+      
+      public class PaymentSystem
+      {
+          public void ProcessPayment(Order order)
+          {
+              // Calculate total, process payment
+          }
+      }
+          </pre>
+          <pre lang="cs" ><code class="language-code">C#</code>
+      <span class="code-correct-comment">// Correct: Responsibility assigned to the class that has the necessary information</span>
+      public class Order
+      {
+          public void ProcessPayment()
+          {
+              // Calculate total, process payment using order data
+          }
+      }
+          </pre>
+          <br/>
+          <h2>2. Low Coupling</h2>
+          <p>Low Coupling involves minimizing the dependencies between classes to increase stability and flexibility.</p>
+          <pre lang="cs" ><code class="language-code">C#</code>
+      <span class="code-incorrect-comment">// Incorrect: High coupling between classes</span>
+      public class OrderManager
+      {
+          private Inventory inventory;
+          private PaymentProcessor paymentProcessor;
+      
+          public void ProcessOrder()
+          {
+              inventory.UpdateStock();
+              paymentProcessor.ProcessPayment();
+          }
+      }
+          </pre>
+          <pre lang="cs" ><code class="language-code">C#</code>
+      <span class="code-correct-comment">// Correct: Reduced coupling enhances flexibility and maintainability</span>
+      public class OrderManager
+      {
+          public void ProcessOrder(Inventory inventory, PaymentProcessor paymentProcessor)
+          {
+              inventory.UpdateStock();
+              paymentProcessor.ProcessPayment();
+          }
+      }
+          </pre>
+          <br/>
+          <h2>3. High Cohesion</h2>
+          <p>High Cohesion means keeping classes focused and manageable by limiting their responsibilities.</p>
+          <pre lang="cs" ><code class="language-code">C#</code>
+      <span class="code-incorrect-comment">// Incorrect: Class doing too many tasks</span>
+      public class UserManager
+      {
+          public void CreateUser() { }
+          public void UpdateUser() { }
+          public void LogUserActivity() { }
+          public void GenerateUserReports() { }
+      }
+          </pre>
+          <pre lang="cs" ><code class="language-code">C#</code>
+      <span class="code-correct-comment">// Correct: Each class has a single focused responsibility</span>
+      public class UserManagement
+      {
+          public void CreateUser() { }
+          public void UpdateUser() { }
+      }
+      
+      public class UserReporting
+      {
+          public void LogUserActivity() { }
+          public void GenerateUserReports() { }
+      }
+          </pre>
+          <br/>
+          <h2>4. Creator</h2>
+          <p>The Creator principle advises that a class should be responsible for creating instances of objects if it aggregates or contains objects of that class.</p>
+          <pre lang="cs" ><code class="language-code">C#</code>
+      <span class="code-incorrect-comment">// Incorrect: Object creation is not handled by the most logical class</span>
+      public class Application
+      {
+          public void Start()
+          {
+              Order order = new Order();  // Application should not create Order directly
+          }
+      }
+      
+      public class OrderManager
+      {
+          // Manages orders
+      }
+          </pre>
+          <pre lang="cs" ><code class="language-code">C#</code>
+      <span class="code-correct-comment">// Correct: The class that contains or aggregates objects should create them</span>
+      public class OrderManager
+      {
+          public Order CreateOrder()
+          {
+              return new Order();  // OrderManager creates Order instances
+          }
+      }
+          </pre>
+          <br/>
+          <h2>5. Controller</h2>
+          <p>The Controller principle suggests that you should assign the responsibility of handling system events to a class that represents the overall system or a use-case scenario, rather than to a UI class or data class.</p>
+          <pre lang="cs" ><code class="language-code">C#</code>
+      <span class="code-incorrect-comment">// Incorrect: UI class handling business logic</span>
+      public class OrderForm
+      {
+          public void SubmitOrder()
+          {
+              // Handle order submission logic
+          }
+      }
+          </pre>
+          <pre lang="cs" ><code class="language-code">C#</code>
+      <span class="code-correct-comment">// Correct: A separate controller class handles the business logic</span>
+      public class OrderController
+      {
+          public void SubmitOrder()
+          {
+              // Handle order submission logic
+          }
+      }
+          </pre>
+          <br/>
+          <h2>6. Polymorphism</h2>
+          <p>Polymorphism advises using object types to drive behavior variations. This principle is used to handle alternatives based on type, often seen with overriding or implementing methods in subclasses or interfaces.</p>
+          <pre lang="cs" ><code class="language-code">C#</code>
+      <span class="code-incorrect-comment">// Incorrect: Using conditional statements to handle variations</span>
+      public class Shape
+      {
+          public string Type;
+      
+          public void Draw()
+          {
+              if (Type == "Circle")
+              {
+                  // Draw circle
+              }
+              else if (Type == "Square")
+              {
+                  // Draw square
+              }
+          }
+      }
+          </pre>
+          <pre lang="cs" ><code class="language-code">C#</code>
+      <span class="code-correct-comment">// Correct: Using polymorphism to handle variations</span>
+      public abstract class Shape
+      {
+          public abstract void Draw();
+      }
+      
+      public class Circle : Shape
+      {
+          public override void Draw()
+          {
+              // Draw circle
+          }
+      }
+      
+      public class Square : Shape
+      {
+          public override void Draw()
+      {
+              // Draw square
+          }
+      }
+          </pre>
         </section>
 
       </article>
