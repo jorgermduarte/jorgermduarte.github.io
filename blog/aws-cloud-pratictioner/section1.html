@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorge Duarte</title>
+  <link rel="shortcut icon" href="../../assets/images/avatar.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+
+    <div class="main-content">
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>Post</button>
+          </li>
+      </nav>
+
+      <article class="about  active" data-page="about">
+
+        <header>
+            <a href="../aws-certified-cloud-pratictioner.html"><button class="btn-back-posts"> <span> <img src="../../assets/images/arrow.svg" height="20" class="arrow-white" /></span> Go Back </button></a>
+          <h2 class="h2 article-title">AWS Certified Cloud Practitioner - Getting Started - Section 1</h2>
+        </header>
+
+        <section class="about-text">
+
+            <h2>Cloud Computing</h2>
+            <ul>
+            <li><strong>On-demand usage & delivery of IT resources</strong></li>
+            <li><strong>Examples:</strong>
+            <ul>
+            <li>Rent a server & serve a website</li>
+            <li>Rent file storage volumes</li>
+            </ul>
+            </li>
+            <li><strong>Flexible usage of compute power & data storage capabilities</strong></li>
+            <li><strong>No need to provision and maintain your own data center</strong></li>
+            <li><strong>Only pay for the resources you use, when you use them</strong></li>
+            </ul>
+            <br/>
+            <h2>On-premises advantages & disadvantages</h2>
+            <h3>Advantages:</h3>
+            <ol>
+            <li>You have full control over your physical infrastructure & hardware.</li>
+            <li>You know exactly where your computers (and data) are.</li>
+            </ol>
+            <h3>Disadvantages:</h3>
+            <ol>
+            <li>You are responsible for maintaining the infrastructure.</li>
+            <li>You are responsible for (long-term) capacity planning & upgrading.</li>
+            <li>You are responsible for securing the infrastructure.</li>
+            <li>You can’t react quickly to workload spikes (e.g., more requests).</li>
+            <li>You also pay for idle resources.</li>
+            <li>You are typically stuck to one or a few locations.</li>
+            </ol>
+            <br/>
+            <h2>Cloud Advantages</h2>
+            <ol>
+            <li><strong>Reliability</strong>
+            <ol>
+            <li><strong>Rely on AWS</strong>
+            <ul>
+            <li>AWS is responsible for managing the underlying infrastructure.</li>
+            <li>Service Level Agreements (SLA) are available for many key services.</li>
+            </ul>
+            </li>
+            <li><strong>Build Reliable Applications</strong>
+            <ul>
+            <li>Various services help you build reliable applications.</li>
+            <li>Your workload performs its intended function correctly & consistently.</li>
+            </ul>
+            </li>
+            <li><strong>Rely on Global Reach</strong>
+            <ul>
+            <li>Fall back to other regions or go with a multi-region setup right from the start.</li>
+            <li>Move your workload within minutes to hours, instead of days or weeks.</li>
+            </ul>
+            </li>
+            </ol>
+            </li>
+            <li><strong>Agility, Elasticity & Scalability</strong>
+            <ol>
+            <li><strong>Agility</strong>
+            <ul>
+            <li>Use cloud resources within seconds or minutes.</li>
+            <li>Launch resources with a click or command.</li>
+            </ul>
+            </li>
+            <li><strong>Elasticity</strong>
+            <ul>
+            <li>Start using more or less resources, just as needed.</li>
+            <li>No long-term planning required.</li>
+            </ul>
+            </li>
+            <li><strong>Scalability</strong>
+            <ul>
+            <li>Scale up or down, as required.</li>
+            <li>Use auto-scaling services to reduce manual workload.</li>
+            </ul>
+            </li>
+            </ol>
+            </li>
+            <li><strong>Pay-as-you Go</strong>
+            <ul>
+            <li><strong>You only pay for what you use.</strong></li>
+            <li><strong>There are a few upfront or subscription payment models.</strong></li>
+            </ul>
+            </li>
+            <li><strong>Global Reach</strong>
+            <ol>
+            <li><strong>Choose perfect location</strong></li>
+            <li><strong>Spread our workloads to ensure high availability</strong></li>
+            </ol>
+            </li>
+            </ol>
+            <br/>
+            <b><a href="https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html" class="wip-course" style="text-decoration: none;" target="_blank">Learn more about AWS advantages</a></b>
+            <br/>
+            <h2>Regions & Availability Zones</h2>
+            <ul>
+            <li><strong>Region</strong>: A region in AWS terminology is a specific geographical area where AWS operates. Each region is entirely independent of the other and is designed to be completely isolated from failures in other regions. This isolation helps achieve the greatest possible fault tolerance and stability.</li>
+            <li><strong>Availability Zones (AZs)</strong>: Within each region, AWS operates several isolated locations known as Availability Zones. Each AZ is essentially a data center or a collection of data centers that are equipped to provide services. A key point about these AZs is that they are physically separated from each other within the region but are interconnected through low-latency links. This setup enhances both fault tolerance and performance.
+            <ul>
+            <li><strong>Minimum AZs</strong>: Each region has at least three Availability Zones, enhancing the reliability of the services offered by providing backup in case one or two zones encounter issues.</li>
+            <li><strong>Individual Data Centers</strong>: Each Availability Zone contains at least one data center, if not more.</li>
+            </ul>
+            </li>
+            <li><strong>Local Zones</strong>: These are extensions of a main AWS region that place compute, storage, database, and other select services closer to end-users, providing them with lower-latency access.</li>
+            <li><strong>Edge Locations</strong>: These are sites deployed in major cities and highly populated areas worldwide to deliver content to end users with lower latency. They are part of AWS's content delivery network, Amazon CloudFront.</li>
+            <li><strong>Wavelength Zones</strong>: These are AWS infrastructure deployments that embed AWS compute and storage services within the telecommunications providers’ datacenters at the edge of the 5G network, so application traffic from 5G devices can reach server applications without leaving the telecommunications network.</li>
+            <li><strong>AWS Outposts</strong>: These bring native AWS services, infrastructure, and operating models to virtually any data center, co-location space, or on-premises facility for a truly consistent hybrid experience.</li>
+            </ul>
+            <br/>
+            <h2>Self-Service vs Managed Services</h2>
+            <p>AWS offers two main kinds of services</p>
+            <h3>Self-Service:</h3>
+            <ul>
+            <li><strong>Do it yourself</strong>: Users handle the setup and management of services.</li>
+            <li><strong>Fully configurable</strong>: Users have complete control over the configuration.</li>
+            <li><strong>Underlying hardware is still managed by AWS</strong>: AWS takes care of the physical infrastructure.</li>
+            </ul>
+            <h3>Managed Services:</h3>
+            <ul>
+            <li><strong>AWS manages the hard parts</strong>: AWS handles the more complex aspects of service management.</li>
+            <li><strong>Partially configurable</strong>: Users have some options for configuration, but not as extensive as with self-service.</li>
+            <li><strong>Can be used together with other services (incl. self-service)</strong>: Managed services can be integrated with both other managed services and self-service options.</li>
+            </ul>
+            <br/>
+            <h2>Which Services does AWS offer?</h2>
+            <ul>
+            <li>Compute</li>
+            <li>Data Storage</li>
+            <li>Database</li>
+            <li>Networking & Content Delivery</li>
+            <li>Application Integration</li>
+            <li>Security</li>
+            <li>Cloud Management</li>
+            <li>Migration & Edge Computing</li>
+            <li>Analytics & Data Ingestion</li>
+            <li>Machine Learning & Artificial Intelligence</li>
+            <li>Developer Tools</li>
+            <li>Business Applications</li>
+            </ul>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <script src="../../assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -64,6 +64,26 @@ pre{
   font-weight: bold !important;
 }
 
+.no-decoration{
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left: 20px;
+}
+li {
+  margin-bottom: 8px;
+}
+ol {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left: 20px;
+}
+
+
 :root {
 
   /**
