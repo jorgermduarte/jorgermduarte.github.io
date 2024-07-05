@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorge Duarte</title>
+  <link rel="shortcut icon" href="../../assets/images/avatar.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+
+    <div class="main-content">
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>Post</button>
+          </li>
+      </nav>
+
+      <article class="about  active" data-page="about">
+
+        <header>
+            <a href="../aws-certified-cloud-pratictioner.html"><button class="btn-back-posts"> <span> <img src="../../assets/images/arrow.svg" height="20" class="arrow-white" /></span> Go Back </button></a>
+          <h2 class="h2 article-title">AWS Certified Cloud Practitioner - Account Security, Permissions & The IAM Service - Section 3</h2>
+        </header>
+
+        <section class="about-text">
+            <h2>Shared Responsibility Model</h2>
+            <p>Security is a shared responsibility</p>
+            <div class="box">
+                <h3>AWS</h3>
+                <ul>
+                    <li>Secure the infrastructure & physical machines</li>
+                    <li>Protect their internal systems & processes</li>
+                    <li>Secure managed services & everything you can't configure or control</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>You</h3>
+                <ul>
+                    <li>Secure your applications & workloads</li>
+                    <li>Protect your account & control account access</li>
+                    <li>Secure everything you are able to control & configure</li>
+                </ul>
+            </div>
+
+            <br/>
+            <h2>Protecting Your Account</h2>
+
+          <h3>Secure Credentials</h3>
+          <ul>
+              <li>Choose a strong password</li>
+              <li>Change it frequently</li>
+              <li>Don’t share your credentials!</li>
+          </ul>
+
+          <h3>Multi-Factor Authentication</h3>
+          <ul>
+              <li>Enable MFA</li>
+              <li>Use a digital or physical solution</li>
+          </ul>
+
+          <h3>Utilize IAM Users</h3>
+          <ul>
+              <li>Create IAM users for accessing your account</li>
+              <li>Every person (e.g., colleague) should use a separate user</li>
+          </ul>
+          <br/>
+          <h2>Identity & Access Management</h2>
+
+          <h3>Identities</h3>
+          <p>The entity for which access rights / permissions are controlled</p>
+          <p>Who is allowed (or not allowed) to do something?</p>
+          <p>Users, User Groups & Roles</p>
+          
+          <h3>Access Management</h3>
+          <p>The permissions that are granted (or not granted) to an entity</p>
+          <p>What is an entity allowed to do (with a given service)?</p>
+          <p>Permissions, managed via Policies</p>
+          <br/>
+
+          <h2>Users, User Groups & Roles</h2>
+
+          <h3>Users</h3>
+          <p>Typically assigned to humans</p>
+          <p>Every person that should be able to access the AWS account gets a user</p>
+
+          <h3>User Groups</h3>
+          <p>Group users to share permissions</p>
+          <p>Avoid unnecessary permission copying or tedious per-user access management</p>
+
+          <h3>Roles</h3>
+          <p>Typically used by services</p>
+          <p>Allows services to perform AWS tasks (e.g., start or use another service)</p>
+
+          <br/>
+          <h2>What Happens If Permissions Clash?</h2>
+          <h3>Scenario 2: Policies clash</h3>
+          
+          <h3>Policy A</h3>
+          <p>Only allows EC2 reading</p>
+          
+          <h3>Policy B</h3>
+          <p>Denies all EC2 access</p>
+          
+          <h3>Final Permission Set</h3>
+          <ul>
+              <li>Only allows EC2 reading</li>
+              <li>Denies all EC2 access</li>
+              <li><strong>No EC2 access</strong></li>
+          </ul>
+          
+          <p><strong>Explicit DENY Statements Always Win!</strong></p>
+          <br/>
+          <h2>Core IAM Policy & Permission Rules</h2>
+          <ul>
+              <li><strong>1.</strong> By default, no permissions are granted to any identity (user, user group, role)</li>
+              <li><strong>2.</strong> Multiple policies can be combined to extend the set of permissions</li>
+              <li><strong>3.</strong> Explicit DENYs overwrite explicit ALLOWs</li>
+          </ul>
+          <br/>
+          <h2>Summary of AWS Security Concepts</h2>
+          <h3>Shared Responsibility Model</h3>
+          <ul>
+              <li>Every party secures the things it controls</li>
+              <li>AWS secures the infrastructure & managed services</li>
+              <li>You secure your applications, workloads & service configs</li>
+          </ul>
+
+          <h3>Account Protection</h3>
+          <ul>
+              <li>Use secure passwords & MFA</li>
+              <li>Use IAM users instead of root access</li>
+              <li>Don’t share credentials</li>
+          </ul>
+
+          <h3>IAM Key Concepts</h3>
+          <ul>
+              <li>IAM identities (users, user groups, roles) define the WHO</li>
+              <li>Policies & permissions define the WHAT</li>
+              <li>Policies contain permissions and are attached to identities</li>
+              <li>No permissions by default, DENY overwrites ALLOW</li>
+          </ul>
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <script src="../../assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

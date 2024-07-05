@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorge Duarte</title>
+  <link rel="shortcut icon" href="../../assets/images/avatar.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+
+    <div class="main-content">
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>Post</button>
+          </li>
+      </nav>
+
+      <article class="about  active" data-page="about">
+
+        <header>
+            <a href="../aws-certified-cloud-pratictioner.html"><button class="btn-back-posts"> <span> <img src="../../assets/images/arrow.svg" height="20" class="arrow-white" /></span> Go Back </button></a>
+          <h2 class="h2 article-title">AWS Certified Cloud Practitioner - Compute Services & EC2 - Section 4</h2>
+        </header>
+
+        <section class="about-text">
+          <h2>Which Services Does AWS Offer?</h2>
+
+          <ul>
+              <li>Compute</li>
+              <li>Data Storage</li>
+              <li>Database</li>
+              <li>Networking & Content Delivery</li>
+              <li>Application Integration</li>
+              <li>Security</li>
+              <li>Cloud Management</li>
+              <li>Migration & Edge Computing</li>
+              <li>Analytics & Data Ingestion</li>
+              <li>Machine Learning & Artificial Intelligence</li>
+              <li>Developer Tools</li>
+              <li>Business Applications</li>
+          </ul>
+          <br/>
+          <h2>AWS Compute Services</h2>
+
+          <h3>ECS / EKS (Elastic Container Service)</h3>
+          <ul>
+              <li>An alternative to EC2 - for containerized workloads</li>
+              <li>Run clusters of containers in the cloud</li>
+              <li>Managed (with vast amount of configuration options)</li>
+              <li>Run any kind of containerized workload</li>
+          </ul>
+
+          <h3>EC2 (Elastic Compute Cloud)</h3>
+          <ul>
+              <li>One of the most important & popular services!</li>
+              <li>Rent a (virtual) remote server / computer</li>
+              <li>Fully configurable</li>
+              <li>Run any kind of workload in the cloud</li>
+          </ul>
+
+          <h3>Lambda (Serverless Code Execution)</h3>
+          <ul>
+              <li>The most popular serverless compute service</li>
+              <li>Run code without provisioning any infrastructure</li>
+              <li>No access to the underlying machine or OS</li>
+              <li>Run any kind of code upon pre-defined events</li>
+          </ul>
+          <br/>
+          <h2>What Are "Containers"?</h2>
+
+          <p>Containers are "packages" of code + the code’s dependencies (e.g., OS, required software)</p>
+          <p>Containers allow developers to distribute and deploy reproducible code environments (including the code itself)</p>
+
+          <ul>
+              <li>No server configuration required (since the container already includes the operating system, software, configuration etc.)</li>
+              <li>Containers can be deployed into all environments that support containers</li>
+              <li>Supporting environments are still computers / servers — they host the containers, not the app itself though</li>
+          </ul>
+
+          <p>Related Service: <strong>ECS / EKS</strong></p>
+          <br/>
+          <h2>What Are "Serverless" Services?</h2>
+
+          <p>Serverless services allow you to run code without configuring or controlling any servers.</p>
+          <p>You can perform tasks in response to events by just providing the code that should be executed.</p>
+          <p>Serverless services allow you to focus on your code, instead of the environment that runs the code.</p>
+          <p>Often, multiple serverless services / tasks must be combined to handle more complex workloads.</p>
+          <p>AWS manages the (hidden) underlying server configuration.</p>
+
+          <p>Related Service: <strong>AWS Lambda</strong></p>
+          <br/>
+          <h2>Amazon Machine Images (AMIs)</h2>
+          <p>Packages of software & setup instructions</p>
+          <p>Different images yield different operating systems with different additional software and configuration</p>
+
+          <ul>
+              <li>You can also create (and share) your own images</li>
+              <li>Or use one of AWS' official images</li>
+              <li>Or use an image shared by other AWS users & partners</li>
+          </ul>
+          <br/>
+
+          <h2>EC2 Pricing</h2>
+
+<h3>On Demand Instances</h3>
+<ul>
+    <li>Default & most flexible option</li>
+    <li>Pay for usage</li>
+    <li>No discounts</li>
+    <li>Price depends on chosen config</li>
+</ul>
+
+<h3>Spot Instances</h3>
+<ul>
+    <li>Must be selected</li>
+    <li>Spare instances, can be reclaimed any time</li>
+    <li>Discounts over on-demand pricing</li>
+    <li>Price depends on chosen config</li>
+    <li>Ideal for workloads that can be interrupted</li>
+</ul>
+
+<h3>Savings Plans</h3>
+<ul>
+    <li>Must be bought separately</li>
+    <li>Pay in advance (for chosen amt. of usage)</li>
+    <li>Discounts over on-demand pricing</li>
+    <li>You can use other compute services</li>
+    <li>Ideal if you can commit long-term</li>
+</ul>
+
+<h3>Reserved Instances</h3>
+<ul>
+    <li>Must be bought separately</li>
+    <li>Pay in advance (for chosen instance types)</li>
+    <li>Discounts over on-demand pricing</li>
+    <li>Not very flexible & only EC2</li>
+</ul>
+<br/>
+
+          <h2>Summary of AWS Compute Services</h2>
+
+          <h3>Multiple Compute Services</h3>
+          <ul>
+              <li>ECS / EKS for containerized workloads</li>
+              <li>Lambda for serverless compute tasks</li>
+              <li>"Serverless" = You only provide the code, no server config</li>
+              <li>EC2 for fully customizable server configuration</li>
+              <li>Run any workload / task on EC2</li>
+          </ul>
+          
+          <h3>EC2 Instances</h3>
+          <ul>
+              <li>EC2 allows you to "rent" "slices" of real machines: Instances</li>
+              <li>Each instance is fully isolated from other instances</li>
+              <li>Instance configuration (AMI, instance type, etc.) is up to you</li>
+              <li>AMIs define the operating system + base software / config</li>
+              <li>Control network access via security groups</li>
+          </ul>
+          
+          <h3>Running Workloads via EC2</h3>
+          <ul>
+              <li>Connect to EC2 instances via ssh or EC2 Instance Connect</li>
+              <li>Run commands, install software, download code, etc.</li>
+              <li>Run one or multiple scripts / commands / programs</li>
+              <li>Stop or terminate whenever you want</li>
+              <li>Advanced options & different pricing models</li>
+          </ul>
+
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <script src="../../assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
