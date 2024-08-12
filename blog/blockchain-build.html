@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
 </head>
 
 <body>
@@ -305,13 +306,106 @@
           <h2>Cryptocurrency Transactions Intuition</h2>
 
           <h3>Transactions and UTXOs</h3>
-          <h3>Where does transaction fees come from?</h3>
-          <h3>How Wallets work</h3>
-          <h3>Signatures: Private & Public Keys</h3>
-          <h3>What is Segregated Witness (SegWit)</h3>
-          <h3>Public Key vs Bitcoin Address</h3>
-          <h3>Hierarchically Deterministic (HD) Wallets</h3>
 
+          <p>Imagine the following transactions:</p>
+
+          <!-- create a table with name of user, sentTo, BTC Value -->
+          <table class="table-info">
+            <tr>
+              <th scope="col">From</th>
+              <th scope="col">To</th>
+              <th scope="col">BTC Value</th>
+            </tr>
+            <tr>
+              <td scope="row">Mark</td>
+              <td>Me</td>
+              <td>0.1 BTC</td>
+            </tr>
+            <tr>
+              <td scope="row">Hadelin</td>
+              <td>Me</td>
+              <td>0.3 BTC</td>
+            </tr>
+            <tr>
+              <td scope="row">Helen</td>
+              <td>Me</td>
+              <td>0.6 BTC</td>
+            </tr>
+            <tr>
+              <td scope="row">Susan</td>
+              <td>Me</td>
+              <td>0.7 BTC</td>
+            </tr>
+          </table>
+          <p>UTXO stands for Unspent Transaction Output.</p>
+          <p>It is a way to keep track of the transactions in the blockchain.</p>
+          <p>Baically every row in the table is a UTXO.</p>
+
+          <p>Imagine that i want  want to buy a bicycle for 0.5BTC.</p>
+          <p>What happens is that i will pick the UTXOs which is closed to the value, for example 0.6 BTC from elen, and the output would look like this:</p>
+
+          <!-- create a table with name of user, sentTo, BTC Value -->
+           <table class="table-info">
+            <tr>
+              <th scope="col">From</th>
+              <th scope="col">To</th>
+              <th scope="col">BTC Value</th>
+            </tr>
+            <tr>
+              <td  scope="row">Me</td>
+              <td>Bikeshop</td>
+              <td>0.5 BTC (UTXO for the bike shop)</td>
+            </tr>
+            <tr>
+              <td  scope="row">Me</td>
+              <td>Me</td>
+              <td>0.1 BTC (UTXO for me)</td>
+            </tr>
+           </table>
+
+           <p>This UTXO (0.1BTC) will be available for me to spend in the future.</p>
+           <p>After this, i could say that i want to buy another bicycle for 1.1 BTC, then the trasaction input will be the 0.3BTC from Hadelin, 0.7BTC from Susan and 0.1 BTC from Me, and the output will only be the 1.1BTC to the bike shop</p>
+
+          <br />
+          <h3>Where does transaction fees come from?</h3>
+
+          <p>Transaction fees are everything that we do not account for on the output UTXOs.</p>
+          <p>Basically the transaction fees are the difference between the input UTXOs and the output UTXOs.</p>
+          <p>Imagining an input of 0.9BTC and an output of 0.88BTC, it means that the fee is 0.02BTC for the miner</p>
+
+          <br/>
+          <h3>How Wallets work</h3>
+          <p>How a wallet comes from a balance value?</p>
+          <p>Basically it iterates over all the blocks in the blockchain, and calculates the total balance of the UTXOs.</p>
+
+          <br/>
+          <h3>Signatures: Private & Public Keys</h3>
+           <p>Soo how does the blockchain ensures privacy and security?</p>
+           <p>We have the private key which we can generate the public key, and the public key is like the number of the bank</p>
+
+           <p>So imagining a transaction from Me to Mark, and the private key is used to sign the Message, and the public key is used to verify the signature.</p>
+           <p>In Blockchain there's a verification function that takes the public key, the message and the signature, and it verifies if the signature is valid.</p>
+
+           <h3>What is Segregated Witness (SegWit)?</h3>
+           <p>Bitcoin has a limit of 1MB per block, and Segregated Witness (SegWit) is a method to increase the number of transactions in a block without technically increasing the block size limit.</p>
+           <p>In a typical Bitcoin transaction, the signature and public key (part of the scriptSig) can occupy a significant portion of the block—sometimes up to 60% of the space.</p>
+           <p>The scriptSig contains the signature and public key, which are used to verify the transaction, while the scriptPubKey is used to determine who can spend the output of the transaction.</p>
+           <p>SegWit works by moving the signature data (the witness) from the main part of the transaction into a separate structure, effectively freeing up space in the main block. This allows for more transactions to fit within the 1MB block size limit, increasing the effective block size without changing the block size limit itself.</p>
+           <p>In this way, SegWit helps reduce the size of each transaction, thereby increasing the number of transactions that can be included in each block.</p>
+           
+           <p class="wip-course">Additional Reading: "Understanding Segwit Block Size" By Jimmy Song (2017)</p>
+           <br/>
+          <h3>Public Key vs Bitcoin Address</h3>
+          <p>A public key is part of a cryptographic key pair used in Bitcoin and other cryptocurrencies. It is used to verify digital signatures and to encrypt data that only the corresponding private key can decrypt. In Bitcoin, the public key is used to generate a Bitcoin address, but it is not directly involved in decryption.</p>
+          <p>A Bitcoin address is a shorter, more user-friendly representation derived from the public key. It is a hash of the public key, typically using a combination of the SHA-256 and RIPEMD-160 hashing algorithms, followed by a checksum and encoded in Base58. The Bitcoin address is what users share to receive Bitcoin.</p>
+          <p>Why should we avoid using the Public Key directly when we can? The main reason is security. If someone were to somehow discover a method to derive the private key from the public key, it would compromise the associated Bitcoin. By using the Bitcoin address (a hash of the public key) instead of the public key itself, we add an extra layer of protection. The hashing process makes it significantly harder for an attacker to reverse-engineer the public key back to the private key, thereby enhancing security.</p>
+          <br/>
+          <h3>Hierarchically Deterministic (HD) Wallets</h3>
+          <p>Hierarchically Deterministic (HD) wallets are a type of cryptocurrency wallet that generates all of its keys and addresses from a single seed, known as a master seed. This seed is a random string of data that is typically represented as a series of 12 or 24 words, known as a mnemonic phrase.</p>
+          <p>From this master seed, an HD wallet can generate an entire tree of private and public keys in a deterministic way. This means that the same seed will always generate the same sequence of keys and addresses, allowing users to recover their entire wallet (including all addresses and funds) using just the seed phrase.</p>
+          <p>One of the key benefits of HD wallets is that they allow users to create multiple addresses from a single seed, which enhances privacy. Instead of reusing the same address, a user can generate a new address for each transaction, making it more difficult for outsiders to track the user's transactions on the blockchain.</p>
+          <p>Another advantage is the ease of backup and recovery. Since all keys are derived from a single seed, users only need to back up the seed phrase to secure access to their entire wallet. This makes HD wallets both convenient and secure.</p>
+          
           <br/>
           <h2>Smart Contract Intuition</h2>
           <h3>What is Ethereum?</h3>

@@ -1,6 +1,47 @@
 /*-----------------------------------*\
   #style.css
 \*-----------------------------------*/
+/* CSS para estilizar a tabela com aparência table-dark do Bootstrap */
+
+.table-info {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: #343a40;
+  border: 1px solid #454d55;
+  border-collapse: collapse;
+  color: #fff;
+}
+
+.table-info th,
+.table-info td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border: 1px solid #454d55;
+}
+
+.table-info th {
+  background-color: #454d55;
+  font-weight: bold;
+  text-align: left;
+}
+
+.table-info tr:nth-child(even) {
+  background-color: #3a3f45;
+}
+
+/* .table-info tbody tr:hover {
+  background-color: #495057;
+} */
+
+.table-info th[scope="col"] {
+  text-align: center;
+}
+
+.table-info td[scope="row"] {
+  font-weight: bold;
+  text-align: center;
+}
 
 
 /**
