@@ -39,6 +39,293 @@
 
         </section>
 
+        <section class="about-text">
+          <h2>Blockchain Intuition</h2>
+          <br/>
+          <h3>- What is a Blockchain?</h3>
+
+          <p>Is a continuously growing list of records, called blocks, which are linked and secured using cryptography.</p>
+          <p>Concepts: Block Data, Genesis Block, Blockchain, Hash</p>
+
+          <p class="wip-course">Additional Reading: "How to Time-Stamp a Digital Document" By Stuart Haber & W.Scott Stornetta (1991)</p>
+          <br/>
+          <h3>- Understanding SHA256 Hash</h3>
+
+          <p>SHA256 is a cryptographic hash function that takes an input and produces a fixed-size string of bytes.</p>
+          <p>The SHA256 has been developed by the NSA.</p>
+          <p>Hash Algorithms requirements: </p>
+          <ul>
+            <li>Has to be One-Way</li>
+            <li>Has to be Deterministic (Same Document will generate the same hash output)</li>
+            <li>Fast Computations</li>
+            <li>The Avalanche Effect (Same document with any change, the hash will be completely different)</li>
+            <li>Must withstand collisions (Pigeon hole principle)</li>
+          </ul>
+
+          <p>Note: The pigeonhole principle states that if n items are put into m containers, with n > m, then at least one container must contain more than one item.</p>
+          <br/>
+          <h3>- Immutable Ledger</h3>
+          <p>On a Traditional Ledger we had who owns what.</p>
+          <p>The blockchain is basically a ledger that is immutable, meaning that once a block is added to the chain, it cannot be changed.</p>
+          <p>Basically an immutable ledger means that the data that is stored in the blockchain cannot be changed.</p>
+          
+          <br/>
+          <h3>- Distributed P2P Network</h3>
+
+          <p>Blockchain is a distributed network, meaning that it is shared among all the nodes in the network.</p>
+          <p>It is a peer-to-peer network, meaning that all the nodes in the network are equal.</p>
+          <p>There is no central authority that can control the blockchain.</p>
+          <p>It is decentralized, meaning that all the nodes in the network have a copy of the blockchain.</p>
+          <p>Since the network is constantly checking their pier's work, it is very secure, because even if one node is compromised, the rest of the network will still be able to verify the transactions.</p>
+  
+          <br/>
+          <h3>- How Mining  Works (Nonce & Cryptographic puzzle)</h3>
+
+          <p>Fields of a Block: Block Number, Data, Prev.Hash, Hash, Nonce</p>
+          <p>Nonce is a number that is used only once in a cryptographic communication.</p>
+          <p>The hash is gonna use the nonce and all of the previous fields to create a hash that is gonna be less than a certain number.</p>
+          <p>It is a cryptographic puzzle that the miners have to solve.</p>
+          <p>A Hash is a hexadecimal Number.</p>
+          <p>In essence, the blockchain system will set a target, and the miners have to find a hash that is less than that target.</p>
+          <p>It is a probabilistic process, meaning that the miners have to try many different nonces to find the right hash, that is less than the target (Example: Hash must have the target as a 4 leading zero values).</p>
+          <p>Once the miner finds the right hash, it will broadcast it to the network, and the network will verify that the hash is less than the target.</p>
+          <p>Once the hash is verified, the block is added to the blockchain.</p>
+          <p>Then the miners will start working on the next block.</p>
+          <p>Nonce means "Number used once".</p>
+  
+          <br/>
+          <h3>- Byzantine Fault Tolerance</h3>
+
+          <p>It is a problem that is related to distributed systems, where the nodes in the network have to agree on a value.</p>
+          <p>Imagine that you have a general that has to send a message to his lieutenants, and he has to make sure that all the lieutenants receive the same message, and that they all agree on the same message.</p>
+          <p>If one of the lieutenants is a traitor, he can send a different message to the other lieutenants, and they will not be able to agree on the same message.</p>
+          <p>Byzantine Fault Tolerance is a way to solve this problem, by having the nodes in the network agree on a value, even if some of the nodes are malicious.</p>
+          <p>Even if the general is a traitor and says to attack, the lieutenants can device to not attack, and they will all agree on the same message.</p>
+          <p>It is a way to reach consensus in a distributed system.</p>
+
+          <p> This algorithm to work, it has to have no more than 1/3 of the nodes in the network being malicious.</p>
+
+          <p>You can read more at the official papel: "The Byzantine Generals Problem" by Georgios Konstantopoulos, 2017.</p>
+          <br/>
+
+          <h3>- Consensus Protocol (Defense against attackers, competing chains)</h3>
+
+          <p>Regarding Defense against attackers, the consensus protocol has to solve two main challenges:</p>
+          <ul>
+            <li>Attackers</li>
+            <li>Competing Chains</li>
+          </ul>
+
+          <p>Imagine the descovery of a new block at the same time by two different miners in different parts of the globe.</p>
+          <p>Both miners will broadcast their blocks to the network, and the network will have to decide which block to add to the blockchain.</p>
+          <p>It would be a fork in the blockchain, and the network will have to decide which fork to follow.</p>
+          <p>It is a consensus protocol that will decide which fork to follow.</p>
+          <p>How to solve the problem of competing chains in this case?</p>
+          <p>It is a probabilistic process, meaning that the network will choose the longest chain, because it is the chain that has the most work put into it.</p>
+          <p>Imagine a scenario with 6 nodes, and 4 of them have the same chain, and 2 of them have a different chain, basically they will wait for the next block to be added to the chain, and they will choose the longest chain.</p>
+          <p>It is a way to solve the problem of competing chains.</p>
+          <p>Soo what happens to the Orphaned block? It is a block that is not part of the longest chain, and it is not added to the blockchain, so it is discarded.</p>
+
+          <p>The are various types of consensus protocols such as:</p>
+          <ul>
+            <li>Proof of Work (Bitcoin)</li>
+            <li>Proof of Stake (Ethereum)</li>
+            <li>(Other)</li>
+          </ul>
+
+          <p>The proof of work is the most popular consensus protocol, and it is used by Bitcoin, and it is the one that we talked about above regarding the cryptographic puzzle.</p>
+          <p>Proof of Stake is a different consensus protocol, where the nodes in the network have to put up a stake, and the nodes that have the most stake will have the most power in the network.</p>
+          <p>There are other consensus protocols, such as Proof of Authority, Proof of Space, Proof of Burn, etc.</p>
+
+          <p>Every single node before the block gets added to the blockchain, it has to pass in a various number of checks, such as:</p>
+          <ul>
+            <li>Check syntatic correctness</li>
+            <li>Reject if duplicate of block we have in any of the tree categories</li>
+            <li>Transaction list must be non-empty</li>
+            <li>Block hash must satify claimed nBits proof of work</li>
+            <li>Block timestamp must not be more than two hours in the future</li>
+            <li>First transaction is coinbase (i.e. only 1 input, no prev out), the rest must not be</li>
+            <li> etc...</li>
+          </ul>
+
+          <p>Note: Cryptographic puzzles are hard to solve, but easy to verify.</p>
+
+          <p class="wip-course">Additional Reading: "Bitcoin P2P e-cash paper" by Satoshi Nakamoto (2008)</p>
+          <br/>
+
+          <h2>Cryptocurrency Intuition</h2>
+
+          <h3>What is Bitcoin Deepdown</h3>
+
+          <p>Basically bitcoin is a protocol just like Ethereum, Neo, Ripple, that uses the technology of blockchain.</p>
+          <p>Protocols contain within them the coin, which is used to reward people for mining, to pay for transactions, etc.</p>
+          <p>While coins are Layer 2, on layer 3 we have the Tokens.</p>
+          <p>Tokens are used to represent assets, and they are built on top of the coins.</p>
+          <p>If we invest in a coin, we are investing in the coin protocol, while if we invest in a token, we are investing in tokens, we are investing in an idea, a project, etc.</p>
+          <p>Bitcoin was invented by Satoshi Nakamoto in 2008, and it was the first cryptocurrency.</p>
+          <p>It is a decentralized digital currency, without a central bank or single administrator, that can be sent from user to user on the peer-to-peer bitcoin network without the need for intermediaries.</p>
+          <p>It is a way to transfer value from one person to another, without the need for a bank.</p>
+          <p>The bitcoin ecosystem is composed of:</p>
+          <ul>
+            <li>Nodes</li>
+            <li>Miners</li>
+            <li>Large Mines</li>
+            <li>Mining Pools</li>
+          </ul>
+
+          <p class="wip-course">Additional Reading: "Bitcoin: A peer-to-peer Eletronic Cash System" by Satoshi Nakamoto (2008)</p>
+
+          <h3>Bitcoin Monetary Policy</h3>
+
+          <p>Bitcoin has a fixed supply of 21 million coins.</p>
+          <p>Bitcoin monetary policy consists of two main components:</p>
+          <ul>
+            <li>Block Frequency</li>
+            <li>Halving</li>
+          </ul>
+          <p>The Halving states that the number of bitcoins released in each block is halved every 210,000 blocks to half the reward.</p>
+          <p>After all the blocks are mined, the miners will be rewarded with transaction fees with higher fees for the miners.</p>
+          <p>It is a way to incentivize the miners to keep mining, even after all the bitcoins are mined.</p>
+          <br/>
+          <p>Regarding the block frequency it is the time that it takes to mine a block, and it is 10 minutes for Bitcoin.</p>
+          <p>How it states that needs 10 minutes? It is because the network will adjust the mining difficulty of the cryptographic puzzle, so that it takes 10 minutes to mine a block.</p>
+          <p>This is automatically adjusted every 2016 blocks, and it is a way to control the supply of bitcoins.</p>
+
+          <p>It is a way to control the supply of bitcoins, and it is a way to control the inflation of bitcoins.</p>
+          <p class="wip-course">Additional Reading: "This time is Different part 2: What Bitcoin really Is" by Mark E. Jeftovic</p>
+
+          <br/>
+          <h3>Understanding Mining Difficulty</h3>
+          <p><b>What is the Current Target and how does that feel?</b></p>
+          <p>- The target is expressed as an Target of leading zeros.</p>
+          <p>Example: </p>
+          <ul>
+            <li>Target: 18 zeros</li>
+            <li>
+              Estimations:
+              <ul>
+                <li>Total possible 64-digit hexadecimal numbers = 10^77</li>
+                <li>Total valid hashes ( with 18 leading zeros) = 2*(10^55)</li>
+                <li>Probability that a randomly picked hash is valid = 2*10^(-22) = 0.0000000000000000000002%</li>
+              </ul>
+            </li>
+          </ul>
+          <p><b>How is the "Mining Difficulty" calculated?</b></p>
+          <p>- Difficulty = current target / max target</p>
+          <p>
+            <ul>
+              <li>Max target when bitcoin started was: 00000000FFFF000000000000...</li>
+            </ul>
+          </p>
+          <p>Difficulty is adjusted every 2016 blocks(2 weeks)</p>
+          <p>Difficulty is adjusted so that a block is released every 10 minutes, increasing or decreasing the number of leading zeros.</p>
+
+          <br/>
+          <h3>Mining Pools</h3>
+
+          <p>Consists of a group of miners that work together to mine a block.</p>
+          <p>They share the reward of the block, and they share the reward of the transaction fees.</p>
+          <p>It is a way to increase the chances of mining a block, and it is a way to increase the chances of getting the reward.</p>
+          <p>The work is distributed in a way to ensure that is not doing the same work twice.</p>
+          <p>The contribution reward is based on the hash rate of the miner.</p>
+
+          <p>Mining pools remove the headache of the miners to know what is a blockchain, how to mine a block, etc., and they just have to mine provide the computational power.</p>
+
+          <br/>
+          <h3>Nonce Range</h3>
+
+          <p>Nonce is the number that is used once to try to solve the cryptographic puzzle.</p>
+          <p>Basically a modest miner does 100 MH/s, that's 100 Million hashes, and the maxium is 4Billion hashes, so that means it would take 40 seconds to find the right hash.</p>
+          <p>But hashing requires a new field too caled the Timestamp, and the timestamp is always updating every second.</p>
+          <p>That means we will only be able to verify a limited number of nounces given the time frame</p>
+          <p>So the hashing is limited by the Nonce and timestamp.</p>
+          <p>What happens is that mining pools will distribute the work to the miners, and they will give the miners a range of nonces to try.</p>
+          <p>It is a way to increase the chances of finding the right hash.</p>
+
+          <h3>How Miners Pick Transactions</h3>
+
+          <p>So the transactions come from the mempool, which are attached to every miner.</p>
+          <p>While blocks are added every 10 minutes, transactions are added to the mempool every second.</p>
+          <p>Basically while this transactions are in the mempool, the are still pending, and they are not added to the blockchain.</p>
+
+          <p>Every transaction has a fee attached to it, and the miners will pick the transactions that have the highest fees.</p>
+          <p>The fees are specified by the sender of the transaction.</p>
+          <p>Miners will pick the transactions that have the highest fees, because they want to maximize their reward.</p>
+          <p>They will also pick the transactions that have the highest priority, such as the transactions that have been waiting for a long time.</p>
+
+          <p>But lets see another point, since the miners pick the transactions from the mempool and attach them to the block, the miners can also choose to not include a transaction in the block.</p>
+          <p>It is a way to censor transactions, and it is a way to control the transactions that are added to the blockchain.</p>
+          <p>If the transaction is not picked up by the miners, it will stay in the mempool waiting for a duration of 72 hours, and then it will be removed from the mempool and the transaction will be canceled.</p>
+          <p>The max block size is 1MB and usually transactions count vary between 1-2k transactions.</p>
+
+          <p class="wip-course">Additional Reading: "How Bitcoin Mining Works" by coindesk</p>
+          <h3>ASIC vs GPU vs CPU</h3>
+          <p>ASIC is a specialized hardware that is used exclusively for the hashing process.</p>
+          <p>The ASIC is much faster than the GPU and the CPU, and it is much more efficient in terms of power consumption.</p>
+          <p>
+            <ul>
+              <li>ASIC: 1 TH/s, 1000 GH/s, 1,000,000 MH/s</li>
+              <li>GPU: 1 GH/s, 1000 MH/s</li>
+              <li>CPU: 1 MH/s</li>
+            </ul>
+          </p>
+          <p>ASICs can be used on bitcoin mining or other type of protocols that uses the SHA256 hash function.</p>
+          
+          <br/>
+          <h3>How do Mempools work?</h3>
+
+          <p>Imagine Susan that wants to do a transaction. What happens?</p>
+          <p>Susan has a node so the transaction is added to the mempool of the node.</p>
+          <p>Then the transaction is broadcasted to the network, and it is added to the mempool of the other nodes in the network.</p>
+          <p>Then the miners will pick the transactions from the mempool and attach them to the block while mining.</p>
+          <p>Once the block is mined, the block is added to the blockchain, and the transactions are removed from the mempool.</p>
+
+          <p class="wip-course">Additional Reading: "An in-depth guide into how the mempool works" By Marion Deneuville (2016)</p>
+
+          <h3>The 51% Attack</h3>
+
+          <p>What the 51% attack is not:</p>
+          <ul>
+            <li>Is not an attack designer to tamper with an individual or select blocks </li>
+            <li></li>
+          </ul>
+          <p>What the 51% attack is:</p>
+          <ul>
+            <li>A group of miners join the network and don't broadcast their blocks to the network</li>
+            <li>Then they isolate themselves and they mine their own blocks and they create a longer chain than the rest of the network</li>
+            <li>After this, they broadcast their blocks to the network, and the network will choose the longest chain</li>
+          </ul>
+
+          <p>This attack can cause a double spend problem. Imagine that in the normal blockchain you spent millions buying assets and then the network gets overriden by the 51% attack, and the attacker can spend the same coins again.</p>
+          <p>This because the transactions are not added to the blockchain, and the attacker can spend the same coins again.</p>
+          <p>Basically the 51% attack is all about the hash power, and the attacker has to have more than 51% of the hash power of the network.</p>
+          <p>This could happen if a mining pool has more than 51% of the hash power of the network.</p>
+
+          <br/>
+          <h2>Cryptocurrency Transactions Intuition</h2>
+
+          <h3>Transactions and UTXOs</h3>
+          <h3>Where does transaction fees come from?</h3>
+          <h3>How Wallets work</h3>
+          <h3>Signatures: Private & Public Keys</h3>
+          <h3>What is Segregated Witness (SegWit)</h3>
+          <h3>Public Key vs Bitcoin Address</h3>
+          <h3>Hierarchically Deterministic (HD) Wallets</h3>
+
+          <br/>
+          <h2>Smart Contract Intuition</h2>
+          <h3>What is Ethereum?</h3>
+          <h3>What is a Smart Contract?</h3>
+          <h3>Decentralized Applications (Dapps)</h3>
+          <h3>Ethereum Virtual Machine & Gas</h3>
+          <h3>Decentralized Autonomous Organizations (DAOs)</h3>
+          <h3>The DAO Attack</h3>
+          <h3>Soft and Hard Forks</h3>
+          <h3>Initial Coin Offerings (ICOs)</h3>
+
+        </section>
+        
+
       </article>
 
     </div>
