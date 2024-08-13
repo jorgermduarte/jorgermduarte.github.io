@@ -392,7 +392,7 @@
            <p>The scriptSig contains the signature and public key, which are used to verify the transaction, while the scriptPubKey is used to determine who can spend the output of the transaction.</p>
            <p>SegWit works by moving the signature data (the witness) from the main part of the transaction into a separate structure, effectively freeing up space in the main block. This allows for more transactions to fit within the 1MB block size limit, increasing the effective block size without changing the block size limit itself.</p>
            <p>In this way, SegWit helps reduce the size of each transaction, thereby increasing the number of transactions that can be included in each block.</p>
-           
+
            <p class="wip-course">Additional Reading: "Understanding Segwit Block Size" By Jimmy Song (2017)</p>
            <br/>
           <h3>Public Key vs Bitcoin Address</h3>
@@ -405,20 +405,100 @@
           <p>From this master seed, an HD wallet can generate an entire tree of private and public keys in a deterministic way. This means that the same seed will always generate the same sequence of keys and addresses, allowing users to recover their entire wallet (including all addresses and funds) using just the seed phrase.</p>
           <p>One of the key benefits of HD wallets is that they allow users to create multiple addresses from a single seed, which enhances privacy. Instead of reusing the same address, a user can generate a new address for each transaction, making it more difficult for outsiders to track the user's transactions on the blockchain.</p>
           <p>Another advantage is the ease of backup and recovery. Since all keys are derived from a single seed, users only need to back up the seed phrase to secure access to their entire wallet. This makes HD wallets both convenient and secure.</p>
-          
+
           <br/>
           <h2>Smart Contract Intuition</h2>
           <h3>What is Ethereum?</h3>
+
+          <p>Ethereum is a decentralized, open-source blockchain platform that enables developers to build and deploy smart contracts and decentralized applications (dApps). The idea behind Ethereum is to create a global "supercomputer," where a network of nodes (computers) works together to execute code and store data in a decentralized manner, without the need for a central authority.</p>
+
+          <p>Unlike Bitcoin, which is primarily focused on being a digital currency, Ethereum is designed to be a versatile platform that can decentralize a wide range of applications, from financial services to supply chains and beyond. This allows developers to create applications that run exactly as programmed, without the risk of downtime, censorship, fraud, or third-party interference.</p>
+
           <h3>What is a Smart Contract?</h3>
+          <p>Smart contracts are self-executing programs that run on the Ethereum blockchain. These contracts have the terms of the agreement between buyer and seller directly encoded into lines of code. When predefined conditions are met, the contract automatically executes the agreement, eliminating the need for intermediaries.</p>
+          <p>In the cryptocurrency world, different platforms use different languages for their contracts. For instance, Bitcoin uses Bitcoin Script, while Ethereum uses Solidity.</p>
+          <p>So, what is Bitcoin Script? It is a simple, stack-based programming language used to define the conditions under which a Bitcoin transaction output can be spent. However, Bitcoin Script is not Turing complete, meaning it is limited in its functionality and cannot perform complex computations.</p>
+          <p>On the other hand, Solidity is a high-level, contract-oriented programming language used to write smart contracts on the Ethereum platform. Solidity is designed to be easy to learn and use, with a syntax similar to JavaScript. Unlike Bitcoin Script, Solidity is Turing complete, meaning it can perform any computation that a computer can execute.</p>
+          <p>To further clarify, a system is described as Turing complete if it can perform any computation that can be executed by a computer. Essentially, a Turing complete system can simulate any other Turing complete system, including complex computations and loops.</p>
+
+          <p>Each Node has:</p>
+          <ul>
+            <li>A History of all smart contracts</li>
+            <li>A History of all transactions</li>
+            <li>A Current State of all smart contracts</li>
+          </ul>
+
+          <br />
           <h3>Decentralized Applications (Dapps)</h3>
+
+          <p>A Dapp consists of a frontend and a backend, where the backend is a smart contract.</p>
+          <p>It is a method for creating applications that are decentralized and operate on the blockchain.</p>
+
           <h3>Ethereum Virtual Machine & Gas</h3>
+
+          <p>Security threats:</p>
+          <ul>
+            <li>Viruses and Unauthorized Access: Smart contracts cannot access private files or compromise our system's security.</li>
+            <li>Infinite Loops & Heavy Calculations: These can lead to excessive resource consumption.</li>
+          </ul>
+          <p>When we participate in the Ethereum network, we receive access to the Ethereum Virtual Machine (EVM), a virtual environment running on our computer but fully isolated. This ensures that nothing within the virtual machine can affect our local system. As a result, smart contracts are sandboxed and have no access to our personal files or sensitive information.</p>
+          <p>Gas is the fee paid to the network for executing smart contracts. It's a critical mechanism designed to prevent inefficient code and potential abuses like infinite loops or resource-intensive calculations. Each operation within the EVM has a predefined gas cost, as detailed in Ethereum's Yellow Paper. For instance, simple operations like addition or multiplication might cost 5 gas.</p>
+          <p>Gas also serves to encourage developers to write optimized, efficient code. The reason we use gas instead of ether is due to ether's price volatility. Gas, on the other hand, has a more stable cost, ensuring consistent pricing for computation.</p>
+          <p>While Bitcoin focuses primarily on transactions and cryptocurrency, Ethereum is designed for computation, enabling the development and execution of decentralized applications on the blockchain.</p>
+
+          <br/>
           <h3>Decentralized Autonomous Organizations (DAOs)</h3>
+
+          <p>What are organizations today?</p>
+          <p>Traditional organizations typically have a hierarchy and follow established protocols and procedures. This hierarchy can be replaced by smart contracts.</p>
+          <p>DAOs are organizations that are governed by smart contracts, making them decentralized and autonomous.</p>
+          <p>They are decentralized because they are managed by a network, and autonomous because their operations are controlled by smart contracts.</p>
+          <p>DAOs offer a way to create organizations that are both decentralized, managed by the network, and autonomous, governed by smart contracts.</p>
+
+          <p class="wip-course">Additional Reading: "DAOs, DACS, DAs and More: An Incomplete Terminology Guide" by Vitalik Buterin (2014)</p>
+
           <h3>The DAO Attack</h3>
+          <p>This attack occurred in 2016 on the Ethereum network.</p>
+          <p>The DAO was an investor-directed venture capital fund, created with the noble goal of funding projects initiated by its members.</p>
+          <p>This DAO was decentralized, meaning it was a smart contract running on the Ethereum blockchain.</p>
+          <p>They raised $150,000,000 through crowdfunding.</p>
+          <p>Unfortunately, there was an error in the code, and the DAO was attacked and hacked, resulting in the loss of $50,000,000 due to a flaw in the code.</p>
+          <p>There was a fail-safe mechanism that locked the funds for 28 days, preventing the attacker from immediately withdrawing them.</p>
+          <p>However, the attacker found a way to split the DAO into a child DAO, allowing them to withdraw the funds from the child DAO.</p>
+          <p>After this, the Ethereum community decided to perform a hard fork of the blockchain, creating a new chain where the funds were returned to the investors.</p>
+          <p>This resulted in the creation of Ethereum (ETH) and Ethereum Classic (ETC).</p>
+          <br />
+
           <h3>Soft and Hard Forks</h3>
+
+          <p>While the DAO attack resulted in a hard fork, there are two types of forks in the blockchain world: soft forks and hard forks.</p>
+          <p><strong>Soft Fork:</strong> A soft fork is a change to the blockchain protocol that is backward-compatible, meaning that nodes that have not upgraded to the new protocol can still participate in the network. Soft forks are typically used to implement minor changes or updates to the protocol.</p>
+          <p><strong>Hard Fork:</strong> A hard fork is a change to the blockchain protocol that is not backward-compatible, meaning that nodes that have not upgraded to the new protocol will not be able to participate in the network. Hard forks are typically used to implement major changes or updates to the protocol.</p>
+          <p>In Bitcoin, with the introduction of SegWit (Segregated Witness), it was a soft fork, while the DAO attack on Ethereum resulted in both a soft fork and a hard fork.</p>
+
+          <br/>
           <h3>Initial Coin Offerings (ICOs)</h3>
 
+          <p>Initial Coin Offerings (ICOs) are a method for companies to raise capital by issuing tokens on the blockchain. These tokens can represent various assets, such as equity in the company, access to a product or service, or voting rights within the organization. ICOs operate on the token layer of the blockchain, but they can also involve protocol layer changes when new coins are issued.</p>
+
+          <p>In an ICO, the company creates a whitepaper that outlines the details of the offering, including the purpose of the tokens and the project's goals. Investors then purchase these tokens directly from the company during the ICO period.</p>
+
+          <p>How do ICOs compare to IPOs?</p>
+          <p>An IPO, or Initial Public Offering, is the first sale of stock by a company to the public. It allows a company to raise capital by selling shares of its stock, typically through an investment bank that underwrites the offering and facilitates the sale.</p>
+          <p>In contrast, an ICO involves issuing tokens rather than shares. While an IPO gives investors ownership stakes and voting rights in the company, ICO tokens can provide various benefits, such as access to a service or the potential for appreciation in value. Unlike IPOs, ICOs often do not involve traditional financial intermediaries.</p>
+
+          <p>ICOs have become a popular fundraising method for blockchain projects, offering a decentralized way to raise capital. However, they come with risks. ICOs are frequently unregulated and can be susceptible to fraud and scams. As a result, it is crucial for investors to conduct thorough research and understand the project's whitepaper before investing.</p>
+
+          <p>Typically, the tokens acquired in an ICO can be used within the project's ecosystem to access products or services. Unlike in an IPO, where the public receives shares and potential voting rights, ICO participants hold tokens which may gain value over time or provide utility within the project’s platform. Additionally, companies conducting ICOs usually retain control over their shares and may not distribute equity as in an IPO.</p>
+
+          <p class="wip-course">Additional Reading: "Wtf is an ICO" By Alex Wilhelm (2017) </p>
+          <br />
+
+          <h2>Other Papers</h2>
+          <p class="wip-course">Additional Reading: "How Crypto Tokens Will Enable the Disruption of Businesses like Uber and Airbnb" By Andrew Finn (2018)</p>
+          <p class="wip-course">Additional Reading: "Why the Web 3.0 Matters and you should know about it" By Matteo Gianpietro Zago (2018)</p>
+
         </section>
-        
 
       </article>
 
