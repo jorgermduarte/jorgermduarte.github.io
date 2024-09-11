@@ -2,7 +2,9 @@
   #style.css
 \*-----------------------------------*/
 /* CSS para estilizar a tabela com aparência table-dark do Bootstrap */
-
+.project-img img{
+  max-height:130px;
+ }
 .table-info {
   width: 100%;
   max-width: 100%;
