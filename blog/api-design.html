@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorge Duarte</title>
+  <link rel="shortcut icon" href="../assets/images/avatar.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+
+    <div class="main-content">
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>Post</button>
+          </li>
+      </nav>
+
+      <article class="about  active" data-page="about">
+
+        <header>
+            <a href="../index.html"><button class="btn-back-posts"> <span> <img src="../assets/images/arrow.svg" height="20" class="arrow-white" /></span> Go Back </button></a>
+          <h2 class="h2 article-title">API Design</h2>
+        </header>
+
+        <section class="about-text">
+
+            <h2>What is API Design?</h2>
+
+            <p>API design is the process of making intentional decisions about how an API will expose data and functionality to its consumers. A successful API design describes the API's endpoints, methods, and resources in a standardized specification format.</p>
+
+            <p>The API design process benefits both consumers and producers by ensuring that APIs support business objectives while remaining easy to use, adaptable, testable, and well-documented. API design should occur early in the API lifecycle in order to achieve alignment among key stakeholders and to help teams identify issues before they become ingrained. API design is also an important part of an effective API governance strategy, as it helps teams standardize API patterns that can be reused across their organization.</p>
+            <br/>
+            <h2>API Lifecycle</h2>
+            <p>This lifecycle definition isn't meant to match the needs of every enterprise organization but is intended to provide you with an example to help you think about what your own API lifecycle looks like.</p>
+
+            <div style="text-align: center; max-width: 100%;">
+                <img src="../assets/images/blog/producer-consumer-api-lifecycle-postman.png" alt="API Lifecycle" width="500px" style="max-width: 100%;">
+            </div>
+
+            <h3>8 stages of the API lifecycle</h3>
+            <ul>
+                <li>Define
+                  <ul>
+                    <li>Ensure API operations are well-defined, with clear responsibility.</li>
+                    <li>Dedicated team workspaces and public GitHub repositories.</li>
+                  </ul>
+                </li>
+                <li>Design
+                  <ul>
+                    <li>Create consistent API designs using OpenAPI and mock servers.</li>
+                    <li>Use collaborative comments to guide development.</li>
+                  </ul>
+                </li>
+                <li>Develop and Document
+                  <ul>
+                    <li>Provide complete, accurate documentation with examples.</li>
+                    <li>Ease API onboarding and usage.</li>
+                  </ul>
+                </li>
+                <li>Test
+                  <ul>
+                    <li>Implement manual and automated testing.</li>
+                    <li>Ensure APIs function as expected with contract and performance tests.</li>
+                    <li>Contract tests can be derived from API artifacts like OpenAPI, JSON Schema, and GraphQL, and used to ensure there are no changes to what has been promised when an API was designed or developed.</li>
+                  </ul>
+                </li>
+                <li>Secure
+                  <ul>
+                    <li>Apply consistent authentication and security testing.</li>
+                    <li>Protect against vulnerabilities.</li>
+                  </ul>
+                </li>
+                <li>Deploy
+                  <ul>
+                    <li>Use CI/CD pipelines for consistent deployment.</li>
+                    <li>Leverage API gateways for deployment across environments.</li>
+                  </ul>
+                </li>
+                <li>Observe
+                  <ul>
+                    <li>Monitor APIs with contract, performance, and security tests.</li>
+                    <li>Track changes and performance over time.</li>
+                  </ul>
+                </li>
+                <li>Distribute for Discovery
+                  <ul>
+                    <li>Enable search and discovery of APIs.</li>
+                    <li>Improve access for both producers and consumers within private or public networks.</li>
+                  </ul>
+                </li>
+            </ul>
+              
+            <br/>
+            <h2>API-first development model</h2>
+            <p>API-first is a development model in which applications are conceptualized and built with services that are delivered through APIs. Whereas companies that take a code-first approach might view APIs as afterthoughts, API-first companies design their APIs before they develop their applications. This strategy enables consumers and producers to collaborate on API definitions before the implementations are built out, which improves both the quality and usability of APIs.</p>
+
+            <br/>
+            <h2>What are the key stages of API design?</h2>
+            <p>The key stages of API design are:</p>
+            <ul>
+                <li>Step 1: Determine what the API is intended to do</li>
+                <ul>
+                    <li> The use case may also have implications on the type of architecture you choose. For instance, a gRPC-based architecture might make the most sense for an API that connects internal microservices, while a GraphQL API would be well-suited for a service that relies on disparate data sources</li>
+                </ul>
+                <li>Step 2: Define the API contract with a specification</li>
+                    <ul>
+                        <li>Which resources are required, how their data should be formatted and structured, how they should relate to one another, and which methods should be available on their associated endpoints.</li>
+                    </ul>
+                <li>Step 3: Validate your assumptions with mocks and tests</li>
+                    <ul>
+                        <li>Mocks can also be used alongside API tests, which can be run manually, on a schedule, or automatically within CI/CD pipelines</li>
+                    </ul>
+                <li>Step 4: Document the API</li>
+                    <ul>
+                        <li>This step, which involves defining key details about every resource, method, parameter, and path, helps validate the design and ensure that consumers are able to start using your API as quickly as possible</li>
+                    </ul>
+            </ul>
+
+            <br/>
+            <h2>What are some API design best practices?</h2>
+            <ul>
+                <li>Prioritize consistency</li>
+                <ul>
+                    <li>It's crucial for leaders to establish an API governance strategy that promotes organization-wide standards</li>
+                    <li>For instance, every API in an organization's portfolio should use consistent naming conventions for every method, endpoint, and resource</li>
+                </ul>
+                <li>Gather input from every stakeholder</li>
+                <ul>
+                    <li>API design issues often stem from poor communication. Each stakeholder is likely to have domain-specific knowledge that may impact the API's design and implementation, and they should be included in every conversation</li>
+                </ul>
+                <li>Understand the API's context and constraints</li>
+                <ul>
+                    <li>Teams must have a clear understanding of an API's context and constraints before they make any design decisions</li>
+                </ul>
+            </ul>
+
+            <br/>
+            <h2>What is RESTful API design?</h2>
+            <p>RESTful API design is the process of designing an API that follows the principles of Representational State Transfer (REST), which is the most popular API architecture today. In a RESTful architecture, resources are identified by URIs (Uniform Resource Identifiers), and the client interacts with those resources with standard HTTP methods such as GET, POST, PUT, and DELETE.</p>
+
+            <ul>
+                <li style="font-weight: bold; color:green;">POST</li>
+                <ul>
+                    <li>Pros:
+                        <ul>
+                            <li>Hides parameters in the request body, reducing the chance of sensitive data being exposed in URLs.</li>
+                            <li>Can handle larger payloads since it’s not limited by URL length restrictions.</li>
+                            <li>Not cached by default, minimizing the risk of sensitive data being stored unintentionally.</li>
+                        </ul>
+                    </li>
+                    <li>Cons:
+                        <ul>
+                            <li>Not idempotent, meaning multiple identical POST requests can create duplicate resources or perform unintended actions.</li>
+                            <li>Can be less predictable than PUT for resource creation or updates.</li>
+                        </ul>
+                    </li>
+                </ul>
+            
+                <li style="font-weight: bold; color: aqua;">GET (Read)</li>
+                <ul>
+                    <li>Pros:
+                        <ul>
+                            <li>Simple and efficient for retrieving data from the server.</li>
+                            <li>Cached by browsers and proxies, improving performance for repeated requests.</li>
+                            <li>Data is visible in the URL, making it easy to share or bookmark requests.</li>
+                        </ul>
+                    </li>
+                    <li>Cons:
+                        <ul>
+                            <li>Exposes query parameters in the URL, which can lead to security issues if sensitive data is included.</li>
+                            <li>Limited in the amount of data it can send due to URL length restrictions.</li>
+                            <li>Often cached, which can expose outdated or sensitive data unintentionally.</li>
+                        </ul>
+                    </li>
+                </ul>
+            
+                <li style="font-weight: bold; color: yellow;">PUT (Update)</li>
+                <ul>
+                    <li>Pros:
+                        <ul>
+                            <li>Idempotent, meaning that multiple identical requests result in the same effect, reducing the risk of unintended changes.</li>
+                            <li>Explicitly updates or replaces a resource at a known location, offering greater control.</li>
+                            <li>More predictable for updating existing resources.</li>
+                        </ul>
+                    </li>
+                    <li>Cons:
+                        <ul>
+                            <li>Requires the client to send the full representation of the resource, which may be less efficient than PATCH for partial updates.</li>
+                            <li>Overwriting a resource may lead to data loss if not carefully handled.</li>
+                        </ul>
+                    </li>
+                </ul>
+            
+                <li style="font-weight: bold; color: red;">DELETE</li>
+                <ul>
+                    <li>Pros:
+                        <ul>
+                            <li>Idempotent, meaning repeated DELETE requests do not have additional side effects.</li>
+                            <li>Simple to use for removing resources from the server.</li>
+                        </ul>
+                    </li>
+                    <li>Cons:
+                        <ul>
+                            <li>Destructive by nature, so proper authentication and authorization are critical to avoid accidental or unauthorized deletions.</li>
+                            <li>No easy undo or rollback mechanism if a resource is deleted unintentionally.</li>
+                        </ul>
+                    </li>
+                </ul>
+            
+                <li style="font-weight: bold; color: orange;">PATCH (Partial Update)</li>
+                <ul>
+                    <li>Pros:
+                        <ul>
+                            <li>Allows partial updates to a resource, making it more efficient than PUT when only a small part of the resource needs to change.</li>
+                            <li>Ideal for making minor updates without sending the entire resource.</li>
+                        </ul>
+                    </li>
+                    <li>Cons:
+                        <ul>
+                            <li>Less predictable than PUT since only part of the resource is updated, increasing the risk of inconsistent data states if validation is poor.</li>
+                            <li>Not idempotent, so repeated PATCH requests can have unintended effects if not managed carefully.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </ul>
+            
+
+            <br/>
+            <h2>API technologies</h2>
+            <ul>
+                <li>REST</li>
+                <ul>
+                    <li>Pros: Stateless: Each request from a client to a server must contain all the information needed to understand and complete the request. Uses standard HTTP methods (GET, POST, PUT, DELETE). Easily consumable by different clients (browsers, mobile apps).</li>
+                    <li>Cons: This can lead to over-fetching or under-fetching of data- because More endpoints may be required to access specific data.</li>
+                </ul>
+                <li>GraphQL</li>
+                <ul>
+                    <li>Pros: Allows clients to request exactly what they need, avoiding over-fetching and under-fetching. Strongly typed schema-based queries.</li>
+                    <li>Cons: Complex queries can impact server performance. All requests are sent as POST requests.</li>
+                </ul>
+                <li>gRPC</li>
+                <ul>
+                    <li>Pros: Built on HTTP/2, it provides advanced features like multiplexing and server push. Uses Protocol Buffers, a language-neutral, platform-neutral, extensible way of serializing structured data. Efficient in terms of bandwidth and resources, especially suitable for microservices.</li>
+                    <li>Cons: Less human-readable compared to JSON. Requires HTTP/2 support.</li>
+                </ul>
+                <li>SOAP</li>
+                <ul>
+                    <li>Pros: Highly extensible with support for security, transactions, and reliability. Widely accepted standard for communication in distributed systems, used in many legacy and enterprise systems.</li>
+                    <li>Cons: Verbose due to XML usage, which can increase network traffic. More complex compared to other standards.</li>
+                </ul>
+                
+                <li>WebSockets</li>
+                <ul>
+                    <li>Pros: Enables full-duplex communication between client and server over a single, long-lived connection. Ideal for real-time applications like chat, gaming, and live updates.</li>
+                    <li>Cons: Requires maintaining open connections, which can be resource-intensive. Not suitable for short, simple request-response interactions.</li>
+                </ul>
+                
+                <li>Server-Sent Events (SSE)</li>
+                <ul>
+                    <li>Pros: Allows a server to push updates to the client via a single, long-lived HTTP connection. Simpler to implement than WebSockets for server-to-client updates.</li>
+                    <li>Cons: One-way communication from server to client only. Limited to HTTP/1.1 and may not perform as well under high concurrency compared to WebSockets.</li>
+                </ul>
+                
+                <li>Webhooks</li>
+                <ul>
+                    <li>Pros: Allows one service to notify another service in real-time when an event occurs. Simple and efficient for event-driven architectures, commonly used in integration scenarios.</li>
+                    <li>Cons: Relies on the availability of the receiving service, with no built-in retry mechanism. Requires manual setup of endpoints to receive notifications.</li>
+                </ul>
+                
+                <li>AMQP (Advanced Message Queuing Protocol)</li>
+                <ul>
+                    <li>Pros: Provides reliable, scalable messaging across distributed systems. Supports message queuing, routing, and persistence. Commonly used in enterprise systems and microservices.</li>
+                    <li>Cons: More complex to configure and manage than simpler protocols like HTTP. Requires message brokers like RabbitMQ.</li>
+                </ul>
+                
+                <li>EDI (Electronic Data Interchange)</li>
+                <ul>
+                    <li>Pros: Standardized format for exchanging business documents (e.g., invoices, purchase orders) between organizations. Reduces manual processing and errors in business transactions.</li>
+                    <li>Cons: Can be costly to implement and maintain. Requires expertise to set up and integrate with existing systems.</li>
+                </ul>
+                
+                <li>EDA (Event-Driven Architecture)</li>
+                <ul>
+                    <li>Pros: Promotes loose coupling between services by allowing them to react to events asynchronously. Highly scalable and resilient, suitable for distributed, microservice-based systems.</li>
+                    <li>Cons: Can introduce complexity in managing event flows and debugging. Requires robust monitoring and error-handling mechanisms.</li>
+                </ul>
+            </ul>
+
+            <br/>
+            <h2>API Governance Strategy</h2>
+            <p>API governance is the application of rules to promote a consistent set of API behaviors across the company’s API landscape. Traditionally, these are performed by a manual review process, thus making them error-prone and inconsistent. In addition, errors are identified late in the API development lifecycle impacting the productivity of development teams and causing production incidents.</p>
+
+            <br/>
+            <h2>API Versioning</h2>
+            <p>API versioning is the process of managing and tracking changes to an API. It also involves communicating those changes to the API's consumers.</p>
+            <p>Effective API versioning strategy not only enables API producers to iterate in a way that minimizes the consumer-facing impact of breaking changes, but also provides a framework for effectively communicating these changes to consumers. This transparency builds trust and—in the case of public APIs—strengthens the organization's reputation, which can boost the API's adoption and retention rates.</p>
+
+            <h3>When to version an API</h3>
+            <p>You should version your API whenever you make a change that will require consumers to modify their codebase in order to continue using the API.</p>
+            <p>Some common examples of breaking changes include:</p>
+            <ul>
+                <li>Renaming a property or endpoint</li>
+                <li>Turning an optional parameter into a required parameter</li>
+                <li>Modifying a data format or type</li>
+                <li>Modifying a property's characteristics</li>
+            </ul>
+
+            <h3>Types of API Versioning</h3>
+            <p>There are several approaches to API versioning, including:</p>
+            <ul>
+                <li>URL versioning</li>
+                <ul>
+                    <li>For instance, consumers who are interested in viewing all of the products in a database would send a request to the https://example-api.com/v1/products endpoint. This is the most popular type of API versioning.</li>
+                </ul>
+                <li>Query parameter versioning</li>
+                <ul>
+                    <li>This strategy requires users to include the version number as a query parameter in the API request. For instance, they might send a request to https://example-api.com/products?version=v1.</li>
+                </ul>
+                <li>Header versioning</li>
+                <ul>
+                    <li>This approach allows consumers to pass the version number as a header in the API request, which decouples the API version from the URL structure.</li>
+                </ul>
+                <li>Consumer-based versioning</li>
+                <ul>
+                    <li>This versioning strategy allows consumers to choose the appropriate version based on their needs. With this approach, the version that exists at the time of the consumer's first call is stored with the consumer's information. Every future call is then executed against this same version—unless the consumer explicitly modifies their configuration.</li>
+                </ul>
+            </ul>
+
+            <p>Backward Compatibility and Versioning: When modifying endpoints, it's important to maintain backward compatibility. This means ensuring that changes don't break existing clients.</p>
+
+            <div style="text-align: center; max-width: 100%;">
+                <img src="../assets/images/blog/backward_compatibility_versioning.jpg" alt="Backward Compatibility" width="500px" style="max-width: 100%;">
+            </div>
+
+            <br/>
+            <h2>Rate Limits and CORS</h2>
+            <p>Another best practice is to set rate limitations. This is used to control the number of requests a user can make in a certain timeframe. This is crucial for maintaining the reliability and availability of your API. It also prevents the API from DDoS attacks.</p>
+            <p>Common practice is to also set CORS settings Cross-Origin Resource Sharing (CORS) settings are important for web security. They control which domains can access your API, preventing unwanted cross-site interactions.</p>
+
+            <br/>
+            <h2>Resource Links Used</h2>
+            <br/>
+            <a class="btn-view-course" href="https://www.postman.com/api-platform/api-design/" target="_blank">Postman - API Design</a>
+            <br/>
+            <a class="btn-view-course" href="https://blog.postman.com/api-lifecycle-blueprint/" target="_blank">Postman - API Lifecycle Blueprint</a>
+            <br/>
+            <a class="btn-view-course" href="https://blog.postman.com/api-governance-with-postman-v10/?_gl=1*ce0bm5*_ga*MTAwNzE3NjQ1MS4xNzI2OTI4OTEy*_ga_CX7P9K6W67*MTcyNzAxNjU5Ni4zLjEuMTcyNzAxNzQ2Mi41MS4wLjA." target="_blank">Postman - API Governance</a>
+            <br/>
+            <a class="btn-view-course" href="https://www.postman.com/api-first/" target="_blank">Postman - API-First Guide</a>
+            <br/>
+            <a class="btn-view-course" href="https://blog.postman.com/rest-api-examples/?_gl=1*12ztnk0*_ga*MTAwNzE3NjQ1MS4xNzI2OTI4OTEy*_ga_CX7P9K6W67*MTcyNzAxNjU5Ni4zLjEuMTcyNzAxNzU3NC4yLjAuMA.." target="_blank">Postman - What Is a REST API?</a>
+            <br/>
+            <a class="btn-view-course" href="https://levelup.gitconnected.com/api-design-101-from-basics-to-best-practices-a0261cdf8886" target="_blank">Medium - API Design 101: From Basics to Best Practices</a>
+            <br/>
+            <a class="btn-view-course" href="https://www.mocks-server.org/docs/overview/" target="_blank">Mocks Server</a>
+            <br/>
+            <a class="btn-view-course" href="https://www.postman.com/api-platform/api-versioning/" target="_blank">Postman - API versioning</a>
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <script src="../assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
