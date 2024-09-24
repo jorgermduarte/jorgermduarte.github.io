@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorge Duarte</title>
+  <link rel="shortcut icon" href="../assets/images/avatar.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+
+    <div class="main-content">
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>Post</button>
+          </li>
+      </nav>
+
+      <article class="about  active" data-page="about">
+
+        <header>
+            <a href="../index.html"><button class="btn-back-posts"> <span> <img src="../assets/images/arrow.svg" height="20" class="arrow-white" /></span> Go Back </button></a>
+          <h2 class="h2 article-title">React</h2>
+        </header>
+
+        <section class="about-text">
+
+            <h2>What is React?</h2>
+            <p>React is a JavaScript library for building user interfaces, primarily single-page applications (SPAs). It allows developers to create reusable UI components, which manage their own state and then update dynamically as the data changes. React follows a component-based architecture, making it easy to create complex interfaces by combining smaller, modular components. One of its core features is the virtual DOM, which optimizes updates to the actual DOM for better performance.</p>
+            <br/>
+            <h2>React DOM</h2>
+            <p>
+                React DOM is the library that connects React to the actual Document Object Model (DOM) in web browsers. While React itself is concerned with how components are built and managed, React DOM takes care of rendering those components in the browser. It provides methods to manipulate the DOM, such as render(), which mounts a React component to a DOM node.
+            </p>
+            <br/>
+            <h2>Virtualization in React</h2>
+            <p>Virtualization in React typically refers to the technique used to improve performance when rendering large lists or grids of elements. Instead of rendering all the items in a list at once, virtualization only renders the visible portion of the list (or slightly more), and dynamically loads more elements as the user scrolls. This reduces the amount of work the browser has to do, which improves both rendering speed and memory usage.</p>
+            <br/>
+            <h2>JSX</h2>
+            <p>JSX is a syntax extension for JavaScript that allows you to write HTML-like code directly within your JavaScript files. Instead of using the traditional React.createElement() to create elements, JSX lets you write markup that looks almost identical to HTML, making your components easier to understand and maintain.</p>
+            <br/>
+            <h2>TSX</h2>
+            <p>TSX (TypeScript XML) is the TypeScript version of JSX. It allows you to write HTML-like syntax within TypeScript code, just as JSX does within JavaScript. However, TSX also incorporates TypeScript's type-checking and other features, which brings the benefits of type safety and better tooling to React development.</p>
+            <br/>
+            <h2>Functional Components & Class based Components</h2>
+            <p>In React, components can be created in two ways: as function components or class-based components. Both can be used to build UIs, but they differ in syntax, capabilities (especially before React Hooks were introduced), and best practices. Let's break down the key differences and advantages of each:</p>
+            <ul>
+                <li>
+                  <strong>Function Components:</strong>
+                  <ul>
+                    <li><strong>Definition:</strong> Simple JavaScript functions that return JSX.</li>
+                    <li><strong>State:</strong> Managed with hooks like <code>useState</code> and side effects with <code>useEffect</code>.</li>
+                    <li><strong>No this keyword:</strong> State and props are accessed directly without needing <code>this</code>.</li>
+                    <li><strong>Performance:</strong> Typically lighter and easier to read.</li>
+                    <li><strong>Preferred:</strong> In modern React, function components are favored due to their simplicity and hooks support.</li>
+                  </ul>
+                </li>
+              
+                <li>
+                  <strong>Class Components:</strong>
+                  <ul>
+                    <li><strong>Definition:</strong> JavaScript ES6 classes that extend <code>React.Component</code>.</li>
+                    <li><strong>State:</strong> Managed via <code>this.state</code> and updated with <code>this.setState()</code>.</li>
+                    <li><strong>Lifecycle Methods:</strong> Uses built-in methods like <code>componentDidMount</code> and <code>componentDidUpdate</code>.</li>
+                    <li><strong>Requires this:</strong> Methods and state need careful handling of the <code>this</code> keyword.</li>
+                    <li><strong>Legacy:</strong> Used in older codebases, but still fully supported.</li>
+                  </ul>
+                </li>
+              
+                <li>
+                  <strong>Key Differences:</strong>
+                  <ul>
+                    <li><strong>Simplicity:</strong> Function components are cleaner and more concise.</li>
+                    <li><strong>State and Lifecycle:</strong> Handled via hooks (<code>useState</code>, <code>useEffect</code>) in function components vs. state and lifecycle methods in class components.</li>
+                    <li><strong>Best Practice:</strong> Function components are now the preferred approach in modern React development.</li>
+                  </ul>
+                </li>
+              </ul>
+              <br/>
+              <h2>React Life Cycle</h2>
+
+              <pre lang="" >
+                <span class="code-correct-comment">Simple flow of the lifecycle:</span>
+                <b>Mounting</b>
+                    ↓
+                    constructor() 
+                    ↓
+                    static getDerivedStateFromProps()
+                    ↓
+                    render()
+                    ↓
+                    componentDidMount()
+
+                <b>Updating</b>
+                    ↓
+                    static getDerivedStateFromProps()
+                    ↓
+                    shouldComponentUpdate()
+                    ↓
+                    render()
+                    ↓
+                    getSnapshotBeforeUpdate()
+                    ↓
+                    componentDidUpdate()
+
+                <b>Unmounting</b>
+                    ↓
+                    componentWillUnmount()
+              </pre>
+              <p>Using Lifecycle Methods in Function Components:</p>
+            <ul>
+            <li>
+                <strong>With the introduction of Hooks, many lifecycle methods can be replicated using the <code>useEffect</code> hook in function components.</strong>
+            </li>
+            <li>
+                <strong>componentDidMount:</strong> Can be replicated with <code>useEffect</code> that runs only on mount.
+            </li>
+            <li>
+                <strong>componentDidUpdate:</strong> Can be handled by specifying dependencies in the <code>useEffect</code> array.
+            </li>
+            <li>
+                <strong>componentWillUnmount:</strong> Can be handled by returning a cleanup function from <code>useEffect</code>.
+            </li>
+            </ul>
+
+            <br/>
+            <pre lang="js" >
+                <span class="code-correct-comment">Using Lifecycle Methods in Function Components:</span>
+                import React, { useState, useEffect } from 'react';
+
+                function ExampleComponent() {
+                  const [count, setCount] = useState(0);
+                
+                  // This effect runs after the first render (like componentDidMount)
+                  useEffect(() => {
+                    console.log('Component mounted or updated');
+                
+                    // This return function acts like componentWillUnmount
+                    return () => {
+                      console.log('Cleanup before unmounting');
+                    };
+                  }, [count]); // Runs whenever 'count' changes
+                
+                  return (
+                    < div>
+                      < p>You clicked {count} times</ p>
+                      < button onClick={() => setCount(count + 1)}>Click me < /button>
+                    < /div>
+                  );
+                }
+            </pre>
+            <p>Summary:</p>
+            <ul>
+                <li>Understanding the React lifecycle helps you manage component behavior effectively.</li>
+                <li>Class components have specific lifecycle methods that can be overridden, while function components use hooks like <code>useEffect</code> to manage similar behaviors.</li>
+                <li>Proper use of lifecycle methods ensures efficient performance and resource management in React applications.</li>
+            </ul>
+
+            <br/>
+            <h2>React Hooks</h2>
+            <p>React Hooks are special functions that allow you to use state and other React features in functional components. They were introduced in React 16.8 to enable functional components to manage state and lifecycle events without converting them into class components. Here’s an overview of the most commonly used hooks and their purposes:</p>
+            <ul>
+                <li>
+                  <strong>Key React Hooks:</strong>
+                  <ul>
+                    <li>
+                      <strong>useState</strong>: 
+                      Allows you to add state to functional components. Returns an array with the current state value and a function to update it.
+                    </li>
+                    <li>
+                      <strong>useEffect</strong>: 
+                      Enables you to perform side effects in your components, such as data fetching or manual DOM manipulations. Takes a function with the side effect logic and an optional dependency array.
+                    </li>
+                    <li>
+                      <strong>useContext</strong>: 
+                      Allows access to the context API, making it easier to share values like themes or user information across components without prop drilling.
+                    </li>
+                    <li>
+                      <strong>useReducer</strong>: 
+                      A more advanced alternative to <code>useState</code>, used for managing complex state logic in a predictable way.
+                    </li>
+                    <li>
+                      <strong>useMemo and useCallback</strong>: 
+                      Optimize performance by memoizing values and functions. <code>useMemo</code> memoizes the result of a computation, while <code>useCallback</code> memoizes a function definition.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Custom Hooks</strong>: 
+                  You can create your own hooks to encapsulate reusable logic, which is a JavaScript function that calls one or more hooks.
+                </li>
+                <li>
+                  <strong>Benefits of Using Hooks:</strong>
+                  <ul>
+                    <li>
+                      <strong>Simplified Component Logic</strong>: 
+                      Hooks allow you to write components that are easier to understand and manage.
+                    </li>
+                    <li>
+                      <strong>Reusability</strong>: 
+                      Custom hooks enable you to encapsulate and share stateful logic across components.
+                    </li>
+                    <li>
+                      <strong>Cleaner Code</strong>: 
+                      They help reduce boilerplate code associated with class components and provide a more functional approach.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Conclusion</strong>: 
+                  React Hooks enhance the capabilities of functional components, enabling efficient management of state and side effects, leading to organized and maintainable code in React applications.
+                </li>
+              </ul>
+
+              <br/>
+              <h2>React Stores</h2>
+              <p>In React, stores refer to a centralized way of managing and maintaining the application state. They are part of a state management approach that helps to simplify the process of sharing state across different components, making it easier to manage complex applications. There are several ways to implement stores in React, each with its own set of tools and patterns. Here are some of the most commonly used methods:</p>
+              
+              <ul>
+                <li>
+                  <strong>1. Context API</strong>
+                  <ul>
+                    <li>
+                      <strong>Overview</strong>: A built-in feature of React that allows you to create a global state accessible to any component without passing props manually.
+                    </li>
+                    <li>
+                      <strong>Usage</strong>: 
+                      <ul>
+                        <li>Create a context using <code>React.createContext()</code>.</li>
+                        <li>Use a <code>Provider</code> to wrap your component tree and supply the state.</li>
+                        <li>Use the <code>useContext</code> hook in any component to access the context value.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>2. Redux</strong>
+                  <ul>
+                    <li>
+                      <strong>Overview</strong>: A popular state management library that provides a structured way to manage state through a single global store.
+                    </li>
+                    <li>
+                      <strong>Key Concepts</strong>: 
+                      <ul>
+                        <li><strong>Store</strong>: A single source of truth for the application's state.</li>
+                        <li><strong>Actions</strong>: Plain JavaScript objects that describe what happened in the application.</li>
+                        <li><strong>Reducers</strong>: Pure functions that take the current state and an action and return a new state.</li>
+                        <li><strong>Dispatch</strong>: A function used to send actions to the store.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <strong>Usage</strong>: 
+                      <ul>
+                        <li>Set up a Redux store using <code>createStore()</code>.</li>
+                        <li>Use the <code>Provider</code> from <code>react-redux</code> to make the store available to components.</li>
+                        <li>Connect components to the store using the <code>connect</code> function or the <code>useSelector</code> and <code>useDispatch</code> hooks.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>3. MobX</strong>
+                  <ul>
+                    <li>
+                      <strong>Overview</strong>: A state management library that focuses on making state management simple and scalable through observable states.
+                    </li>
+                    <li>
+                      <strong>Key Concepts</strong>: 
+                      <ul>
+                        <li><strong>Observable</strong>: Any state can be made observable, automatically tracking its usage and updates.</li>
+                        <li><strong>Actions</strong>: Functions that modify the state.</li>
+                        <li><strong>Computed Values</strong>: Values that derive from observable state, automatically updating when the state changes.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <strong>Usage</strong>: 
+                      <ul>
+                        <li>Use <code>makeObservable</code> or <code>makeAutoObservable</code> to define observable properties and actions in your stores.</li>
+                        <li>Use the <code>Observer</code> component or the <code>useObserver</code> hook to reactively render components based on observable state.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>4. Zustand</strong>
+                  <ul>
+                    <li>
+                      <strong>Overview</strong>: A small, fast, and scalable state management solution that leverages hooks.
+                    </li>
+                    <li>
+                      <strong>Key Features</strong>: 
+                      <ul>
+                        <li>Simple API that allows you to create a store using hooks.</li>
+                        <li>Lightweight with no dependencies.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <strong>Usage</strong>: 
+                      <ul>
+                        <li>Create a store using <code>create()</code>.</li>
+                        <li>Use the store in components by calling the store function directly.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>5. Recoil</strong>
+                  <ul>
+                    <li>
+                      <strong>Overview</strong>: A state management library that provides a way to manage shared state with a flexible and scalable approach.
+                    </li>
+                    <li>
+                      <strong>Key Concepts</strong>: 
+                      <ul>
+                        <li><strong>Atoms</strong>: Units of state that can be read from and written to from any component.</li>
+                        <li><strong>Selectors</strong>: Functions that derive state from atoms or other selectors.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <strong>Usage</strong>: 
+                      <ul>
+                        <li>Define atoms using <code>atom()</code>.</li>
+                        <li>Use <code>useRecoilState()</code> to read and write atom values in components.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Benefits of Using Stores</strong>: 
+                  <ul>
+                    <li><strong>Centralized State Management</strong>: Simplifies data flow and management across components.</li>
+                    <li><strong>Predictability</strong>: State changes can be more predictable and easier to debug with libraries like Redux or MobX.</li>
+                    <li><strong>Separation of Concerns</strong>: Helps keep UI logic and business logic separate, promoting cleaner code.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Choosing a Store Solution</strong>: 
+                  <ul>
+                    <li><strong>Simple Applications</strong>: Context API may suffice for lightweight state management.</li>
+                    <li><strong>Medium to Large Applications</strong>: Redux or MobX can provide more structure and features.</li>
+                    <li><strong>Highly Dynamic Applications</strong>: Libraries like Recoil or Zustand may offer the flexibility and performance needed.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Conclusion</strong>: 
+                  React stores play a crucial role in managing state across applications, providing various solutions to meet different needs, leading to better organization and maintainability of your React code.
+                </li>
+              </ul>
+              
+              <br/>
+              <h2>React Profiler</h2>
+              <ul>
+                <li>
+                  <strong>Overview</strong>: 
+                  <ul>
+                    <li>Measures the rendering behavior of components.</li>
+                    <li>Identifies performance bottlenecks and optimizes applications.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Key Features</strong>: 
+                  <ul>
+                    <li><strong>Render Timing</strong>: Captures time taken for each component to render.</li>
+                    <li><strong>Commit Phase Tracking</strong>: Tracks how long the commit phase takes.</li>
+                    <li><strong>Interaction Tracking</strong>: Visualizes how interactions affect rendering.</li>
+                    <li><strong>Flamegraph Visualization</strong>: Displays rendering data in a flamegraph format.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Usage</strong>: 
+                  <ul>
+                    <li>Enable Profiler in React DevTools.</li>
+                    <li>Record a profiling session by interacting with the app.</li>
+                    <li>Analyze results to identify performance issues.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Common Performance Issues</strong>: 
+                  <ul>
+                    <li>Unnecessary Re-renders: Use <code>React.memo</code> to avoid.</li>
+                    <li>Heavy Components: Optimize with code splitting or lazy loading.</li>
+                    <li>Excessive State Updates: Batch updates to minimize renders.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Benefits</strong>: 
+                  <ul>
+                    <li>Provides performance insights for optimization.</li>
+                    <li>Helps identify components that can be improved.</li>
+                    <li>Enables real-time analysis during development.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Conclusion</strong>: 
+                  The React Profiler is essential for optimizing React applications, leading to better performance and user experience.
+                </li>
+              </ul>
+
+              <br/>
+              <h2> React Concurrent Mode vs Suspense</h2>
+              <ul>
+                <li>
+                  <strong>React Concurrent Mode</strong>
+                  <ul>
+                    <li>
+                      <strong>Overview</strong>: A set of features that allow components to render asynchronously for a more responsive UI.
+                    </li>
+                    <li>
+                      <strong>Key Features</strong>: 
+                      <ul>
+                        <li><strong>Concurrent Rendering</strong>: Renders multiple tasks simultaneously.</li>
+                        <li><strong>Transition APIs</strong>: Marks updates as non-urgent for better prioritization.</li>
+                        <li><strong>Scheduling</strong>: Interrupts rendering for higher-priority updates.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <strong>Use Cases</strong>: Best for complex UIs needing responsiveness during data fetching and user interactions.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Suspense</strong>
+                  <ul>
+                    <li>
+                      <strong>Overview</strong>: Handles loading states for asynchronous data in a graceful way.
+                    </li>
+                    <li>
+                      <strong>Key Features</strong>: 
+                      <ul>
+                        <li><strong>Data Fetching</strong>: Suspends rendering until data is loaded.</li>
+                        <li><strong>Fallback UI</strong>: Displays a loading spinner or message while waiting for data.</li>
+                        <li><strong>Integration</strong>: Works seamlessly with Concurrent Mode.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <strong>Use Cases</strong>: Ideal for components that rely on asynchronous data fetching.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Key Differences</strong>:
+                  <ul>
+                    <li><strong>Purpose</strong>: Concurrent Mode optimizes rendering performance; Suspense manages loading states.</li>
+                    <li><strong>Functionality</strong>: Concurrent Mode affects rendering behavior; Suspense handles loading states.</li>
+                    <li><strong>Usage</strong>: Concurrent Mode impacts the entire application; Suspense is used in specific components for data fetching.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Conclusion</strong>: Both features improve user experience by making applications more responsive and easier to manage during asynchronous operations.
+                </li>
+              </ul>
+              
+              <br/>
+              <h2>REACT HOCs and Render Props</h2>
+              <ul>
+                <li>
+                  <strong>Higher-Order Components (HOCs)</strong>
+                  <ul>
+                    <li>
+                      <strong>Definition</strong>: 
+                      A Higher-Order Component is a function that takes a component and returns a new component.
+                    </li>
+                    <li>
+                      <strong>Purpose</strong>: 
+                      Used for code reuse and abstraction to share functionality across components.
+                    </li>
+                    <li>
+                      <strong>Usage</strong>: 
+                      Common for adding logging, authentication checks, or data fetching.
+                    </li>
+                    <li>
+                      <strong>Example</strong>:
+        <pre lang="javascript">
+    const withEnhancements = (WrappedComponent) => {
+        return class extends React.Component {
+        render() {
+            // Add extra props or behavior
+            return < WrappedComponent {...this.props} extraProp="value" />;
+        }
+        };
+    };
+        </pre>
+                    </li>
+                    <li>
+                      <strong>Benefits</strong>: 
+                      Promotes code reuse and separation of concerns, enhancing functionality without altering original components.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Render Props</strong>
+                  <ul>
+                    <li>
+                      <strong>Definition</strong>: 
+                      A Render Prop is a technique for sharing code using a prop whose value is a function.
+                    </li>
+                    <li>
+                      <strong>Purpose</strong>: 
+                      To provide flexibility in how components render content by passing state or behavior.
+                    </li>
+                    <li>
+                      <strong>Usage</strong>: 
+                      Commonly used for managing state or handling subscriptions.
+                    </li>
+                    <li>
+                      <strong>Example</strong>:
+        <pre lang="javascript">
+        class DataProvider extends React.Component {
+            state = { data: null };
+
+            componentDidMount() {
+            // Fetch data and update state
+            }
+
+            render() {
+            return this.props.render(this.state.data);
+            }
+        }
+
+        // Usage
+        < DataProvider render={data => < MyComponent data={data} />} />
+        </pre>
+                    </li>
+                    <li>
+                      <strong>Benefits</strong>: 
+                      Offers greater rendering flexibility and avoids prop name collisions.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Key Differences</strong>:
+                  <ul>
+                    <li><strong>Structure</strong>: HOCs wrap components; Render Props use a function as a prop.</li>
+                    <li><strong>Use Cases</strong>: HOCs are for cross-cutting concerns; Render Props are for state sharing.</li>
+                    <li><strong>Complexity</strong>: HOCs can lead to "wrapper hell"; Render Props keep the hierarchy simpler.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Conclusion</strong>: 
+                  Both patterns are powerful for sharing functionality and state, promoting reusable and maintainable code in React applications.
+                </li>
+              </ul>
+              
+              
+            <br/>
+            <h2>Resource Links Used</h2>
+            <br/>
+            <a class="btn-view-course" href="https://chat.openai.com/" target="_blank">OpenAI - ChatGPT</a>
+            
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <script src="../assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
