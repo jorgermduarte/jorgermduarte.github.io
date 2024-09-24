@@ -140,15 +140,25 @@
                 function ExampleComponent() {
                   const [count, setCount] = useState(0);
                 
-                  // This effect runs after the first render (like componentDidMount)
                   useEffect(() => {
-                    console.log('Component mounted or updated');
-                
+                    console.log('Component updated');
                     // This return function acts like componentWillUnmount
                     return () => {
                       console.log('Cleanup before unmounting');
                     };
                   }, [count]); // Runs whenever 'count' changes
+
+                  
+                  // This effect runs after the first render (like componentDidMount)
+                  useEffect(() => {
+                    console.log('Component mounted');
+                
+                    // This return function acts like componentWillUnmount
+                    return () => {
+                      console.log('Cleanup before unmounting');
+                    };
+                  }, []);
+
                 
                   return (
                     < div>
