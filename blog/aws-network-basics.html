@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorge Duarte</title>
+  <link rel="shortcut icon" href="../assets/images/avatar.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+</head>
+
+<body>
+  <main>
+
+    <div class="main-content">
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>Post</button>
+          </li>
+      </nav>
+
+      <article class="about  active" data-page="about">
+
+        <header>
+            <a href="../index.html"><button class="btn-back-posts"> <span> <img src="../assets/images/arrow.svg" height="20" class="arrow-white" /></span> Go Back </button></a>
+          <h2 class="h2 article-title">AWS Network Basics</h2>
+        </header>
+
+        <section class="about-text">
+
+          <p>This post distills key insights from my study of "AWS Network Basics" from AWS Skillbuilder.</p>
+          <p><a class="btn-view-course" href="https://explore.skillbuilder.aws/learn/courses/12439/aws-networking-basics" target="_blank">View Course on AWS</a></p>
+
+        </section>
+
+        <section class="about-text">
+            <h2>Networking on AWS</h2>
+            <p>On AWS, networking is virtualized and available in several different types and configurations which helps to match your networking methods with your needs.</p>
+            <p>Maybe you have a regional, public, private, mesh, or hub-and-spoke network design.</p>
+        
+            <h2>The AWS Networking Options</h2>
+            <ol>
+                <li>Run on top of the AWS global network which is the backbone that supports the interconnectivity needs for elasticity, scalability, and highly availability as well as continual growth.</li>
+                <li>Support the foundational building blocks of your design for your environment, network, and workloads to ensure you meet your business goals.</li>
+                <li>Provide services built by AWS to accelerate deployment and management of your network.</li>
+            </ol>
+        
+            <h2>Guidance from AWS</h2>
+        
+            <h3>AWS Well-Architected Framework</h3>
+            <p>To build secure, high-performing, resilient, and efficient networks for applications and workloads. The framework is built around six pillars:</p>
+            <ul>
+                <li>Operational excellence</li>
+                <li>Security</li>
+                <li>Reliability</li>
+                <li>Performance efficiency</li>
+                <li>Cost optimization</li>
+                <li>Sustainability</li>
+            </ul>
+            <p>The well-architected framework provides a consistent approach for customers and partners to evaluate architectures and implement scalable designs.</p>
+        
+            <h3>AWS Shared Responsibility Model</h3>
+            <p>This model adds defined security management for your network and environment. In AWS, security and compliance is a shared responsibility between you and AWS. At a high level:</p>
+            <ul>
+                <li>AWS is responsible for the security of the cloud.</li>
+                <li>You are responsible for the security in the cloud, including your data, applications, and network traffic in AWS.</li>
+            </ul>
+            <p>The shared responsibility model provides clarity around which areas of systems security are owned by AWS and which are owned by you.</p>
+        
+            <h2>Planning Your Network Design and Cost Optimization</h2>
+            <p>The fifth pillar of the AWS Well-Architected Framework, the cost optimization pillar, recommends measuring and monitoring your infrastructure. This is crucial because as your environment grows, your environment changes.</p>
+            <p>Data transfer charges are often overlooked in your design. There is no charge for inbound data transfer across all services in all Regions. However, data transfer from AWS to the internet is charged per service, with rates specific to the originating Region.</p>
+            <p>Define your metrics, set target goals, define and enforce your tagging strategy, use cost allocation tags, and regularly review for any changes. This helps to track your costs and optimize them.</p>
+            <p>AWS provides the following services to track expenses and usage:</p>
+            <ul>
+                <li>AWS Cost Explorer</li>
+                <li>AWS Billing and Management Console</li>
+                <li>AWS Budgets</li>
+                <li>AWS Trusted Advisor</li>
+            </ul>
+            <p>The framework and the Hybrid Network Lens provide a consistent approach to evaluate your network and implement scalable designs over time.</p>
+        
+            <h2>Network Security</h2>
+            <p>The shared responsibility model balances the agility of your network with the need to improve the security of the data as it traverses your network using network controls, configurations, and so on.</p>
+            <p>To learn more about each layer of the shared responsibility model, explore additional resources provided by AWS.</p>
+        
+            <hr>
+            <h2>Network Foundations</h2>
+            <p>Everything you do in AWS uses networking, whether communicating with AWS or creating connections between your on-premises environment and AWS. A solid network design is the foundation of any environment.</p>
+            <p>The AWS network foundation options support the foundational building blocks of your design, environment, network, and workloads to ensure that you meet your business goals. However, designing and configuring your foundation for networking is different in AWS than for on-premises environments.</p>
+        
+            <h2>Amazon VPC</h2>
+            <p>Amazon Virtual Private Cloud (Amazon VPC) provides a private location to launch AWS resources in an isolated virtual network.</p>
+            <p>Amazon supports services to monitor your network traffic, like:</p>
+            <ul>
+                <li><a href="#" class="wip-course">Amazon VPC Flow Logs</a></li>
+                <li><a href="#" class="wip-course">Amazon CloudWatch</a></li>
+                <li><a href="#" class="wip-course">VPC Traffic Mirroring</a></li>
+            </ul>
+        
+            <h2>AWS PrivateLink</h2>
+            <p>AWS PrivateLink helps establish secure and private connectivity between Amazon VPCs, AWS services within your Region, inside another Amazon VPC, or your on-premises network.</p>
+        
+            <h2>AWS Transit Gateway</h2>
+            <p>AWS Transit Gateway is a service to manage and simplify the connections and peering for your Amazon VPCs.</p>
+
+            <hr>
+  
+            <h2>Hybrid Connectivity</h2>
+            <p>AWS provides services and hybrid connectivity solutions to link your on-premises and AWS networks. This supports a wide range of hybrid architectures and use cases.</p>
+            <p>AWS has a large global network footprint, many connection types, and networking services for building your hybrid networks. Additionally, AWS offers connections to run AWS services on premises and wirelessly.</p>
+            <p>This provides tools to meet specific requirements, applications, and business goals, no matter where your AWS services are connected—in your Amazon VPC, on-premises, or at the network edge.</p>
+          
+            <ul>
+                <li  class="wip-course" >AWS Direct Connect</li>
+                <li  class="wip-course">AWS Cloud WAN</li>
+                <li  class="wip-course">AWS Client VPN</li>
+                <li  class="wip-course">AWS Site-to-Site VPN</li>
+            </ul>
+
+            <br>
+            <hr>
+            <h2>Edge Networking Services</h2>
+            <p>On AWS, edge networking services securely transmit your user-facing data with improved latency globally. When you use the AWS edge networking services, your traffic moves off the internet and behind the AWS global network.</p>
+            <p>Network edge computing removes the need for reaching back to your data centers or the cloud, to the edge of the network. This interconnects your network and provides a path for the exchange of information quicker.</p>
+            <h3>The AWS Global Network</h3>
+            <ul>
+                <li>Defends and limits your exposure to attack by encrypting data, removing network hops, and controlling application access.</li>
+                <li>Improves your application performance and integrates access to the AWS global network global multi-service points of presence (PoPs).</li>
+            </ul>
+            <p>AWS edge networking services sit at the AWS global edge locations and are configured to connect and deliver data with single-digit millisecond AWS network latency.</p>
+            <ul>
+                <li  class="wip-course">Amazon CloudFront</li>
+                <li  class="wip-course">Amazon Route 53</li>
+                <li  class="wip-course">AWS Global Accelerator</li>
+            </ul>
+
+            <br>
+            <hr>
+            <h2>Application Networking</h2>
+            <p>On AWS, application networking services enhance your application's network architecture with improved security, availability, performance, and monitoring capabilities. These services ensure scalability, high availability, and security for traditional and modern applications globally.</p>
+            <ul>
+                <li  class="wip-course">Amazon API Gateway</li>
+                <li  class="wip-course">AWS App Mesh</li>
+                <li  class="wip-course">AWS Cloud Map</li>
+            </ul>
+
+            <br>
+            <hr>
+            <h2>Network Security</h2>
+            <p>AWS provides multiple network and application protection services to secure your environment, inspect and filter traffic, enforce fine-grained security policies, and meet compliance requirements. Security is a shared responsibility: customers manage security in the Cloud, while AWS handles security of the Cloud.</p>
+            <p>Network security helps prevent attacks, maintain high availability, and ensure application responsiveness. AWS network security services support always-on detection and automatic inline threat mitigations. These services offer protections at the host-level, network-level, and application-level boundaries.</p>
+            <ul>
+                <li  class="wip-course">AWS WAF</li>
+                <li  class="wip-course">AWS Shield</li>
+                <li  class="wip-course">AWS Firewall Manager</li>
+                <li  class="wip-course">AWS Network Firewall</li>
+            </ul>
+
+            <br>
+            <hr>
+            <h2>Networking Concepts</h2>
+            <section>
+                <p>A network is a set of devices sharing resources using common communication protocols over interconnections. Networks can be physically wired, optical, wireless, or a hybrid of these.</p>
+            </section>
+        
+            <section>
+                <h1>Network Topologies</h1>
+                <p>When designing or troubleshooting networks, understanding data flow and topology is essential. AWS supports flexible designs, including traditional zone-based segmentation and VLANs.</p>
+        
+                <h3>Common Network Topologies</h3>
+                <ul>
+                    <li><strong>Point-to-Point:</strong> Secure private data connection between two locations without traversing the public Internet.</li>
+                    <li><strong>Bus Network:</strong> Early local networks using a single coaxial cable. A break disables the link.</li>
+                    <li><strong>Tree:</strong> Shares information across networks via root nodes transmitting signals to all computers.</li>
+                    <li><strong>Hub-and-Spoke:</strong> Central hub connects to devices (spokes). Used in AWS with VPNs, Direct Connect, VPC Peering, and Transit Gateways.</li>
+                    <li><strong>Mesh:</strong> Redundant multiple links for load balancing and fault tolerance, common in WANs.</li>
+                    <li><strong>Ring:</strong> Connections form a loop, often with redundancy, used in MANs.</li>
+                    <li><strong>Hybrid:</strong> Combination of multiple topology types.</li>
+                </ul>
+        
+                <p>Design documents and topology diagrams are essential for visibility, helping to spot risks and weak points in the network.</p>
+            </section>
+        
+            <section>
+                <h3>Protocols</h3>
+                <p>Protocols optimize network performance, security, and visibility. Examples include:</p>
+        
+                <ul>
+                    <li><strong>Network Management:</strong> Facilitates network monitoring and optimization.</li>
+                    <li><strong>Network Communication:</strong> Includes HTTP/HTTPS for web browsing.</li>
+                    <li><strong>Network Security:</strong> Ensures secure data transmission, e.g., HTTPS.</li>
+                    <li><strong>File Transfer:</strong> FTP enables efficient and fast file transfers.</li>
+                </ul>
+        
+                <p>Choosing appropriate protocols aligns network design with business goals.</p>
+            </section>
+
+
+    <section>
+        <h3>IPv4</h3>
+        <p>IPv4 addresses are 32-bit numbers represented in dotted decimal notation, ranging from <strong>0.0.0.0</strong> to <strong>255.255.255.255</strong>. This provides over 4.2 billion unique IP addresses.</p>
+
+        <h3>Public IPv4</h3>
+        <p>Public IPv4 addresses are globally routed and divided into class ranges:</p>
+        <ul>
+            <li><strong>Class A:</strong> 0.0.0.0 - 127.255.255.255 (over 2.1 billion addresses).</li>
+            <li><strong>Class B:</strong> 128.0.0.0 - 191.255.255.255 (over 1 billion addresses).</li>
+            <li><strong>Class C:</strong> 192.0.0.0 - 223.255.255.255 (over 2 million addresses).</li>
+            <li>There are also Class D and E ranges reserved for multicast and experimental use.</li>
+        </ul>
+
+        <h3>Private IPv4</h3>
+        <p>Private IPv4 addresses are used for internal networks and are not routed on the internet. Examples:</p>
+        <ul>
+            <li><strong>Class A:</strong> 10.0.0.0 - 10.255.255.255</li>
+            <li><strong>Class B:</strong> 172.16.0.0 - 172.31.255.255</li>
+            <li><strong>Class C:</strong> 192.168.0.0 - 192.168.255.255</li>
+        </ul>
+        <p>Private addresses require <strong>Network Address Translation (NAT)</strong> to communicate with the internet.</p>
+    </section>
+
+    <section>
+        <h2>IPv6</h2>
+        <p>IPv6 addresses are 128-bit hexadecimal numbers, providing a vastly larger address space compared to IPv4. These addresses use a start address and prefix to represent networks.</p>
+        <div class="important">
+            <strong>Key Differences:</strong>
+            <ul>
+                <li>IPv4: 32-bit, dotted decimal.</li>
+                <li>IPv6: 128-bit, hexadecimal.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Classless Inter-Domain Routing (CIDR)</h2>
+        <p>CIDR replaces classful addressing, allowing more efficient IP address management and routing scalability. CIDR is represented by a network address and a prefix (e.g., <code>192.168.1.0/24</code>).</p>
+        <h3>Advantages of CIDR:</h3>
+        <ul>
+            <li>Efficient IP address space management.</li>
+            <li>Reduces routing table entries.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Subnetting</h2>
+        <p>Subnetting divides a network into smaller segments, improving routing efficiency, network management, and security. Each subnet isolates groups of hosts for better control and organization.</p>
+        <p>Subnetting creates logical networks within Class A, B, or C ranges, enabling efficient traffic management.</p>
+    </section>
+
+    <hr>
+    <h2>Transmission Control Protocol/Internet Protocol (TCP/IP) Model</h2>
+    <p>The TCP/IP model is a suite of communication protocols used to interconnect network devices on the internet. It is a simplified model derived from the OSI model and consists of four layers. This model standardizes protocols for reliable communication across interconnected networks.</p>
+
+    <h3>TCP/IP Model Layers</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Layer</th>
+                <th>Role</th>
+                <th>Common Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Link</td>
+                <td>Defines the networking methods within the local network link for communication without routers.</td>
+                <td>Media Access Control (MAC) addresses</td>
+            </tr>
+            <tr>
+                <td>Internet</td>
+                <td>Responsible for sending packets across network boundaries and establishing basic data channels.</td>
+                <td>Internet Protocol version 4 (IPv4)</td>
+            </tr>
+            <tr>
+                <td>Transport</td>
+                <td>Establishes channels for application-specific data exchange.</td>
+                <td>Transmission Control Protocol (TCP)</td>
+            </tr>
+            <tr>
+                <td>Application</td>
+                <td>Provides end-user services like exchanging application data over network connections.</td>
+                <td>Hypertext Transfer Protocol (HTTP)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Key Functions of TCP and IP</h3>
+    <ul>
+        <li><strong>TCP (Transmission Control Protocol):</strong> Creates communication channels, assembles messages into packets for transmission, and reassembles them in the correct order at the destination.</li>
+        <li><strong>IP (Internet Protocol):</strong> Defines addressing and routing for packets, ensuring they reach the correct destination through successive hops.</li>
+    </ul>
+
+    <h3>Advantages of TCP/IP</h3>
+    <p>TCP/IP specifies how data is exchanged over the internet, ensuring:</p>
+    <ul>
+        <li>End-to-end communications with efficient packet management.</li>
+        <li>Automatic recovery from device failures.</li>
+        <li>Reliability without requiring significant overhead management.</li>
+    </ul>
+
+
+    <hr>
+    <h2>Open Systems Interconnection (OSI) Model</h2>
+    <p>The OSI model contains 7 layers, each responsible for a specific function in computer communication. These layers are categorized into two groups: Media layers and Host layers.</p>
+    
+    <h3>Layers Overview</h3>
+    <p>The OSI model consists of the following 7 layers:</p>
+    <ul>
+        <li><strong>Physical Layer</strong>: Transmits raw data bits over the physical medium (e.g., cables, radio waves).</li>
+        <li><strong>Data Link Layer</strong>: Provides error detection and correction, ensures data transfer over a reliable link.</li>
+        <li><strong>Network Layer</strong>: Routes data from source to destination, handles logical addressing (e.g., IP addresses).</li>
+        <li><strong>Transport Layer</strong>: Ensures end-to-end communication and reliability, manages data flow and error correction (e.g., TCP/UDP).</li>
+        <li><strong>Session Layer</strong>: Manages sessions or connections between applications, controls dialogues between computers.</li>
+        <li><strong>Presentation Layer</strong>: Formats and encrypts data, ensuring it can be understood by the application layer (e.g., data compression, encryption).</li>
+        <li><strong>Application Layer</strong>: Interfaces directly with the end-user application, where communication services like HTTP and FTP are provided.</li>
+    </ul>
+    
+    <h3>Host and Media Layers</h3>
+    <p>The OSI model can be divided into two main categories:</p>
+    <ul>
+        <li><strong>Media Layer</strong> (Layers 1-3): Handles the physical transfer of data between devices. Includes the Physical, Data Link, and Network layers.</li>
+        <li><strong>Host Layer</strong> (Layers 4-7): Manages the data transport process, from breaking data into packets to reassembling them at the destination. Includes the Transport, Session, Presentation, and Application layers.</li>
+    </ul>
+
+    <h3>About the OSI Model</h3>
+    <p>The OSI model was developed by the International Organization for Standardization (ISO) to create a standardized framework for computer communications and developing protocols.</p>
+
+
+    </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <script src="../assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
