@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorge Duarte</title>
+  <link rel="shortcut icon" href="../assets/images/avatar.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+</head>
+
+<body>
+  <main>
+
+    <div class="main-content">
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>Post</button>
+          </li>
+      </nav>
+
+      <article class="about  active" data-page="about">
+
+        <header>
+            <a href="../index.html"><button class="btn-back-posts"> <span> <img src="../assets/images/arrow.svg" height="20" class="arrow-white" /></span> Go Back </button></a>
+          <h2 class="h2 article-title">AWS Security Fundamentals Second Edition</h2>
+        </header>
+
+        <section class="about-text">
+
+          <p>This post distills key insights from my study of "AWS Security Fundamentals Second Edition" from AWS Skillbuilder.</p>
+          <p><a class="btn-view-course" href="https://explore.skillbuilder.aws/learn/courses/48/aws-security-fundamentals-second-edition" target="_blank">View Course on AWS</a></p>
+
+        </section>
+
+        <section class="about-text">
+            
+            <h2>Availability Zones</h2>
+            
+            <p>AWS organizes its physical data centers into logical units called Availability Zones. These data centers are interconnected over fully redundant, dedicated, low-latency connections. You can think of an Availability Zone as one logical data center.</p>
+            
+            <h2>AWS Regions</h2>
+            
+            <p>AWS groups Availability Zones into AWS Regions. An AWS Region typically contains two or more Availability Zones, which are physically separated and isolated. This design ensures that if one Availability Zone goes down, the others are unaffected.</p>
+            
+            <h2>Choosing an AWS Region</h2>
+            
+            <p>When creating resources on AWS, you must choose an AWS Region to host them. Several factors can influence your choice of region.</p>
+            
+            <h3>End User Location</h3>
+            
+            <p>Selecting an AWS Region based on the location of your end users ensures the best user experience. For instance, if most of your users are in South America, choosing the Sao Paulo AWS Region would be better than the Singapore Region.</p>
+            
+            <h3>Compliance</h3>
+            
+            <p>If your data must reside in a specific country or be replicated for disaster recovery, compliance requirements could dictate your choice of AWS Region.</p>
+            
+            <h3>Service Availability</h3>
+            
+            <p>While most popular AWS services are available in all regions, not every service is available in every region. Consider both current and future AWS needs when selecting a region.</p>
+            
+            <h3>Cost</h3>
+            
+            <p>Costs vary across regions due to differences in local regulations, electricity prices, and operational expenses. Finding the right balance between cost and the other factors is crucial for selecting the optimal AWS Region.</p>
+            
+            <hr>
+            <h2>AWS Data Center Security Overview</h2>
+
+<p>The AWS Global Infrastructure is designed with security best practices and various compliance standards. AWS ensures that its infrastructure is one of the most secure in the world. Customers cannot visit AWS data centers but can access detailed information about AWS’s security policies and controls through third-party audits and certifications.</p>
+
+<h2>Perimeter Layer</h2>
+
+<p>AWS data center physical security starts at the Perimeter Layer. For more details, customers can explore further markers provided by AWS.</p>
+
+<h2>Environmental Layer</h2>
+
+<p>AWS carefully selects data center locations to mitigate environmental risks such as flooding, extreme weather, and seismic activity.</p>
+
+<ul>
+  <li>High availability and performance are achieved by deploying applications across multiple Availability Zones within the same Region.</li>
+  <li>AWS conducts regular business continuity tests to prepare for various disaster scenarios.</li>
+  <li>Companies using AWS Cloud reduce server usage by 77%, power consumption by 84%, and rely on 28% more solar and wind power compared to traditional data centers.</li>
+</ul>
+
+<h2>Infrastructure Layer</h2>
+
+<p>The Infrastructure Layer includes components like backup power, HVAC systems, and fire suppression equipment to protect servers and data.</p>
+
+<h2>Data Layer</h2>
+
+<p>AWS takes additional precautions to protect the media storing your data, even though data protection is ultimately the customer’s responsibility in the cloud.</p>
+
+<ul>
+  <li>Storage devices are decommissioned using NIST800-88 techniques to destroy customer data.</li>
+  <li>AWS undergoes external audits to ensure compliance with security certifications.</li>
+  <li>In the event of a breach, AWS servers can notify employees and automatically disable the server if data removal is detected.</li>
+</ul>
+<hr>
+
+
+
+<h2>Compliance on AWS</h2>
+
+<p>AWS communicates its security and control environment to customers through various methods:</p>
+
+<ul>
+  <li>Obtaining industry certifications and third-party attestations.</li>
+  <li>Publishing information about AWS security and control practices in whitepapers and online content.</li>
+  <li>Providing certificates, reports, and other documentation under a non-disclosure agreement (NDA), as required.</li>
+  <li>Offering security features and enablers, including compliance playbooks and mapping documents for compliance programs.</li>
+</ul>
+
+<p>Running workloads on AWS does not automatically make them compliant. It is the customer’s responsibility to ensure compliance with applicable standards. However, AWS’s infrastructure is certified, so customers only need to certify their applications and architectures.</p>
+
+<h2>AWS Service Spotlight: AWS Artifact</h2>
+
+<p>AWS Artifact is a no-cost, self-service portal that provides access to AWS security and compliance reports and select online agreements. Available reports include AWS System and Organization Controls (SOC) reports, payment card industry (PCI) reports, and certifications from various accreditation bodies across geographies and compliance areas.</p>
+    <hr>
+    <h2>AWS Identity and Access Management (IAM)</h2>
+
+<p>The management of access credentials is essential for securing your resources in the cloud. When you open an AWS account, your initial identity has access to all AWS services and resources. AWS Identity and Access Management (IAM) allows you to create and manage users and their permissions, implementing role-based access control for secure management of resources.</p>
+
+<h2>IAM Users and Groups</h2>
+
+<p>An IAM group is a collection of users, allowing you to specify permissions for similar types of users. For example, a "Developers" group can have permissions tailored to the needs of developers. This structure helps manage users based on their roles in the organization rather than technical characteristics.</p>
+
+<h2>Types of AWS Credentials</h2>
+
+<p>Here are the types of AWS credentials that provide access to resources:</p>
+
+<h3>Username and Password</h3>
+
+<p>A password policy defines the type of password an IAM user can set, ensuring strong passwords and regular changes. This policy mirrors secure online environments.</p>
+
+<h3>Multi-Factor Authentication (MFA)</h3>
+
+<p>MFA adds an extra layer of security, requiring more than one authentication factor: a username and password, and a one-time code from the MFA device. AWS CLI also supports MFA.</p>
+
+<h3>User Access Keys</h3>
+
+<p>User access keys are used for programmatic access to AWS via the AWS CLI, SDKs, or direct API calls. Each user can have up to two active access keys, which are useful for key rotation or revocation.</p>
+
+<h3>Amazon EC2 Key Pairs</h3>
+
+<p>To access EC2 instances using SSH or RDP, AWS uses public-key infrastructure with key pairs (public and private keys). While key pairs can be generated by AWS or imported, they do not provide accountability, so they are not recommended for routine usage. For better tracking and accountability, it's recommended to use directory domain services like Active Directory or LDAP for federated access.</p>
+
+<h2>Amazon Cognito</h2>
+
+<p>Amazon Cognito allows you to add user sign-up, sign-in, and access controls to your web and mobile apps. You can define roles and assign users to these roles, ensuring that each user has access only to authorized resources. User sign-in can be managed either through a third-party identity provider or directly through Amazon Cognito.</p>
+
+<hr>
+
+<h2>Detective Controls</h2>
+
+<p>Detective controls are crucial for identifying potential security threats or incidents. In AWS, detective controls can be implemented through services like AWS CloudTrail, which records API calls on your account, helping track changes to resources, troubleshoot issues, and ensure compliance.</p>
+
+<h3>Capturing and Collecting Logs</h3>
+
+<p>AWS CloudTrail is enabled by default on your AWS account and records API calls. Logs provide details such as who made the request, when and from where the request was made, and what actions were taken. This information is useful for tracking changes to resources like creation, modification, or deletion.</p>
+
+<h3>Monitoring and Notifications</h3>
+
+<p>Amazon CloudWatch helps organizations monitor resources, log changes, send notifications, and invoke automated remediation actions for unwanted changes. It integrates security alerts into workflows, enabling proactive responses to potential issues.</p>
+
+<h3>Auditing on AWS</h3>
+
+<p>The AWS Management Console and AWS CLI enable auditing across services like Amazon S3, ELB, CloudWatch, CloudTrail, and VPC. These tools help auditors across regulatory standards and industry requirements.</p>
+
+<h3>AWS Config</h3>
+
+<p>AWS Config is a continuous monitoring and assessment service that helps detect non-compliant configurations in near real-time. It allows you to view current and historical configurations of resources, which aids in troubleshooting outages and analyzing security attacks.</p>
+
+<p>With AWS Config rules, you can perform continuous assessments to ensure that resources comply with your security policies, industry best practices, and compliance standards. AWS provides pre-built rules, such as ensuring encryption is enabled on all EBS volumes, and allows you to create custom rules based on your specific security needs.</p>
+<hr>
+<h2>Infrastructure Protection</h2>
+
+<h3>Protection through Isolation</h3>
+<p>Infrastructure protection ensures that systems and resources within your workloads are protected against unintended and unauthorized access, and other potential vulnerabilities. With Amazon VPC, you can isolate your AWS resources in the cloud. Using a VPC, you can launch resources into a virtual network that you have defined, closely resembling a traditional network you would operate in your own data center.</p>
+
+<h4>Common VPC Features for Defense-in-Depth</h4>
+<p>These features provide a defense-in-depth approach for securing your resources in the cloud.</p>
+
+<h3>Application and OS Security</h3>
+<p>Securing your network and ensuring that your servers are hardened and patched are essential tasks in infrastructure security. AWS Systems Manager helps automate management tasks, such as collecting system inventory, applying OS patches, maintaining antivirus definitions, and configuring applications at scale.</p>
+
+<h4>AWS Systems Manager Features</h4>
+<ul>
+  <li><strong>Automation:</strong> Safely automate common and repetitive IT operations and management tasks across AWS resources.</li>
+  <li><strong>Inventory:</strong> Collect data about your instances and installed software, including apps, files, network configurations, and system properties.</li>
+  <li><strong>Patch Manager:</strong> Deploy software patches automatically across large groups of EC2 or on-premises instances.</li>
+  <li><strong>Parameter Store:</strong> Manage configuration data and secrets like passwords, separate from your code.</li>
+  <li><strong>Run Command:</strong> Manage instances remotely without logging into servers, automating tasks like registry edits and software installations.</li>
+  <li><strong>Session Manager:</strong> Manage Windows and Linux EC2 instances via a browser-based shell without opening inbound ports or managing SSH keys.</li>
+</ul>
+
+<h3>Amazon Inspector</h3>
+<p>Amazon Inspector is an automated security assessment service that scans applications for vulnerabilities or deviations from best practices. It aggregates findings and routes them to AWS Security Hub, where workflows like ticketing can be triggered. Additionally, it automatically detects if vulnerabilities have been patched, updating the findings to closed without manual intervention.</p>
+<hr>
+<h2>Data Protection</h2>
+
+<h3>Protection at Rest</h3>
+<p>Protecting data at rest involves encrypting data while using storage services, including database services. For Amazon S3, there are two types of encryption options based on who will manage and provide the keys:</p>
+<ul>
+  <li><strong>Client-side encryption:</strong> You encrypt your data before sending it to AWS.</li>
+  <li><strong>Server-side encryption:</strong> AWS encrypts data on your behalf after it is received by the service.</li>
+</ul>
+
+<h3>Protection in Transit</h3>
+<p>Data in transit refers to data being transmitted from one system to another. AWS recommends the following best practices to ensure the confidentiality and integrity of your application's data during transmission:</p>
+<ul>
+  <li>AWS services provide HTTPS endpoints using Transport Security Layer (TLS) for end-to-end encryption when communicating with AWS APIs.</li>
+  <li>Use AWS to generate, deploy, and manage public and private certificates for TLS encryption in web-based workloads.</li>
+  <li>Use IPsec with VPN connectivity into AWS to encrypt traffic.</li>
+</ul>
+
+<h3>AWS Key Management Service (KMS)</h3>
+<p>AWS KMS is a managed service that allows you to create and control the keys used in data encryption. If you want a managed service for encryption key creation and control without the need to operate your own Hardware Security Module (HSM), AWS KMS is a suitable option. It integrates with other AWS services, including AWS CloudTrail, to help meet auditing, regulatory, and compliance requirements.</p>
+<hr>
+<h2>Incident Response</h2>
+
+<p>Incident response in the AWS Cloud is faster, cheaper, more effective, and easier to manage compared to on-premises environments. AWS enhances your ability to detect, react, and recover with a variety of investigation capabilities.</p>
+
+<h3>The Power of APIs for Automation</h3>
+<p>In AWS, you can automate many routine tasks during incident response using APIs. For example, with a single command, you can isolate an instance by changing its associated security groups.</p>
+
+<h3>Performing Forensics on Data Volumes</h3>
+<p>Forensics often involve capturing the disk image or the as-is configuration of an OS. You can use Amazon EBS snapshots and Amazon EC2 APIs to capture the data and state of systems under investigation.</p>
+
+<h3>Operating in a Clean Room</h3>
+<p>AWS CloudFormation allows you to quickly create a trusted environment for deeper investigations. It can deploy preconfigured instances in an isolated environment with all the necessary forensic tools.</p>
+
+<h3>AWS Step Functions</h3>
+<p>AWS Step Functions enables the coordination of multiple AWS services into serverless workflows. You can design workflows that integrate services like AWS Lambda and AWS CloudFormation to respond to incidents in the cloud.</p>
+
+<h4>Example Workflow: Responding to a Compromised Instance</h4>
+<p>The following describes a workflow for responding to a compromised instance using AWS Step Functions, AWS Lambda, AWS CloudFormation, and Amazon SNS:</p>
+<ol>
+  <li>Remove the instance from its Auto Scaling group and create a snapshot of any attached Amazon EBS volumes. Record instance metadata and apply a quarantine resource tag.</li>
+  <li>Isolate the instance by removing all associated security groups and assigning a new forensics security group with no ingress or egress permissions.</li>
+  <li>Create a new environment using AWS CloudFormation, including a new VPC and a forensics instance with prebuilt tools attached to a copy of the snapshot volumes.</li>
+  <li>Perform basic forensics on the attached volumes.</li>
+  <li>Generate reports with the investigation results and send them to the team via an Amazon SNS topic.</li>
+</ol>
+<hr>
+<h2>DDoS Mitigation</h2>
+
+<p>A combination of AWS services can be used to implement a defense-in-depth strategy against Distributed Denial of Service (DDoS) attacks. These services automatically respond to DDoS attacks, minimizing mitigation time and reducing impact. AWS Edge locations provide an additional layer of infrastructure that enhances your ability to absorb DDoS attacks and isolate faults, all while minimizing availability impact.</p>
+
+<h3>Protection at the Edge</h3>
+<p>AWS Edge locations increase your ability to handle DDoS attacks and deliver content with lower latency. Amazon CloudFront uses a global network of over 310 Points of Presence, including over 300 Edge locations, to ensure faster content delivery. These edge locations serve as physical data centers located in key cities, separate from Availability Zones, improving performance and reducing the impact of DDoS threats on your web applications and resources.</p>
+
+<h3>AWS Services for Out-of-Region Protection</h3>
+<p>The following AWS services work together to create a flexible, layered security perimeter against DDoS attacks, referred to as AWS Edge Services:</p>
+
+<ul>
+  <li><strong>Amazon Route 53</strong>: A highly available and scalable DNS service with advanced features such as traffic flow, latency-based routing, weighted round-robin, Geo DNS, and health checks. These features help direct traffic and avoid site outages, with Route 53 hosted at numerous AWS edge locations to absorb large DDoS traffic volumes.</li>
+  <li><strong>Amazon CloudFront</strong>: A content delivery network (CDN) service that delivers data to end users. CloudFront accepts only HTTPS and HTTP well-formed connections, blocking many common DDoS attacks and ensuring continuous service during larger DDoS events.</li>
+  <li><strong>AWS Shield</strong>: A managed DDoS protection service that safeguards AWS-hosted web applications with always-on detection and automatic inline mitigations to reduce downtime and latency.</li>
+</ul>
+
+<h3>AWS WAF</h3>
+<p> <strong>AWS WAF</strong>: A web application firewall that protects against common web exploits. AWS WAF allows you to create custom web security rules to control which traffic to allow or block, improving application availability and security.
+</p>
+<hr>
+<h2>AWS Well-Architected Tool</h2>
+
+<p>The AWS Well-Architected Tool is a self-service tool designed to help customers review their AWS workloads at any time, without the need for an AWS Solutions Architect. By using this tool, you can assess your workloads through a consistent process, understand potential risks in your architecture, and identify next steps for improvement.</p>
+
+<h3>How it Works</h3>
+<p>To use the AWS Well-Architected Tool, follow these steps:</p>
+
+<ol>
+  <li>Define your workload.</li>
+  <li>Answer a series of questions across the six pillars of the Well-Architected Framework: operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability.</li>
+  <li>The tool then provides a plan outlining potential improvements to be applied to the workload.</li>
+</ol>
+
+<p>The AWS Well-Architected Tool is free to use; you only pay for any AWS resources consumed. However, the tool is available only in select AWS Regions.</p>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <script src="../assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
