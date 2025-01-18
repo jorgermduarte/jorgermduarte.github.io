@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorge Duarte</title>
+  <link rel="shortcut icon" href="../assets/images/avatar.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+</head>
+
+<body>
+  <main>
+
+    <div class="main-content">
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>Post</button>
+          </li>
+      </nav>
+
+      <article class="about  active" data-page="about">
+
+        <header>
+            <a href="../index.html"><button class="btn-back-posts"> <span> <img src="../assets/images/arrow.svg" height="20" class="arrow-white" /></span> Go Back </button></a>
+          <h2 class="h2 article-title">AWS Technical Essentials</h2>
+        </header>
+
+        <section class="about-text">
+
+          <p>This post distills key insights from my study of "AWS Technical Essentials" from AWS Skillbuilder.</p>
+          <p><a class="btn-view-course" href="https://explore.skillbuilder.aws/learn/courses/1851/aws-technical-essentials" target="_blank">View Course on AWS</a></p>
+
+        </section>
+
+        <section class="about-text">
+            <h2>Cloud computing deployment models</h2>
+
+            <h1>On-premises</h1>
+            <p>Companies managed their own data centers with costly hardware and operations. Scaling and experimenting were difficult due to high costs.</p>
+            <h1>Cloud</h1>
+            <p>Cloud computing offers on-demand IT resources over the internet with pay-as-you-go pricing. Providers like AWS handle hardware, letting businesses focus on innovation.</p>
+        
+            <h1>Hybrid</h1>
+            <p>Hybrid setups connect on-premises and cloud resources, allowing organizations to scale by combining both infrastructures.</p>
+        
+            <h1>Comparison</h1>
+            <p>On-premises requires time and money to set up environments, delaying development. Cloud enables quick replication of production setups, saving time and allowing focus on unique business needs. AWS simplifies repetitive tasks, providing scalable, cost-effective services.</p>
+        
+            <hr/>
+            <br/>
+            <h2>AWS Global Infrastructure</h2>
+            
+            <h1>Regions</h1>
+            <p>The AWS Cloud spans 93 Availability Zones across 29 geographic Regions worldwide. Regions are independent locations hosting AWS data centers, named after their geographic areas (e.g., us-east-1 for Northern Virginia).</p>
+            <p>When choosing a Region, consider latency, pricing, service availability, and compliance.</p>
+
+            <h1>Examples of Region Codes</h1>
+            <ul>
+                <li><strong>us-east-1:</strong> Northern Virginia</li>
+                <li><strong>ap-northeast-1:</strong> Tokyo</li>
+            </ul>
+
+            <h1>Choosing the Right Region</h1>
+            <p><strong>Latency:</strong> Pick a Region close to your users for better performance.</p>
+            <p><strong>Pricing:</strong> Costs vary by Region due to economic factors.</p>
+            <p><strong>Service Availability:</strong> Not all services are available in every Region.</p>
+            <p><strong>Compliance:</strong> Choose a Region that meets data storage regulations.</p>
+
+            <h1>Availability Zones</h1>
+            <p>Each Region contains multiple Availability Zones (AZs), which are clusters of data centers with redundant power, networking, and connectivity. AZs are identified by appending letters to Region codes (e.g., us-east-1a).</p>
+            <p>For high availability, replicate workloads across multiple AZs.</p>
+
+            <h1>Scope of AWS Services</h1>
+            <p>Services are scoped at the Availability Zone, Region, or Global level. Region-scoped services handle data durability and availability automatically, while AZ-scoped services require user configuration for resilience.</p>
+
+            <h1>Maintaining Resiliency</h1>
+            <p>Use Region-scoped managed services or replicate workloads across at least two AZs to ensure high availability and resilience.</p>
+
+            <h1>Edge Locations</h1>
+            <p>Edge locations are global points where content is cached for faster access. With over 400+ edge locations, Amazon CloudFront uses these to deliver content with low latency and high performance.</p>
+
+            
+            <hr/>
+            <br/>
+            <h2>Interacting with AWS</h2>
+            <h1>AWS Management Console</h1>
+            <p>The AWS Management Console is a web-based interface for managing cloud resources. It is ideal for beginners to create and manage resources.</p>
+            <p>Key features:</p>
+            <ul>
+                <li><strong>Services Menu:</strong> Access AWS services by category (Compute, Storage, etc.).</li>
+                <li><strong>Region Selector:</strong> Change the Region to make requests to services in that location. The URL updates to reflect the selected Region.</li>
+            </ul>
+        
+            <h1>AWS CLI</h1>
+            <p>The AWS CLI is a unified command-line tool for managing AWS services. It is useful for automation and handling repetitive tasks with scripts.</p>
+            <p>Features:</p>
+            <ul>
+                <li>Open-source tool available for Windows, Linux, and macOS.</li>
+                <li>Allows programmatic interaction with AWS services via API calls.</li>
+            </ul>
+            <h1>AWS SDKs</h1>
+            <p>AWS SDKs allow developers to integrate AWS services into their applications using popular programming languages such as Python, JavaScript, and Java.</p>
+            <p>Features:</p>
+            <ul>
+                <li>Open source and maintained by AWS.</li>
+                <li>Supports integration with various AWS services through programming languages.</li>
+            </ul>
+
+            
+            <hr/>
+            <br/>
+            <h2>AWS Root User Best Practices</h2>
+
+            <h1>Root User Overview</h1>
+            <p>The AWS root user has full access to all services and resources. It is accessed with the email and password used during account creation. For programmatic access, use access keys (ID and secret).</p>
+        
+            <h1>Best Practices</h1>
+            <ul>
+                <li><strong>Limit Root User Usage:</strong> Use it only for critical tasks.</li>
+                <li><strong>Delete Access Keys:</strong> Avoid creating or keep them securely.</li>
+                <li><strong>Enable MFA:</strong> Add a second layer of security using supported MFA devices.</li>
+            </ul>
+        
+            <h1>Multi-Factor Authentication (MFA)</h1>
+            <p>MFA adds a second layer of security by combining:</p>
+            <ul>
+                <li><strong>Something you know:</strong> Password or PIN.</li>
+                <li><strong>Something you have:</strong> One-time code from a device.</li>
+            </ul>
+        
+            <h1>Types of MFA<h1>
+            <ul>
+                <li><strong>Virtual MFA:</strong> Software apps (e.g., Google Authenticator) generate time-based codes.</li>
+                <li><strong>Hardware TOTP Tokens:</strong> Physical devices generate one-time codes.</li>
+                <li><strong>FIDO Security Keys:</strong> Physical USB or NFC keys for secure access.</li>
+            </ul>
+            <p>Activating MFA on the root user is a critical AWS security best practice.</p>
+                
+            
+                 
+            <hr/>
+            <br/>
+        <h2>AWS Identity and Access Management</h2>
+
+        <h1>Authentication</h1>
+        <p>Authentication verifies the user's identity. It answers the question: "Are you who you say you are?" The most common forms of authentication are usernames and passwords, though it can also include token-based authentication or biometric methods like fingerprints.</p>
+
+        <h1>Authorization</h1>
+        <p>Authorization determines what actions a user can perform on AWS resources. After authentication, it answers: "What can you do?" It grants specific permissions, like creating, editing, or deleting resources.</p>
+
+        <h1>IAM Overview</h1>
+        <p>AWS Identity and Access Management (IAM) helps you manage access to your AWS account. IAM is used to define who can access your account and what they can do once inside. It offers a granular way of managing permissions to AWS services and resources.</p>
+
+        <h1>IAM Features</h1>
+        <ul>
+            <li>Global integration with AWS services</li>
+            <li>Shared access</li>
+            <li>Multi-factor authentication</li>
+            <li>Identity federation</li>
+            <li>Free to use</li>
+        </ul>
+
+        <h1>IAM Users</h1>
+        <p>An IAM user represents an individual or service interacting with AWS. Users can be granted access to the AWS Management Console or programmatic access via the AWS CLI/API.</p>
+        <p>IAM users have permanent credentials that stay until manually rotated by admins.</p>
+
+        <h1>IAM Groups</h1>
+        <p>Groups are collections of IAM users that inherit permissions assigned to the group. Groups help manage permissions at scale. For example, a "developer" group could include all users working on development tasks.</p>
+
+        <h1>Key Group Features:</h1>
+        <ul>
+            <li>Users can belong to multiple groups.</li>
+            <li>Groups cannot belong to other groups.</li>
+        </ul>
+
+        <h1>IAM Policies</h1>
+        <p>IAM policies define permissions to access AWS resources. They are attached to IAM users, groups, or roles. When a request is made by an IAM identity, AWS evaluates the associated policies to determine if the action should be allowed or denied.</p>
+
+             
+        <hr/>
+        <br/>
+        <h2>Amazon ECS (Elastic Container Service)</h2>
+        <ul>
+          <li>End-to-end container orchestration service.</li>
+          <li>Runs on:
+              <ul>
+                  <li><strong>AWS Fargate</strong>: Serverless infrastructure.</li>
+                  <li><strong>Amazon EC2 Instances</strong>: Manual cluster management with ECS Agent.</li>
+              </ul>
+          </li>
+          <li>Uses <strong>Task Definitions</strong> (JSON) to configure resources like CPU, memory, and networking.</li>
+      </ul>
+      
+      <h2>Amazon EKS (Elastic Kubernetes Service)</h2>
+      <ul>
+          <li>Managed Kubernetes service for containerized workloads.</li>
+          <li>Uses <strong>worker nodes (Kubernetes nodes)</strong> to run containers.</li>
+          <li>Containers are organized in <strong>Pods</strong>.</li>
+          <li>Best for teams familiar with Kubernetes needing advanced orchestration.</li>
+      </ul>
+  
+      <h2>Key Differences</h2>
+      <table border="1">
+          <thead>
+              <tr>
+                  <th>Feature</th>
+                  <th>Amazon ECS</th>
+                  <th>Amazon EKS</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Technology</td>
+                  <td>AWS native</td>
+                  <td>Kubernetes</td>
+              </tr>
+              <tr>
+                  <td>Compute Options</td>
+                  <td>Fargate, EC2</td>
+                  <td>Kubernetes nodes</td>
+              </tr>
+              <tr>
+                  <td>Containers</td>
+                  <td>Tasks</td>
+                  <td>Pods</td>
+              </tr>
+              <tr>
+                  <td>Use Case</td>
+                  <td>Simple, AWS-focused.</td>
+                  <td>Kubernetes-based, advanced control.</td>
+              </tr>
+          </tbody>
+      </table>
+      <br/>
+      <hr/>
+      <br/>
+
+
+      <h2>Removing Undifferentiated Heavy Lifting with AWS</h2>
+      <h1>The Challenge</h1>
+      <p>When running workloads on Amazon EC2, AWS manages the physical hardware, but you handle:</p>
+      <ul>
+          <li>Guest operating system</li>
+          <li>Security and patching</li>
+          <li>Networking and scaling</li>
+      </ul>
+      <p>With Amazon ECS or EKS, AWS manages container deployment and clustering, but you’re still responsible for maintaining EC2 instances.</p>
+  
+      <h1>Go Serverless</h1>
+      <p>Serverless computing removes the burden of managing servers. Key features:</p>
+      <ul>
+          <li>No servers to provision or manage</li>
+          <li>Automatic scaling with usage</li>
+          <li>Pay only for active resources</li>
+          <li>Built-in availability and fault tolerance</li>
+      </ul>
+  
+      <h1>Serverless Services</h1>
+      <ul>
+          <li><strong>AWS Fargate</strong>: Run containers without managing EC2 instances.</li>
+          <li><strong>AWS Lambda</strong>: Execute code in response to events, only paying for execution time.</li>
+      </ul>
+      <hr/>
+      <br/>
+
+      <h2>Networking Basics</h2>
+      <h1>What is Networking?</h1>
+      <p>Networking connects computers worldwide, enabling communication. AWS demonstrates this through its global infrastructure of data centers, Availability Zones, and Regions.</p>
+  
+      <h1>Networking Analogy: Sending a Letter</h1>
+      <ul>
+          <li>The letter represents the data being sent.</li>
+          <li>The sender's address is the source of the message.</li>
+          <li>The recipient's address is the destination of the message.</li>
+      </ul>
+  
+      <h1>IP Addresses</h1>
+      <p>Just like a home has a mailing address, computers have IP addresses to ensure messages are routed correctly.</p>
+      <p><strong>Example of a 32-bit address in binary:</strong> <code>11000000 10101000 00000001 00011110</code></p>
+      <p>IP addresses are typically displayed in decimal format as IPv4 addresses, e.g., <strong>192.168.1.30</strong>.</p>
+  
+      <h1>CIDR Notation</h1>
+      <p>Classless Inter-Domain Routing (CIDR) allows representation of IP address ranges. For instance:</p>
+      <ul>
+          <li><strong>192.168.1.30</strong>: A single IP address.</li>
+          <li><strong>192.168.1.0/24</strong>: A range with the first 24 bits fixed, leaving 256 possible addresses.</li>
+      </ul>
+      <p>In AWS, CIDR ranges vary from <strong>/28</strong> (16 IPs) to <strong>/16</strong> (65,536 IPs).</p>
+      
+      
+      <hr/>
+      <br/>
+      <h2>What is a VPC?</h2>
+        <p>A Virtual Private Cloud (VPC) is an isolated network you create within the AWS Cloud, similar to a traditional on-premises network. When creating a VPC, you specify:</p>
+        <ul>
+            <li><strong>Name of the VPC</strong></li>
+            <li><strong>Region</strong>: The VPC spans all Availability Zones within the selected region.</li>
+            <li><strong>IP Range</strong>: Defined in CIDR notation, supporting up to five CIDRs.</li>
+        </ul>
+        <p>AWS provisions the network and allocates IP addresses based on this information.</p>
+
+        <h1>Creating Subnets</h1>
+        <p>Subnets are smaller networks within a VPC, comparable to VLANs in traditional networks. Subnets can be:</p>
+        <ul>
+            <li><strong>Public:</strong> For internet-connected resources.</li>
+            <li><strong>Private:</strong> For resources not connected to the internet.</li>
+        </ul>
+        <p>When creating a subnet, you specify:</p>
+        <ul>
+            <li>The VPC to associate it with.</li>
+            <li>The Availability Zone where it resides.</li>
+            <li>The IPv4 CIDR block, which must be a subset of the VPC's range.</li>
+        </ul>
+
+        <h1>High Availability</h1>
+        <p>To ensure fault tolerance, create at least two subnets across different Availability Zones. If one AZ fails, resources in the other AZ remain accessible.</p>
+
+        <h1>Reserved IPs</h1>
+        <p>AWS reserves five IP addresses per subnet for routing, DNS, and network management. For example, in a /24 subnet with 256 IP addresses, only 251 are available for use.</p>
+
+        <h1>Gateways</h1>
+        <h3>Internet Gateway</h3>
+        <p>Enables communication between your VPC and the internet. Highly available and scalable, it acts like a modem for your network.</p>
+        
+        <h3>Virtual Private Gateway</h3>
+        <p>Used to connect your VPC to another private network via a VPN. Requires a customer gateway on the other side of the connection.</p>
+        
+        <h3>AWS Direct Connect</h3>
+        <p>Provides a secure physical connection between your on-premises data center and your VPC via Ethernet. It keeps traffic on the AWS global network.</p>
+        <h1>Main Route Table</h1>
+        <p>When a VPC is created, AWS automatically creates a main route table. This table contains rules (routes) that dictate the direction of network traffic. By default, the main route table allows traffic between all subnets in the local network.</p>
+        <ul>
+            <li>You cannot delete the main route table.</li>
+            <li>A gateway route table cannot be set as the main route table.</li>
+            <li>You can replace the main route table with a custom subnet route table.</li>
+            <li>Routes in the main route table can be added, removed, or modified.</li>
+            <li>Subnets can be explicitly associated with the main route table, even if they are already implicitly associated.</li>
+        </ul>
+    
+        <h1>Custom Route Tables</h1>
+        <p>Subnets without an explicitly associated route table use the main route table. However, for specific use cases, such as isolating application components, you can create custom route tables. These allow distinct routes for each subnet, such as:</p>
+        <ul>
+            <li>Frontend subnet with routes for external access.</li>
+            <li>Database subnet with routes limited to internal access.</li>
+        </ul>
+        <p>Custom route tables include a default local route for communication between resources and subnets inside the VPC. For better control, explicitly associate subnets with custom route tables, leaving the main route table unchanged.</p>
+
+        <hr/>
+        <br/>
+        <h2>Storage Types</h2>
+        <h1>1. File Storage</h1>
+        <p>Data is stored in file hierarchies with metadata such as name and path. Ideal for centralized file sharing and management.</p>
+        <h3>Use cases:</h3>
+        <ul>
+            <li>Web serving</li>
+            <li>Analytics</li>
+            <li>Media</li>
+            <li>Home directories</li>
+        </ul>
+    
+        <h1>2. Block Storage</h1>
+        <p>Data is split into addressable blocks for fast and efficient access. Ideal for critical and high-performance applications.</p>
+        <h3>Use cases:</h3>
+        <ul>
+            <li>Transactional workloads</li>
+            <li>Containers</li>
+            <li>Virtual machines</li>
+        </ul>
+    
+        <h1>3. Object Storage</h1>
+        <p>Data is stored as objects in a flat structure within buckets. Scalable for large or unstructured data sets.</p>
+        <h3>Use cases:</h3>
+        <ul>
+            <li>Data archiving</li>
+            <li>Backup and recovery</li>
+            <li>Rich media</li>
+        </ul>
+    
+        <h1>Comparison with Traditional Systems</h1>
+        <ul>
+            <li><strong>Block Storage</strong>: Similar to DAS/SAN.</li>
+            <li><strong>File Storage</strong>: Similar to NAS servers.</li>
+            <li><strong>Object Storage</strong>: Best for scalability and flexibility.</li>
+        </ul>
+    
+        <h1>Cloud Benefits</h1>
+        <p>With cloud storage, you can create and modify storage solutions in minutes, unlike the rigidity of traditional data centers.</p>
+
+        <h1>1. Amazon Elastic File System (Amazon EFS)</h1>
+        <p>Amazon EFS is a scalable file system that automatically adjusts capacity as files are added or removed. It provides consistent performance without the need for manual provisioning. EFS supports both AWS compute services and on-premises resources, allowing multiple instances to connect simultaneously.</p>
+        
+        <h3>Key Features:</h3>
+        <ul>
+            <li>Simple web interface for quick setup.</li>
+            <li>No minimum fees or setup costs.</li>
+            <li>Pay only for used storage.</li>
+            <li>Support for multiple storage classes.</li>
+        </ul>
+    
+        <h3>Storage Classes:</h3>
+        <ul>
+            <li><strong>EFS Standard</strong>: Multi-AZ resilience, high durability, and availability.</li>
+            <li><strong>EFS Standard-IA (Infrequent Access)</strong>: Cost-effective, lower access frequency.</li>
+            <li><strong>EFS One Zone</strong>: Saves data in a single availability zone for cost savings.</li>
+            <li><strong>EFS One Zone-IA</strong>: Lower cost for infrequent access data within a single zone.</li>
+        </ul>
+    
+        <h1>2. Amazon FSx</h1>
+        <p>Amazon FSx is a fully managed service offering a variety of high-performance file systems. It provides reliability, security, scalability, and flexibility for running file systems in the cloud.</p>
+    
+        <h3>Available File Systems:</h3>
+        <ul>
+            <li><strong>Lustre</strong>: High-performance file system for fast processing.</li>
+            <li><strong>NetApp ONTAP</strong>: Ideal for enterprise-grade data management and storage solutions.</li>
+            <li><strong>OpenZFS</strong>: Open-source file system with advanced features.</li>
+            <li><strong>Windows File Server</strong>: Managed Windows file system for seamless integration with Windows workloads.</li>
+        </ul>
+    
+        <h3>Benefits:</h3>
+        <ul>
+            <li>Fully managed for ease of use.</li>
+            <li>Multiple file system options for different workloads.</li>
+            <li>Scalable and secure.</li>
+        </ul>
+
+        <h2>Amazon S3 Overview</h2>
+
+        <h1>Bucket Names</h1>
+        <p>Bucket names must be 3-63 characters, contain only lowercase letters, numbers, dots, and hyphens, and start and end with a letter or number.</p>
+    
+        <h1>Object Keys</h1>
+        <p>Object keys uniquely identify objects, and prefixes/delimiters can simulate folder structures in the console.</p>
+    
+        <h1>Use Cases</h1>
+        <ul>
+            <li>Backup and storage</li>
+            <li>Media hosting</li>
+            <li>Software delivery</li>
+            <li>Data lakes</li>
+            <li>Static websites</li>
+        </ul>
+    
+        <h1>Security</h1>
+        <p>By default, S3 resources are private. You can adjust permissions with IAM and S3 policies, and encrypt data in transit and at rest.</p>
+    
+        <h1>Storage Classes</h1>
+        <p>S3 offers various storage classes, such as Standard, Intelligent-Tiering, Glacier, and others, based on access frequency and cost.</p>
+    
+        <h2>Amazon EBS</h2>
+        <p>Amazon EBS is designed for data that changes frequently and must persist through instance stops, terminations, or hardware failures. It has two types of volumes: SSD-backed and HDD-backed.</p>
+        
+        <ul>
+          <li><strong>SSD-backed volumes:</strong> Performance depends on IOPs, ideal for transactional workloads like databases and boot volumes.</li>
+          <li><strong>HDD-backed volumes:</strong> Performance depends on MBps, suitable for throughput-intensive workloads like big data, data warehouses, log processing, and sequential data I/O.</li>
+        </ul>
+        
+        <h1>Key Features of Amazon EBS:</h1>
+        <ul>
+          <li>Block storage.</li>
+          <li>Pay for what you provision (storage must be provisioned in advance).</li>
+          <li>Volumes are replicated across multiple servers in a single Availability Zone.</li>
+          <li>Most EBS volumes can only be attached to a single EC2 instance at a time.</li>
+        </ul>
+        
+        <br/>
+        <hr/>
+        <br/>
+
+        <h2>Databases on AWS</h2>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>AWS Service(s)</th>
+                    <th>Database Type</th>
+                    <th>Use Cases</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Amazon RDS, Aurora, Amazon Redshift</td>
+                    <td>Relational</td>
+                    <td>Traditional applications, ERP, CRM, ecommerce</td>
+                </tr>
+                <tr>
+                    <td>DynamoDB</td>
+                    <td>Key-value</td>
+                    <td>High-traffic web applications, ecommerce systems, gaming applications</td>
+                </tr>
+                <tr>
+                    <td>Amazon ElastiCache for Memcached, Amazon ElastiCache for Redis</td>
+                    <td>In-memory</td>
+                    <td>Caching, session management, gaming leaderboards, geospatial applications</td>
+                </tr>
+                <tr>
+                    <td>Amazon DocumentDB</td>
+                    <td>Document</td>
+                    <td>Content management, catalogs, user profiles</td>
+                </tr>
+                <tr>
+                    <td>Amazon Keyspaces</td>
+                    <td>Wide column</td>
+                    <td>High-scale industrial applications for equipment maintenance, fleet management, route optimization</td>
+                </tr>
+                <tr>
+                    <td>Neptune</td>
+                    <td>Graph</td>
+                    <td>Fraud detection, social networking, recommendation engines</td>
+                </tr>
+                <tr>
+                    <td>Timestream</td>
+                    <td>Time series</td>
+                    <td>IoT applications, Development Operations (DevOps), industrial telemetry</td>
+                </tr>
+                <tr>
+                    <td>Amazon QLDB</td>
+                    <td>Ledger</td>
+                    <td>Systems of record, supply chain, registrations, banking transactions</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <h2>Breaking up applications and databases</h2>
+        <p>As the industry changes, applications and databases change too. Today, with larger applications, you no longer see just one database supporting them. Instead, applications are broken into smaller services, each with its own purpose-built database supporting it. This shift removes the idea of a one-size-fits-all database and replaces it with a complimentary database strategy. You can give each database the appropriate functionality, performance, and scale the workload requires.</p>
+    
+
+        <hr/>
+        <br/>
+        <h2>Amazon CloudWatch Overview</h2>
+        <p>Amazon CloudWatch is a monitoring and observability service that provides insights into AWS resources and applications. It automatically collects metrics from AWS services, enabling users to monitor resources like EC2 instances, set up dashboards, and create alarms. In this demo, the goal was to create a CloudWatch dashboard to track EC2 instance CPU utilization and set up an alarm for notifications when CPU usage exceeds 70% for more than 5 minutes.</p>
+
+        <h1>Steps Covered:</h1>
+        <h3>1. Creating a Dashboard:</h3>
+        <ul>
+            <li>Navigate to CloudWatch in the AWS console.</li>
+            <li>Create a dashboard to display CPU utilization for an EC2 instance.</li>
+            <li>Use a line graph to visualize the metric and save the dashboard.</li>
+        </ul>
+
+        <h3>2. Using CloudWatch Alarms:</h3>
+        <ul>
+            <li>Set up an alarm to trigger when CPU utilization exceeds 70% for 5 minutes.</li>
+            <li>Configure actions such as sending an email alert using Amazon SNS when the alarm is triggered.</li>
+            <li>Create an SNS topic and specify the recipient for notifications.</li>
+        </ul>
+
+        <h1>CloudWatch Alarm States:</h1>
+        <p>Amazon CloudWatch Alarms can be in three possible states:</p>
+        <ul>
+            <li><strong>OK:</strong> This state means that the metric being monitored is within the defined threshold or normal range. The alarm is not triggered because the metric is operating as expected.</li>
+            <li><strong>ALARM:</strong> The alarm enters this state when the metric crosses the threshold defined for the alarm, indicating that there may be a potential issue. For example, if CPU utilization exceeds 70% for a certain period, the alarm would enter this state.</li>
+            <li><strong>INSUFFICIENT_DATA:</strong> This state occurs when CloudWatch does not have enough data to determine whether the metric is within an acceptable range or not. This could happen when an instance is in a starting or stopping state, or if no data has been sent for that metric.</li>
+        </ul>
+
+        <p>Each of these states allows you to configure actions that can be triggered, such as sending notifications through Amazon SNS when the state changes (e.g., from OK to ALARM).</p>
+
+        <p>CloudWatch allows for real-time monitoring of AWS resources, providing essential insights into application performance. Custom metrics can also be added to CloudWatch for a more comprehensive view of application health.</p>
+
+
+
+        <hr/>
+        <br/>
+
+        <h2>Types of Load Balancers</h2>
+    <p>In this guide, we will cover three types of load balancers: Application Load Balancer (ALB), Network Load Balancer (NLB), and Gateway Load Balancer (GLB).</p>
+
+    <h1>Load Balancer Types Overview</h1>
+    <ul>
+        <li><strong>Application Load Balancer (ALB):</strong> Operates at Layer 7 of the OSI model, ideal for HTTP/HTTPS traffic.</li>
+        <li><strong>Network Load Balancer (NLB):</strong> Operates at Layer 4 of the OSI model, best for TCP/UDP traffic.</li>
+        <li><strong>Gateway Load Balancer (GLB):</strong> Helps manage third-party virtual appliances, supports Layer 3 gateway and Layer 4 load balancing.</li>
+    </ul>
+
+    <h3>Application Load Balancer (ALB)</h3>
+    <p>An ALB is ideal for balancing HTTP and HTTPS traffic. It evaluates listener rules to route traffic based on request content.</p>
+    <h4>Key Features:</h4>
+    <ul>
+        <li>Routes traffic based on request data</li>
+        <li>Sends responses directly to the client</li>
+        <li>Uses TLS offloading</li>
+        <li>Authenticates users</li>
+        <li>Secures traffic</li>
+        <li>Supports sticky sessions</li>
+    </ul>
+
+    <h3>Network Load Balancer (NLB)</h3>
+    <p>A Network Load Balancer works at Layer 4, routing TCP and UDP traffic based on IP protocol data.</p>
+    <h4>Key Features:</h4>
+    <ul>
+        <li>Sticky sessions: Routes requests from the same client to the same target</li>
+        <li>Low latency: Ideal for latency-sensitive applications</li>
+        <li>Preserves source IP address</li>
+        <li>Supports static IP and Elastic IP addresses</li>
+        <li>DNS failover: Uses Amazon Route 53 for traffic management</li>
+    </ul>
+
+    <h3>Gateway Load Balancer (GLB)</h3>
+    <p>A Gateway Load Balancer helps distribute traffic to third-party appliances like firewalls, intrusion detection systems, and more.</p>
+    <h4>Key Features:</h4>
+    <ul>
+        <li>High availability: Routes traffic through healthy virtual appliances</li>
+        <li>Monitoring: Monitored using CloudWatch metrics</li>
+        <li>Streamlined deployments: Deploy virtual appliances from the AWS Marketplace</li>
+        <li>Private connectivity: Connects resources over a private network</li>
+    </ul>
+
+    <h1>Choosing the Right Load Balancer</h1>
+    <p>You can select between the ELB service types based on the features required for your application. Below is a comparison table of major features:</p>
+    
+    <table border="1">
+        <tr>
+            <th>Feature</th>
+            <th>ALB</th>
+            <th>NLB</th>
+            <th>GLB</th>
+        </tr>
+        <tr>
+            <td>Load Balancer Type</td>
+            <td>Layer 7</td>
+            <td>Layer 4</td>
+            <td>Layer 3 gateway and Layer 4 load balancing</td>
+        </tr>
+        <tr>
+            <td>Target Type</td>
+            <td>IP, instance, Lambda</td>
+            <td>IP, instance, ALB</td>
+            <td>IP, instance</td>
+        </tr>
+        <tr>
+            <td>Protocol Listeners</td>
+            <td>HTTP, HTTPS</td>
+            <td>TCP, UDP, TLS</td>
+            <td>IP</td>
+        </tr>
+        <tr>
+            <td>Static IP and Elastic IP Address</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Preserve Source IP Address</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Fixed Response</td>
+            <td>Yes</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>User Authentication</td>
+            <td>Yes</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+    </table>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <script src="../assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
