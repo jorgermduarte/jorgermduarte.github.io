@@ -165,19 +165,19 @@
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link  active" data-nav-link="about" onclick="openTab(this)">About</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
+            <button class="navbar-link" data-nav-link="resume"  onclick="openTab(this)">Resume</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Personal Projects</button>
+            <button class="navbar-link" data-nav-link="portfolio"  onclick="openTab(this)">Portfolio</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
+            <button class="navbar-link" data-nav-link="blog"  onclick="openTab(this)">Blog</button>
           </li>
 
         </ul>
@@ -192,7 +192,7 @@
         - #ABOUT
       -->
 
-      <article class="about  active" data-page="about">
+      <article class="about" data-page="about">
 
         <header>
           <h2 class="h2 article-title">About me</h2>
@@ -532,10 +532,10 @@
         - #PORTFOLIO
       -->
 
-      <article class="portfolio" data-page="personal projects">
+      <article class="portfolio" data-page="portfolio">
 
         <header>
-          <h2 class="h2 article-title">Personal Projects</h2>
+          <h2 class="h2 article-title">Portfolio</h2>
         </header>
 
         <section class="projects">
@@ -1430,7 +1430,51 @@
   </main>
 
 
+  <script>
+    const getLastOpenTab = () => {
+      const lastOpenTab = localStorage.getItem('lastOpenTab');
+      return lastOpenTab ? lastOpenTab : null;
+    }
+    const setLastOpenTab = (tab) => {
+      localStorage.setItem('lastOpenTab', tab);
+    }
 
+    const openTab = (tab = null) => {
+      let name = "about";
+
+      if (tab) {
+        name = tab.getAttribute('data-nav-link');
+      } else {
+        const lastOpenedTab = getLastOpenTab();
+        if (lastOpenedTab) {
+          name = lastOpenedTab;
+        }
+      }
+
+      const navbarLinks = document.querySelectorAll('.navbar-link');
+      navbarLinks.forEach((tab) => tab.classList.remove('active'));
+      document.querySelector(`.navbar-link[data-nav-link="${name}"]`).classList.add('active');
+
+      // find articles with data-page attribute
+      const articles = document.querySelectorAll('article');
+
+      // hide all articles with data-page attribute (remove active class)
+      articles.forEach((article) => article.classList.remove('active'));
+
+      // find article with data-page attribute equal to name
+      const article = document.querySelector(`article[data-page="${name}"]`);
+
+      // add active class to article
+      article.classList.add('active');
+
+
+      setLastOpenTab(name);
+    }
+
+    openTab(null);
+
+
+  </script>
 
 
 
